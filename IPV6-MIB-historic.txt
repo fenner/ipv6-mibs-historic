@@ -13,7 +13,7 @@
      Ipv6IfIndexOrZero                     FROM IPV6-TC;
 
  ipv6MIB MODULE-IDENTITY
-     LAST-UPDATED "20150528211213Z"
+     LAST-UPDATED "201505282112Z"
      ORGANIZATION "IETF IPv6 Working Group"
      CONTACT-INFO
        "           Dimitry Haskin
@@ -39,7 +39,7 @@
      DESCRIPTION
        "The MIB module for entities implementing the IPv6
         protocol."
-     REVISION "20150528211213Z"
+     REVISION "201505282112Z"
      DESCRIPTION
        "Deprecating this MIB; it has been replaced by
        the revised IP-MIB (RFC4293) and IP-FORWARD-MIB

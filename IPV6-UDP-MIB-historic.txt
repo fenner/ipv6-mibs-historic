@@ -7,7 +7,7 @@ IMPORTS
    Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
 
 ipv6UdpMIB MODULE-IDENTITY
-   LAST-UPDATED "20150528211213Z"
+   LAST-UPDATED "201505282112Z"
    ORGANIZATION "IETF IPv6 MIB Working Group"
    CONTACT-INFO
         "               Mike Daniele
@@ -21,7 +21,7 @@ ipv6UdpMIB MODULE-IDENTITY
                 Email:  daniele@zk3.dec.com"
    DESCRIPTION
         "The MIB module for entities implementing UDP over IPv6."
-   REVISION "20150528211213Z"
+   REVISION "201505282112Z"
    DESCRIPTION
         "Deprecating this MIB; it has been replaced by
         the revised UDP-MIB (RFC4113)."

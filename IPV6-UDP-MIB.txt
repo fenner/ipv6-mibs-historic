@@ -37,7 +37,7 @@ udp      OBJECT IDENTIFIER ::= { mib-2 7 }
 ipv6UdpTable OBJECT-TYPE
    SYNTAX      SEQUENCE OF Ipv6UdpEntry
    MAX-ACCESS  not-accessible
-   STATUS      current
+   STATUS      obsolete
    DESCRIPTION
         "A table containing UDP listener information for
          UDP/IPv6 endpoints."
@@ -46,7 +46,7 @@ ipv6UdpTable OBJECT-TYPE
 ipv6UdpEntry OBJECT-TYPE
    SYNTAX      Ipv6UdpEntry
    MAX-ACCESS  not-accessible
-   STATUS      current
+   STATUS      obsolete
    DESCRIPTION
         "Information about a particular current UDP listener.
 
@@ -67,7 +67,7 @@ Ipv6UdpEntry ::= SEQUENCE {
 ipv6UdpLocalAddress OBJECT-TYPE
    SYNTAX       Ipv6Address
    MAX-ACCESS   not-accessible
-   STATUS       current
+   STATUS       obsolete
    DESCRIPTION
         "The local IPv6 address for this UDP listener.
          In the case of a UDP listener which is willing
@@ -79,7 +79,7 @@ ipv6UdpLocalAddress OBJECT-TYPE
 ipv6UdpLocalPort OBJECT-TYPE
     SYNTAX     INTEGER (0..65535)
     MAX-ACCESS not-accessible
-    STATUS     current
+    STATUS     obsolete
     DESCRIPTION
         "The local port number for this UDP listener."
     ::= { ipv6UdpEntry 2 }
@@ -87,7 +87,7 @@ ipv6UdpLocalPort OBJECT-TYPE
 ipv6UdpIfIndex OBJECT-TYPE
    SYNTAX     Ipv6IfIndexOrZero
    MAX-ACCESS   read-only
-   STATUS     current
+   STATUS     obsolete
    DESCRIPTION
         "An index object used to disambiguate conceptual rows in
          the table, since the ipv6UdpLocalAddress/ipv6UdpLocalPort
@@ -119,7 +119,7 @@ ipv6UdpGroups      OBJECT IDENTIFIER ::= { ipv6UdpConformance 2 }
 -- compliance statements
 
 ipv6UdpCompliance MODULE-COMPLIANCE
-   STATUS  current
+   STATUS  obsolete
    DESCRIPTION
         "The compliance statement for SNMPv2 entities which
          implement UDP over IPv6."
@@ -132,7 +132,7 @@ ipv6UdpGroup OBJECT-GROUP
                -- ipv6UdpLocalAddress (not-accessible)
                -- ipv6UdpLocalPort (not-accessible)
                ipv6UdpIfIndex }
-   STATUS    current
+   STATUS    obsolete
    DESCRIPTION
         "The group of objects providing management of
          UDP over IPv6."

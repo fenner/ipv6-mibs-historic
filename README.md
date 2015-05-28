@@ -33,8 +33,9 @@ Moving the IPV6-MIBs to historic
 ## Why?
 
 In 2005, the IPv6 MIB update group published
-updated versions of the IP-MIB {{?RFC4293}}, UDP-MIB, TCP-MIB and
-IP-FORWARDING-MIB that use the InetAddressType/InetAddress
+updated versions of the IP-MIB {{?RFC4293}}, UDP-MIB {{?RFC4113}},
+TCP-MIB {{?RFC4022}} and IP-FORWARD-MIB {{?RFC4292}},
+which use the InetAddressType/InetAddress
 construct to handle IPv4 and IPv6 in the same table.
 These documents were marked in the RFC Index as
 obsoleting the corresponding IPV6-MIBs, but the
@@ -49,29 +50,29 @@ documents with the SMI syntax changed to obsolete.
 # Historic IPV6-TC
 
 ~~~~
-{::include IPV6-TC.txt}
+{::include IPV6-TC-historic.txt}
 ~~~~
 
 # Historic IPV6-MIB
 
 ~~~~
-{::include IPV6-MIB.txt}
+{::include IPV6-MIB-historic.txt}
 ~~~~
 
 # Historic IPV6-ICMP-MIB
 
 ~~~~
-{::include IPV6-ICMP-MIB.txt}
+{::include IPV6-ICMP-MIB-historic.txt}
 ~~~~
 
 # Historic IPV6-UDP-MIB
 
 ~~~~
-{::include IPV6-UDP-MIB.txt}
+{::include IPV6-UDP-MIB-historic.txt}
 ~~~~
 
 # Historic IPV6-TCP-MIB
 
 ~~~~
-{::include IPV6-TCP-MIB.txt}
+{::include IPV6-TCP-MIB-historic.txt}
 ~~~~

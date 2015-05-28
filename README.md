@@ -16,14 +16,22 @@ author:
     org: Arista Networks, Inc.
     street: 5453 Great America Parkway
     city: Santa Clara
-    code: 95xxx
+    code: 95054
     country: USA
     phone: +1-408-547-5572
     email: fenner@fenron.com
 
 --- abstract
 
-insert abstract here
+In 2005, the IPv6 MIB update group published
+updated versions of the IP-MIB, UDP-MIB,
+TCP-MIB and IP-FORWARD-MIB,
+which use the InetAddressType/InetAddress
+construct to handle IPv4 and IPv6 in the same table.
+This document contains versions of the obsoleted
+IPV6-MIB, IPV6-TC, IPV6-ICMP-MIB, IPV6-TCP-MIB
+and IPV6-UDP-MIB, for the purpose of updating
+MIB repositories.
 
 --- middle
 
@@ -76,3 +84,15 @@ documents with the SMI syntax changed to obsolete.
 ~~~~
 {::include IPV6-TCP-MIB-historic.txt}
 ~~~~
+
+# Reclassification
+
+(This section may be removed by the RFC Editor.)
+
+It is expected that the publication of this document
+will be accompanied by a note from the IESG reclassifying
+{{?RFC2452}},
+{{?RFC2454}},
+and
+{{?RFC2465}}
+to Historic.

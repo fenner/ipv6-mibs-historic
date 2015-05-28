@@ -38,7 +38,7 @@ tcp      OBJECT IDENTIFIER ::= { mib-2 6 }
 ipv6TcpConnTable OBJECT-TYPE
    SYNTAX      SEQUENCE OF Ipv6TcpConnEntry
    MAX-ACCESS  not-accessible
-   STATUS      current
+   STATUS      obsolete
    DESCRIPTION
         "A table containing TCP connection-specific information,
          for only those connections whose endpoints are IPv6 addresses."
@@ -47,7 +47,7 @@ ipv6TcpConnTable OBJECT-TYPE
 ipv6TcpConnEntry OBJECT-TYPE
    SYNTAX      Ipv6TcpConnEntry
    MAX-ACCESS  not-accessible
-   STATUS      current
+   STATUS      obsolete
    DESCRIPTION
         "A conceptual row of the ipv6TcpConnTable containing
          information about a particular current TCP connection.
@@ -76,7 +76,7 @@ Ipv6TcpConnEntry ::=
 ipv6TcpConnLocalAddress OBJECT-TYPE
    SYNTAX     Ipv6Address
    MAX-ACCESS not-accessible
-   STATUS     current
+   STATUS     obsolete
    DESCRIPTION
         "The local IPv6 address for this TCP connection. In
          the case of a connection in the listen state which
@@ -88,7 +88,7 @@ ipv6TcpConnLocalAddress OBJECT-TYPE
 ipv6TcpConnLocalPort OBJECT-TYPE
    SYNTAX     INTEGER (0..65535)
    MAX-ACCESS not-accessible
-   STATUS     current
+   STATUS     obsolete
    DESCRIPTION
         "The local port number for this TCP connection."
    ::= { ipv6TcpConnEntry 2 }
@@ -96,7 +96,7 @@ ipv6TcpConnLocalPort OBJECT-TYPE
 ipv6TcpConnRemAddress OBJECT-TYPE
    SYNTAX     Ipv6Address
    MAX-ACCESS not-accessible
-   STATUS     current
+   STATUS     obsolete
    DESCRIPTION
         "The remote IPv6 address for this TCP connection."
    ::= { ipv6TcpConnEntry 3 }
@@ -104,7 +104,7 @@ ipv6TcpConnRemAddress OBJECT-TYPE
 ipv6TcpConnRemPort OBJECT-TYPE
    SYNTAX     INTEGER (0..65535)
    MAX-ACCESS not-accessible
-   STATUS     current
+   STATUS     obsolete
    DESCRIPTION
         "The remote port number for this TCP connection."
    ::= { ipv6TcpConnEntry 4 }
@@ -112,7 +112,7 @@ ipv6TcpConnRemPort OBJECT-TYPE
 ipv6TcpConnIfIndex OBJECT-TYPE
    SYNTAX     Ipv6IfIndexOrZero
    MAX-ACCESS not-accessible
-   STATUS     current
+   STATUS     obsolete
    DESCRIPTION
         "An index object used to disambiguate conceptual rows in
          the table, since the connection 4-tuple may not be unique.
@@ -153,7 +153,7 @@ ipv6TcpConnState OBJECT-TYPE
         timeWait(11),
         deleteTCB(12) }
    MAX-ACCESS read-write
-   STATUS     current
+   STATUS     obsolete
    DESCRIPTION
         "The state of this TCP connection.
 
@@ -186,7 +186,7 @@ ipv6TcpGroups      OBJECT IDENTIFIER ::= { ipv6TcpConformance 2 }
 -- compliance statements
 
 ipv6TcpCompliance MODULE-COMPLIANCE
-   STATUS  current
+   STATUS  obsolete
    DESCRIPTION
         "The compliance statement for SNMPv2 entities which
          implement TCP over IPv6."
@@ -202,7 +202,7 @@ ipv6TcpGroup OBJECT-GROUP
                -- ipv6TcpConnRemPort (not-accessible)
                -- ipv6TcpConnIfIndex (not-accessible)
                ipv6TcpConnState }
-   STATUS    current
+   STATUS    obsolete
    DESCRIPTION
         "The group of objects providing management of
          TCP over IPv6."

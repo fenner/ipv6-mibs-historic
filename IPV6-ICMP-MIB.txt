@@ -43,7 +43,7 @@
  ipv6IfIcmpTable OBJECT-TYPE
      SYNTAX     SEQUENCE OF Ipv6IfIcmpEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "IPv6 ICMP statistics. This table contains statistics
       of ICMPv6 messages that are received and sourced by
@@ -53,7 +53,7 @@
  ipv6IfIcmpEntry OBJECT-TYPE
      SYNTAX     Ipv6IfIcmpEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "An ICMPv6 statistics entry containing
       objects at a particular IPv6 interface.
@@ -145,7 +145,7 @@
  ipv6IfIcmpInMsgs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The total number of ICMP messages received
       by the interface which includes all those
@@ -158,7 +158,7 @@
  ipv6IfIcmpInErrors OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP messages which the interface
       received but determined as having ICMP-specific
@@ -168,7 +168,7 @@
  ipv6IfIcmpInDestUnreachs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Destination Unreachable
       messages received by the interface."
@@ -177,7 +177,7 @@
  ipv6IfIcmpInAdminProhibs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP destination
       unreachable/communication administratively
@@ -187,7 +187,7 @@
  ipv6IfIcmpInTimeExcds OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Time Exceeded messages
        received by the interface."
@@ -196,7 +196,7 @@
  ipv6IfIcmpInParmProblems OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Parameter Problem messages
        received by the interface."
@@ -205,7 +205,7 @@
  ipv6IfIcmpInPktTooBigs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Packet Too Big messages
       received by the interface."
@@ -214,7 +214,7 @@
  ipv6IfIcmpInEchos OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Echo (request) messages
        received by the interface."
@@ -223,7 +223,7 @@
  ipv6IfIcmpInEchoReplies OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Echo Reply messages received
       by the interface."
@@ -232,7 +232,7 @@
  ipv6IfIcmpInRouterSolicits OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Router Solicit messages
        received by the interface."
@@ -241,7 +241,7 @@
  ipv6IfIcmpInRouterAdvertisements OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Router Advertisement messages
       received by the interface."
@@ -250,7 +250,7 @@
  ipv6IfIcmpInNeighborSolicits OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Neighbor Solicit messages
        received by the interface."
@@ -259,7 +259,7 @@
  ipv6IfIcmpInNeighborAdvertisements OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Neighbor Advertisement
       messages received by the interface."
@@ -268,7 +268,7 @@
  ipv6IfIcmpInRedirects OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of Redirect messages received
       by the interface."
@@ -277,7 +277,7 @@
  ipv6IfIcmpInGroupMembQueries OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMPv6 Group Membership Query
       messages received by the interface."
@@ -286,7 +286,7 @@
  ipv6IfIcmpInGroupMembResponses OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMPv6 Group Membership Response messages
       received by the interface."
@@ -295,7 +295,7 @@
   ipv6IfIcmpInGroupMembReductions OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMPv6 Group Membership Reduction messages
       received by the interface."
@@ -304,7 +304,7 @@
  ipv6IfIcmpOutMsgs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The total number of ICMP messages which this
       interface attempted to send.  Note that this counter
@@ -314,7 +314,7 @@
  ipv6IfIcmpOutErrors OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP messages which this interface did
       not send due to problems discovered within ICMP
@@ -329,7 +329,7 @@
  ipv6IfIcmpOutDestUnreachs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Destination Unreachable
 
@@ -339,7 +339,7 @@
  ipv6IfIcmpOutAdminProhibs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "Number of ICMP dest unreachable/communication
        administratively prohibited messages sent."
@@ -348,7 +348,7 @@
  ipv6IfIcmpOutTimeExcds OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Time Exceeded messages sent
       by the interface."
@@ -357,7 +357,7 @@
  ipv6IfIcmpOutParmProblems OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Parameter Problem messages
       sent by the interface."
@@ -366,7 +366,7 @@
  ipv6IfIcmpOutPktTooBigs OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Packet Too Big messages sent
       by the interface."
@@ -375,7 +375,7 @@
  ipv6IfIcmpOutEchos OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Echo (request) messages sent
       by the interface."
@@ -384,7 +384,7 @@
  ipv6IfIcmpOutEchoReplies OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Echo Reply messages sent
       by the interface."
@@ -393,7 +393,7 @@
  ipv6IfIcmpOutRouterSolicits OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Router Solicitation messages
        sent by the interface."
@@ -402,7 +402,7 @@
  ipv6IfIcmpOutRouterAdvertisements OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Router Advertisement messages
       sent by the interface."
@@ -411,7 +411,7 @@
  ipv6IfIcmpOutNeighborSolicits OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Neighbor Solicitation
        messages sent by the interface."
@@ -420,7 +420,7 @@
  ipv6IfIcmpOutNeighborAdvertisements OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMP Neighbor Advertisement
       messages sent by the interface."
@@ -429,7 +429,7 @@
  ipv6IfIcmpOutRedirects OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of Redirect messages sent. For
       a host, this object will always be zero,
@@ -439,7 +439,7 @@
  ipv6IfIcmpOutGroupMembQueries OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMPv6 Group Membership Query
       messages sent."
@@ -448,7 +448,7 @@
  ipv6IfIcmpOutGroupMembResponses OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMPv6 Group Membership Response
       messages sent."
@@ -457,7 +457,7 @@
  ipv6IfIcmpOutGroupMembReductions OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The number of ICMPv6 Group Membership Reduction
       messages sent."
@@ -475,7 +475,7 @@ ipv6IcmpGroups
 -- compliance statements
 
 ipv6IcmpCompliance MODULE-COMPLIANCE
-    STATUS  current
+    STATUS  obsolete
     DESCRIPTION
       "The compliance statement for SNMPv2 entities which
       implement ICMPv6."
@@ -520,7 +520,7 @@ ipv6IcmpGroup OBJECT-GROUP
                 ipv6IfIcmpOutGroupMembResponses,
                 ipv6IfIcmpOutGroupMembReductions
               }
-    STATUS    current
+    STATUS    obsolete
     DESCRIPTION
          "The ICMPv6 group of objects providing information
           specific to ICMPv6."

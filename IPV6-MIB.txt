@@ -53,7 +53,7 @@
                   notForwarding(2)  -- a router
                  }
       MAX-ACCESS read-write
-      STATUS     current
+      STATUS     obsolete
       DESCRIPTION
         "The indication of whether this entity is acting
         as an IPv6 router in respect to the forwarding of
@@ -73,7 +73,7 @@
  ipv6DefaultHopLimit OBJECT-TYPE
      SYNTAX      INTEGER(0..255)
      MAX-ACCESS  read-write
-      STATUS     current
+      STATUS     obsolete
      DESCRIPTION
         "The default value inserted into the Hop Limit
         field of the IPv6 header of datagrams originated
@@ -85,7 +85,7 @@
 ipv6Interfaces OBJECT-TYPE
      SYNTAX      Unsigned32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The number of IPv6 interfaces (regardless of
         their current state) present on this system."
@@ -94,7 +94,7 @@ ipv6Interfaces OBJECT-TYPE
 ipv6IfTableLastChange OBJECT-TYPE
      SYNTAX      TimeStamp
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The value of sysUpTime at the time of the last
        insertion or removal of an entry in the
@@ -109,7 +109,7 @@ ipv6IfTableLastChange OBJECT-TYPE
 ipv6IfTable OBJECT-TYPE
      SYNTAX     SEQUENCE OF Ipv6IfEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "The IPv6 Interfaces table contains information
        on the entity's internetwork-layer interfaces.
@@ -123,7 +123,7 @@ ipv6IfTable OBJECT-TYPE
  ipv6IfEntry OBJECT-TYPE
      SYNTAX     Ipv6IfEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "An interface entry containing objects
         about a particular IPv6 interface."
@@ -147,7 +147,7 @@ ipv6IfTable OBJECT-TYPE
  ipv6IfIndex OBJECT-TYPE
      SYNTAX     Ipv6IfIndex
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "A unique non-zero value identifying
         the particular IPv6 interface."
@@ -156,7 +156,7 @@ ipv6IfTable OBJECT-TYPE
  ipv6IfDescr OBJECT-TYPE
      SYNTAX     DisplayString
      MAX-ACCESS read-write
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "A textual string containing information about the
        interface.  This string may be set by the network
@@ -166,7 +166,7 @@ ipv6IfTable OBJECT-TYPE
  ipv6IfLowerLayer OBJECT-TYPE
     SYNTAX      VariablePointer
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "This object identifies the protocol layer over
        which this network interface operates.  If this
@@ -188,7 +188,7 @@ ipv6IfTable OBJECT-TYPE
     SYNTAX      Unsigned32
     UNITS       "octets"
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "The size of the largest IPv6 packet which can be
       sent/received on the interface, specified in
@@ -199,7 +199,7 @@ ipv6IfTable OBJECT-TYPE
     SYNTAX      Unsigned32 (0..65535)
     UNITS       "octets"
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "The size of the largest IPv6 datagram which this
       entity can re-assemble from incoming IPv6 fragmented
@@ -209,7 +209,7 @@ ipv6IfTable OBJECT-TYPE
  ipv6IfIdentifier OBJECT-TYPE
      SYNTAX      Ipv6AddressIfIdentifier
      MAX-ACCESS  read-write
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The Interface Identifier for this interface that
 
@@ -226,7 +226,7 @@ ipv6IfTable OBJECT-TYPE
      SYNTAX      INTEGER (0..64)
      UNITS       "bits"
      MAX-ACCESS  read-write
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The length of the Interface Identifier in bits."
      ::= { ipv6IfEntry 7 }
@@ -234,7 +234,7 @@ ipv6IfTable OBJECT-TYPE
  ipv6IfPhysicalAddress OBJECT-TYPE
      SYNTAX      PhysAddress
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The interface's physical address. For example, for
        an IPv6 interface attached to an 802.x link, this
@@ -254,7 +254,7 @@ ipv6IfAdminStatus OBJECT-TYPE
              down(2)
             }
     MAX-ACCESS  read-write
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "The desired state of the interface.  When a managed
       system initializes,  all IPv6 interfaces start with
@@ -281,7 +281,7 @@ ipv6IfOperStatus OBJECT-TYPE
              notPresent(5)      -- missing
             }
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "The current operational state of the interface.
       The noIfIdentifier(3) state indicates that no valid
@@ -303,7 +303,7 @@ ipv6IfOperStatus OBJECT-TYPE
 ipv6IfLastChange OBJECT-TYPE
     SYNTAX      TimeStamp
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
         "The value of sysUpTime at the time the interface
         entered its current operational state.  If the
@@ -319,7 +319,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsTable OBJECT-TYPE
      SYNTAX     SEQUENCE OF Ipv6IfStatsEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
          "IPv6 interface traffic statistics."
      ::= { ipv6MIBObjects 6 }
@@ -327,7 +327,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsEntry OBJECT-TYPE
      SYNTAX     Ipv6IfStatsEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
          "An interface statistics entry containing objects
          at a particular IPv6 interface."
@@ -381,7 +381,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInReceives OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The total number of input datagrams received by
         the interface, including those received in error."
@@ -390,7 +390,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInHdrErrors OBJECT-TYPE
      SYNTAX     Counter32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The number of input datagrams discarded due to
         errors in their IPv6 headers, including version
@@ -402,7 +402,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInTooBigErrors OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The number of input datagrams that could not be
        forwarded because their size exceeded the link MTU
@@ -412,7 +412,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInNoRoutes OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of input datagrams discarded because no
          route could be found to transmit them to their
@@ -422,7 +422,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInAddrErrors OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of input datagrams discarded because
         the IPv6 address in their IPv6 header's destination
@@ -439,7 +439,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInUnknownProtos OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of locally-addressed datagrams
         received successfully but discarded because of an
@@ -453,7 +453,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInTruncatedPkts OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of input datagrams discarded because
          datagram frame didn't carry enough data."
@@ -462,7 +462,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInDiscards OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of input IPv6 datagrams for which no
         problems were encountered to prevent their
@@ -475,7 +475,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInDelivers OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
       "The total number of datagrams successfully
       delivered to IPv6 user-protocols (including ICMP).
@@ -488,7 +488,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsOutForwDatagrams OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of output datagrams which this
         entity received and forwarded to their final
@@ -504,7 +504,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsOutRequests OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
       "The total number of IPv6 datagrams which local IPv6
       user-protocols (including ICMP) supplied to IPv6 in
@@ -516,7 +516,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsOutDiscards OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
          "The number of output IPv6 datagrams for which no
          problem was encountered to prevent their
@@ -530,7 +530,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsOutFragOKs OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of IPv6 datagrams that have been
          successfully fragmented at this output interface."
@@ -539,7 +539,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsOutFragFails OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of IPv6 datagrams that have been
          discarded because they needed to be fragmented
@@ -549,7 +549,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsOutFragCreates OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of output datagram fragments that have
          been generated as a result of fragmentation at
@@ -559,7 +559,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsReasmReqds OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of IPv6 fragments received which needed
          to be reassembled at this interface.  Note that this
@@ -572,7 +572,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsReasmOKs OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The number of IPv6 datagrams successfully
        reassembled.  Note that this counter is incremented
@@ -584,7 +584,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsReasmFails OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of failures detected by the IPv6 re-
         assembly algorithm (for whatever reason: timed
@@ -602,7 +602,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsInMcastPkts OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The number of multicast packets received
          by the interface"
@@ -611,7 +611,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6IfStatsOutMcastPkts OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "The number of multicast packets transmitted
          by the interface"
@@ -626,7 +626,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrPrefixTable OBJECT-TYPE
      SYNTAX  SEQUENCE OF Ipv6AddrPrefixEntry
      MAX-ACCESS  not-accessible
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
          "The list of IPv6 address prefixes of
          IPv6 interfaces."
@@ -635,7 +635,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrPrefixEntry OBJECT-TYPE
      SYNTAX  Ipv6AddrPrefixEntry
      MAX-ACCESS  not-accessible
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
          "An interface entry containing objects of
          a particular IPv6 address prefix."
@@ -657,7 +657,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrPrefix OBJECT-TYPE
      SYNTAX      Ipv6AddressPrefix
      MAX-ACCESS  not-accessible
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The prefix associated with the this interface."
      ::= { ipv6AddrPrefixEntry 1 }
@@ -666,7 +666,7 @@ ipv6IfLastChange OBJECT-TYPE
      SYNTAX      INTEGER (0..128)
      UNITS       "bits"
      MAX-ACCESS  not-accessible
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The length of the prefix (in bits)."
      ::= { ipv6AddrPrefixEntry 2 }
@@ -674,7 +674,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrPrefixOnLinkFlag OBJECT-TYPE
      SYNTAX      TruthValue
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "This object has the value 'true(1)', if this
        prefix can be used  for on-link determination
@@ -684,7 +684,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrPrefixAutonomousFlag OBJECT-TYPE
      SYNTAX      TruthValue
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "Autonomous address configuration flag. When
        true(1), indicates that this prefix can be used
@@ -698,7 +698,7 @@ ipv6IfLastChange OBJECT-TYPE
      SYNTAX      Unsigned32
      UNITS       "seconds"
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
         "It is the length of time in seconds that this
         prefix will remain preferred, i.e. time until
@@ -715,7 +715,7 @@ ipv6IfLastChange OBJECT-TYPE
      SYNTAX      Unsigned32
      UNITS       "seconds"
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "It is the length of time in seconds that this
        prefix will remain valid, i.e. time until
@@ -735,7 +735,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrTable OBJECT-TYPE
     SYNTAX      SEQUENCE OF Ipv6AddrEntry
     MAX-ACCESS  not-accessible
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "The table of addressing information relevant to
       this node's interface addresses."
@@ -744,7 +744,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrEntry OBJECT-TYPE
     SYNTAX      Ipv6AddrEntry
     MAX-ACCESS  not-accessible
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
         "The addressing information for one of this
         node's interface addresses."
@@ -763,7 +763,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrAddress OBJECT-TYPE
     SYNTAX      Ipv6Address
     MAX-ACCESS  not-accessible
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "The IPv6 address to which this entry's addressing
       information pertains."
@@ -773,7 +773,7 @@ ipv6IfLastChange OBJECT-TYPE
     SYNTAX      INTEGER(0..128)
     UNITS       "bits"
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "The length of the prefix (in bits) associated with
       the IPv6 address of this entry."
@@ -794,7 +794,7 @@ ipv6IfLastChange OBJECT-TYPE
          unknown(3)     -- for some reason.
        }
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
        "The type of address. Note that 'stateless(1)'
        refers to an address that was statelessly
@@ -806,7 +806,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6AddrAnycastFlag OBJECT-TYPE
      SYNTAX      TruthValue
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "This object has the value 'true(1)', if this
        address is an anycast address and the value
@@ -823,7 +823,7 @@ ipv6IfLastChange OBJECT-TYPE
                           -- for some reason.
             }
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
       "Address status.  The preferred(1) state indicates
       that this is a valid address that can appear as
@@ -846,7 +846,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteNumber OBJECT-TYPE
      SYNTAX      Gauge32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The number of current ipv6RouteTable entries.
        This is primarily to avoid having to read
@@ -856,7 +856,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6DiscardedRoutes OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The number of routing entries which were chosen
         to be discarded even though they are valid.  One
@@ -870,7 +870,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteTable OBJECT-TYPE
      SYNTAX     SEQUENCE OF Ipv6RouteEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "IPv6 Routing table. This table contains
        an entry for each valid IPv6 unicast route
@@ -881,7 +881,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteEntry OBJECT-TYPE
      SYNTAX     Ipv6RouteEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
              "A routing entry."
      INDEX   { ipv6RouteDest,
@@ -909,7 +909,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteDest OBJECT-TYPE
      SYNTAX     Ipv6Address
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "The destination IPv6 address of this route.
        This object may not take a Multicast address
@@ -920,7 +920,7 @@ ipv6IfLastChange OBJECT-TYPE
      SYNTAX     INTEGER(0..128)
      UNITS      "bits"
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "Indicates the prefix length of the destination
        address."
@@ -929,7 +929,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteIndex OBJECT-TYPE
      SYNTAX     Unsigned32
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "The value which uniquely identifies the route
        among the routes to the same network layer
@@ -942,7 +942,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteIfIndex OBJECT-TYPE
      SYNTAX     Ipv6IfIndexOrZero
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "The index value which uniquely identifies the local
        interface through which the next hop of this
@@ -956,7 +956,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteNextHop OBJECT-TYPE
      SYNTAX     Ipv6Address
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "On remote routes, the address of the next
        system en route;  otherwise, ::0
@@ -982,7 +982,7 @@ ipv6IfLastChange OBJECT-TYPE
 
      }
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The type of route. Note that 'local(3)' refers
         to a route for which the next hop is the final
@@ -1017,7 +1017,7 @@ ipv6IfLastChange OBJECT-TYPE
        igrp(9)     -- InterGateway Routing Protocol
      }
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "The routing mechanism via which this route was
        learned."
@@ -1026,7 +1026,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RoutePolicy OBJECT-TYPE
      SYNTAX     Integer32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "The general set of conditions that would cause the
       selection of one multipath route (set of next hops
@@ -1047,7 +1047,7 @@ ipv6IfLastChange OBJECT-TYPE
      SYNTAX     Unsigned32
      UNITS      "seconds"
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The number of seconds since this route was last
         updated or otherwise determined to be correct.
@@ -1059,7 +1059,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteNextHopRDI OBJECT-TYPE
      SYNTAX     Unsigned32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The Routing Domain ID of the Next Hop.
         The  semantics of this object are determined by
@@ -1072,7 +1072,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteMetric OBJECT-TYPE
      SYNTAX     Unsigned32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The routing metric for this route. The
         semantics of this metric are determined by the
@@ -1086,7 +1086,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteWeight OBJECT-TYPE
      SYNTAX     Unsigned32
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The system internal weight value for this route.
         The semantics of this value are determined by
@@ -1099,7 +1099,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteInfo OBJECT-TYPE
      SYNTAX     RowPointer
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "A reference to MIB definitions specific to the
         particular routing protocol which is responsible
@@ -1116,7 +1116,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6RouteValid OBJECT-TYPE
      SYNTAX     TruthValue
      MAX-ACCESS read-write
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "Setting this object to the value 'false(2)' has
         the effect of invalidating the corresponding entry
@@ -1141,7 +1141,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6NetToMediaTable OBJECT-TYPE
      SYNTAX      SEQUENCE OF Ipv6NetToMediaEntry
      MAX-ACCESS  not-accessible
-     STATUS      current
+     STATUS      obsolete
      DESCRIPTION
        "The IPv6 Address Translation table used for
        mapping from IPv6 addresses to physical addresses.
@@ -1158,7 +1158,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6NetToMediaEntry OBJECT-TYPE
      SYNTAX     Ipv6NetToMediaEntry
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "Each entry contains one IPv6 address to `physical'
        address equivalence."
@@ -1185,7 +1185,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6NetToMediaNetAddress OBJECT-TYPE
      SYNTAX     Ipv6Address
      MAX-ACCESS not-accessible
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
         "The IPv6 Address corresponding to
         the media-dependent `physical' address."
@@ -1194,7 +1194,7 @@ ipv6IfLastChange OBJECT-TYPE
  ipv6NetToMediaPhysAddress OBJECT-TYPE
      SYNTAX     PhysAddress
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
        "The media-dependent `physical' address."
      ::= { ipv6NetToMediaEntry 2 }
@@ -1207,7 +1207,7 @@ ipv6IfLastChange OBJECT-TYPE
                  local(4)     -- local interface
                 }
      MAX-ACCESS read-only
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
              "The type of the mapping. The 'dynamic(2)' type
              indicates that the IPv6 address to physical
@@ -1237,7 +1237,7 @@ ipv6IfNetToMediaState OBJECT-TYPE
                            -- for some reason.
             }
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
         "The Neighbor Unreachability Detection [8] state
         for the interface when the address mapping in
@@ -1247,7 +1247,7 @@ ipv6IfNetToMediaState OBJECT-TYPE
 ipv6IfNetToMediaLastUpdated OBJECT-TYPE
     SYNTAX      TimeStamp
     MAX-ACCESS  read-only
-    STATUS      current
+    STATUS      obsolete
     DESCRIPTION
         "The value of sysUpTime at the time this entry
         was last updated.  If this entry was updated prior
@@ -1259,7 +1259,7 @@ ipv6IfNetToMediaLastUpdated OBJECT-TYPE
  ipv6NetToMediaValid OBJECT-TYPE
      SYNTAX     TruthValue
      MAX-ACCESS read-write
-     STATUS     current
+     STATUS     obsolete
      DESCRIPTION
       "Setting this object to the value 'false(2)' has
       the effect of invalidating the corresponding entry
@@ -1295,7 +1295,7 @@ ipv6IfStateChange NOTIFICATION-TYPE
               ipv6IfDescr,
               ipv6IfOperStatus -- the new state of the If.
              }
-     STATUS             current
+     STATUS             obsolete
      DESCRIPTION
         "An ipv6IfStateChange notification signifies
         that there has been a change in the state of
@@ -1314,7 +1314,7 @@ ipv6Groups      OBJECT IDENTIFIER ::= { ipv6Conformance 2 }
 -- compliance statements
 
 ipv6Compliance MODULE-COMPLIANCE
-    STATUS  current
+    STATUS  obsolete
     DESCRIPTION
       "The compliance statement for SNMPv2 entities which
       implement ipv6 MIB."
@@ -1426,7 +1426,7 @@ ipv6GeneralGroup OBJECT-GROUP
               ipv6IfNetToMediaState,
               ipv6IfNetToMediaLastUpdated,
               ipv6NetToMediaValid }
-    STATUS    current
+    STATUS    obsolete
     DESCRIPTION
          "The IPv6 group of objects providing for basic
           management of IPv6 entities."
@@ -1434,7 +1434,7 @@ ipv6GeneralGroup OBJECT-GROUP
 
 ipv6NotificationGroup NOTIFICATION-GROUP
     NOTIFICATIONS { ipv6IfStateChange }
-    STATUS    current
+    STATUS    obsolete
     DESCRIPTION
          "The notification that an IPv6 entity is required
           to implement."

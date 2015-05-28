@@ -7,7 +7,7 @@ IMPORTS
 -- definition of textual conventions
 Ipv6Address ::= TEXTUAL-CONVENTION
      DISPLAY-HINT "2x:"
-     STATUS       current
+     STATUS       obsolete
      DESCRIPTION
        "This data type is used to model IPv6 addresses.
         This is a binary string of 16 octets in network
@@ -16,7 +16,7 @@ Ipv6Address ::= TEXTUAL-CONVENTION
 
 Ipv6AddressPrefix ::= TEXTUAL-CONVENTION
      DISPLAY-HINT "2x:"
-     STATUS       current
+     STATUS       obsolete
      DESCRIPTION
        "This data type is used to model IPv6 address
        prefixes. This is a binary string of up to 16
@@ -25,7 +25,7 @@ Ipv6AddressPrefix ::= TEXTUAL-CONVENTION
 
 Ipv6AddressIfIdentifier ::= TEXTUAL-CONVENTION
      DISPLAY-HINT "2x:"
-     STATUS       current
+     STATUS       obsolete
      DESCRIPTION
        "This data type is used to model IPv6 address
        interface identifiers. This is a binary string
@@ -34,7 +34,7 @@ Ipv6AddressIfIdentifier ::= TEXTUAL-CONVENTION
 
 Ipv6IfIndex ::= TEXTUAL-CONVENTION
      DISPLAY-HINT "d"
-     STATUS       current
+     STATUS       obsolete
      DESCRIPTION
        "A unique value, greater than zero for each
        internetwork-layer interface in the managed
@@ -49,7 +49,7 @@ Ipv6IfIndex ::= TEXTUAL-CONVENTION
 
 Ipv6IfIndexOrZero ::= TEXTUAL-CONVENTION
      DISPLAY-HINT "d"
-     STATUS       current
+     STATUS       obsolete
      DESCRIPTION
          "This textual convention is an extension of the
          Ipv6IfIndex convention.  The latter defines

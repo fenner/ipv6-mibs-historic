@@ -7,7 +7,7 @@ IMPORTS
    Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
 
 ipv6TcpMIB MODULE-IDENTITY
-   LAST-UPDATED "9801290000Z"
+   LAST-UPDATED "20150528211213Z"
    ORGANIZATION "IETF IPv6 MIB Working Group"
    CONTACT-INFO
         "       Mike Daniele
@@ -21,6 +21,13 @@ ipv6TcpMIB MODULE-IDENTITY
                 Email:  daniele@zk3.dec.com"
    DESCRIPTION
         "The MIB module for entities implementing TCP over IPv6."
+   REVISION "20150528211213Z"
+   DESCRIPTION
+        "Deprecating this MIB; it has been replaced by
+        the revised TCP-MIB (RFC4022)."
+   REVISION "9801290000Z"
+   DESCRIPTION
+        "First revision, published as RFC2452"
    ::= { experimental 86 }
 
 -- objects specific to TCP for IPv6

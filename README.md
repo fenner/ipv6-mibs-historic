@@ -33,7 +33,7 @@ Moving the IPV6-MIBs to historic
 ## Why?
 
 In 2005, the IPv6 MIB update group published
-updated versions of the IP-MIB {{?rfc4293}}, UDP-MIB, TCP-MIB and
+updated versions of the IP-MIB {{?RFC4293}}, UDP-MIB, TCP-MIB and
 IP-FORWARDING-MIB that use the InetAddressType/InetAddress
 construct to handle IPv4 and IPv6 in the same table.
 These documents were marked in the RFC Index as

@@ -1,9 +1,9 @@
 ---
 coding: utf-8
 
-title: Moving the IPV6-MIBs to historic
-abbrev: ipv6-mibs-historic
-docname: draft-fenner-ipv6-mibs-historic-00
+title: Republishing the IPV6-MIBs as obsolete
+abbrev: ipv6-mibs-obsolete
+docname: draft-fenner-ipv6-mibs-obsolete-00
 category: historic
 
 stand_alone: yes
@@ -35,10 +35,7 @@ MIB repositories.
 
 --- middle
 
-# ipv6-mibs-historic
-Moving the IPV6-MIBs to historic
-
-## Why?
+# Motivation
 
 In 2005, the IPv6 MIB update group published
 updated versions of the IP-MIB {{?RFC4293}}, UDP-MIB {{?RFC4113}},

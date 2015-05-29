@@ -1,0 +1,41 @@
+In 2005, the IPv6 MIB update group published updated versions of the
+IP-MIB [RFC4293], UDP-MIB [RFC4113], TCP-MIB [RFC4022] and IP-
+FORWARD-MIB [RFC4292], which use the InetAddressType/InetAddress
+construct to handle IPv4 and IPv6 in the same table.  These documents
+were marked in the RFC Index as obsoleting the corresponding
+IPV6-MIBs, but the extracted content of these MIBs never changed in
+MIB repositories, and the original RFCs (as is normal IETF policy)
+never changed from being Proposed Standard.
+
+This causes an unclear situation when simply looking at MIB
+repositories, so we are reclassifying the original documents
+([RFC2452], [RFC2454], and [RFC2465]) as historic.
+
+A companion document simply republishes these documents with the
+SMI syntax changed to obsolete.
+
+
+   [RFC2452]  Daniele, M., "IP Version 6 Management Information Base for
+              the Transmission Control Protocol", RFC 2452, December
+              1998.
+
+   [RFC2454]  Daniele, M., "IP Version 6 Management Information Base for
+              the User Datagram Protocol", RFC 2454, December 1998.
+
+   [RFC2465]  Haskin, D. and S. Onishi, "Management Information Base for
+              IP Version 6: Textual Conventions and General Group", RFC
+              2465, December 1998.
+
+   [RFC4022]  Raghunarayan, R., "Management Information Base for the
+              Transmission Control Protocol (TCP)", RFC 4022, March
+              2005.
+
+   [RFC4113]  Fenner, B. and J. Flick, "Management Information Base for
+              the User Datagram Protocol (UDP)", RFC 4113, June 2005.
+
+   [RFC4292]  Haberman, B., "IP Forwarding Table MIB", RFC 4292, April
+              2006.
+
+   [RFC4293]  Routhier, S., "Management Information Base for the
+              Internet Protocol (IP)", RFC 4293, April 2006.
+

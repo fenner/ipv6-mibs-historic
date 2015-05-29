@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Ipv6-mibs-historic by fenner</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ipv6-mibs-historic</h1>
+        <h2>Moving the IPV6-MIBS to historic</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/fenner/ipv6-mibs-historic/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/fenner/ipv6-mibs-historic/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/fenner/ipv6-mibs-historic" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3>
+<a id="republishing-the-ipv6-mibs-as-obsolete" class="anchor" href="#republishing-the-ipv6-mibs-as-obsolete" aria-hidden="true"><span class="octicon octicon-link"></span></a>Republishing the IPV6-MIBS as obsolete</h3>
+
+<p>In 2005, the IPv6 MIB update group published updated versions of the
+IP-MIB [RFC4293], UDP-MIB [RFC4113], TCP-MIB [RFC4022] and IP-
+FORWARD-MIB [RFC4292], which use the InetAddressType/InetAddress
+construct to handle IPv4 and IPv6 in the same table.  These documents
+were marked in the RFC Index as obsoleting the corresponding
+IPV6-MIBs, but the extracted content of these MIBs never changed in
+MIB repositories, and the original RFCs (as is normal IETF policy)
+never changed from being Proposed Standard.</p>
+
+<p>This causes an unclear situation when simply looking at MIB
+repositories, so we are reclassifying the original documents
+([RFC2452], [RFC2454], and [RFC2465]) as historic.</p>
+
+<p>The current draft is <a href="no-more-v6-mibs.txt">here</a>.</p>
+
+<p>The current draft of the IESG status change document, reclassifying RFC24xx to historic
+is <a href="status-change-ipv6-mib-to-historic.txt">here</a></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>

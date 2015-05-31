@@ -4,8 +4,8 @@
 
 Network Working Group                                          B. Fenner
 Internet-Draft                                     Arista Networks, Inc.
-Intended status: Historic                                   May 28, 2015
-Expires: November 29, 2015
+Intended status: Historic                                   May 31, 2015
+Expires: December 2, 2015
 
 
                  Republishing the IPV6-MIBs as obsolete
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 29, 2015.
+   This Internet-Draft will expire on December 2, 2015.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Fenner                  Expires November 29, 2015               [Page 1]
+Fenner                  Expires December 2, 2015                [Page 1]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
@@ -66,12 +66,12 @@ Table of Contents
    1.  Motivation  . . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Historic IPV6-TC  . . . . . . . . . . . . . . . . . . . . . .   2
    3.  Historic IPV6-MIB . . . . . . . . . . . . . . . . . . . . . .   4
-   4.  Historic IPV6-ICMP-MIB  . . . . . . . . . . . . . . . . . . .  34
-   5.  Historic IPV6-UDP-MIB . . . . . . . . . . . . . . . . . . . .  45
-   6.  Historic IPV6-TCP-MIB . . . . . . . . . . . . . . . . . . . .  48
-   7.  Reclassification  . . . . . . . . . . . . . . . . . . . . . .  53
-   8.  Informative References  . . . . . . . . . . . . . . . . . . .  53
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  54
+   4.  Historic IPV6-ICMP-MIB  . . . . . . . . . . . . . . . . . . .  38
+   5.  Historic IPV6-UDP-MIB . . . . . . . . . . . . . . . . . . . .  52
+   6.  Historic IPV6-TCP-MIB . . . . . . . . . . . . . . . . . . . .  55
+   7.  Reclassification  . . . . . . . . . . . . . . . . . . . . . .  60
+   8.  Informative References  . . . . . . . . . . . . . . . . . . .  60
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  61
 
 1.  Motivation
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Fenner                  Expires November 29, 2015               [Page 2]
+Fenner                  Expires December 2, 2015                [Page 2]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
@@ -165,7 +165,7 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
 
-Fenner                  Expires November 29, 2015               [Page 3]
+Fenner                  Expires December 2, 2015                [Page 3]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
@@ -176,1694 +176,1928 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 3.  Historic IPV6-MIB
 
-    IPV6-MIB DEFINITIONS ::= BEGIN
+ IPV6-MIB DEFINITIONS ::= BEGIN
 
-    IMPORTS
-        MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
-        mib-2, Counter32, Unsigned32, Integer32,
-        Gauge32                               FROM SNMPv2-SMI
-        DisplayString, PhysAddress, TruthValue, TimeStamp,
-        VariablePointer, RowPointer           FROM SNMPv2-TC
-        MODULE-COMPLIANCE, OBJECT-GROUP,
-        NOTIFICATION-GROUP                    FROM SNMPv2-CONF
-        Ipv6IfIndex, Ipv6Address, Ipv6AddressPrefix,
-        Ipv6AddressIfIdentifier,
-        Ipv6IfIndexOrZero                     FROM IPV6-TC;
+ IMPORTS
+     MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
+     mib-2, Counter32, Unsigned32, Integer32,
+     Gauge32                               FROM SNMPv2-SMI
+     DisplayString, PhysAddress, TruthValue, TimeStamp,
+     VariablePointer, RowPointer           FROM SNMPv2-TC
+     MODULE-COMPLIANCE, OBJECT-GROUP,
+     NOTIFICATION-GROUP                    FROM SNMPv2-CONF
+     Ipv6IfIndex, Ipv6Address, Ipv6AddressPrefix,
+     Ipv6AddressIfIdentifier,
+     Ipv6IfIndexOrZero                     FROM IPV6-TC;
 
-    ipv6MIB MODULE-IDENTITY
-        LAST-UPDATED "201505282112Z"
-        ORGANIZATION "IETF IPv6 Working Group"
-        CONTACT-INFO
-          "           Dimitry Haskin
+ ipv6MIB MODULE-IDENTITY
+     LAST-UPDATED "201505282112Z"
+     ORGANIZATION "IETF IPv6 Working Group"
+     CONTACT-INFO
+       "           Dimitry Haskin
 
-              Postal: Bay Networks, Inc.
-                      660 Techology Park Drive.
-                      Billerica, MA  01821
+           Postal: Bay Networks, Inc.
+                   660 Techology Park Drive.
+                   Billerica, MA  01821
 
-                      US
+                   US
 
-                 Tel: +1-978-916-8124
-              E-mail: dhaskin@baynetworks.com
+              Tel: +1-978-916-8124
+           E-mail: dhaskin@baynetworks.com
 
-                      Steve Onishi
+                   Steve Onishi
 
-              Postal: Bay Networks, Inc.
-                      3 Federal Street
-                      Billerica, MA 01821
-                      US
+           Postal: Bay Networks, Inc.
+                   3 Federal Street
+                   Billerica, MA 01821
+                   US
 
-                 Tel: +1-978-916-3816
-              E-mail: sonishi@baynetworks.com"
-        DESCRIPTION
-          "The MIB module for entities implementing the IPv6
-           protocol."
-        REVISION "201505282112Z"
+              Tel: +1-978-916-3816
+           E-mail: sonishi@baynetworks.com"
+     DESCRIPTION
+       "The MIB module for entities implementing the IPv6
+        protocol."
+     REVISION "201505282112Z"
 
 
 
-Fenner                  Expires November 29, 2015               [Page 4]
+Fenner                  Expires December 2, 2015                [Page 4]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-        DESCRIPTION
-          "Deprecating this MIB; it has been replaced by
-          the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
-          (RFC4292)."
-        REVISION "9801082155Z"
-        DESCRIPTION
-          "First revision, published as RFC2465"
-        ::= { mib-2 55 }
+     DESCRIPTION
+       "Deprecating this MIB; it has been replaced by
+       the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
+       (RFC4292)."
+     REVISION "9801082155Z"
+     DESCRIPTION
+       "First revision, published as RFC2465"
+     ::= { mib-2 55 }
 
-    -- the IPv6 general group
+ -- the IPv6 general group
 
-    ipv6MIBObjects OBJECT IDENTIFIER   ::= { ipv6MIB 1 }
+ ipv6MIBObjects OBJECT IDENTIFIER   ::= { ipv6MIB 1 }
 
-    ipv6Forwarding OBJECT-TYPE
-        SYNTAX      INTEGER {
-                     forwarding(1),    -- acting as a router
+ ipv6Forwarding OBJECT-TYPE
+     SYNTAX      INTEGER {
+                  forwarding(1),    -- acting as a router
 
-                                       -- NOT acting as
-                     notForwarding(2)  -- a router
-                    }
-         MAX-ACCESS read-write
-         STATUS     obsolete
-         DESCRIPTION
-           "The indication of whether this entity is acting
-           as an IPv6 router in respect to the forwarding of
-           datagrams received by, but not addressed to, this
-           entity.  IPv6 routers forward datagrams.  IPv6
-           hosts do not (except those source-routed via the
-           host).
+                                    -- NOT acting as
+                  notForwarding(2)  -- a router
+                 }
+      MAX-ACCESS read-write
+      STATUS     obsolete
+      DESCRIPTION
+        "The indication of whether this entity is acting
+        as an IPv6 router in respect to the forwarding of
+        datagrams received by, but not addressed to, this
+        entity.  IPv6 routers forward datagrams.  IPv6
+        hosts do not (except those source-routed via the
+        host).
 
-           Note that for some managed nodes, this object may
-           take on only a subset of the values possible.
-           Accordingly, it is appropriate for an agent to
-           return a `wrongValue' response if a management
-           station attempts to change this object to an
-           inappropriate value."
-         ::= { ipv6MIBObjects 1 }
+        Note that for some managed nodes, this object may
+        take on only a subset of the values possible.
+        Accordingly, it is appropriate for an agent to
+        return a `wrongValue' response if a management
+        station attempts to change this object to an
+        inappropriate value.
 
-    ipv6DefaultHopLimit OBJECT-TYPE
-        SYNTAX      INTEGER(0..255)
-        MAX-ACCESS  read-write
-         STATUS     obsolete
-        DESCRIPTION
-           "The default value inserted into the Hop Limit
-           field of the IPv6 header of datagrams originated
-           at this entity, whenever a Hop Limit value is not
-           supplied by the transport layer protocol."
-        DEFVAL  { 64 }
+        This object is obsoleted by IP-MIB::ipv6IpForwarding."
+      ::= { ipv6MIBObjects 1 }
+
+ ipv6DefaultHopLimit OBJECT-TYPE
+     SYNTAX      INTEGER(0..255)
+     MAX-ACCESS  read-write
+      STATUS     obsolete
+     DESCRIPTION
+        "The default value inserted into the Hop Limit
+        field of the IPv6 header of datagrams originated
+        at this entity, whenever a Hop Limit value is not
 
 
 
-Fenner                  Expires November 29, 2015               [Page 5]
+Fenner                  Expires December 2, 2015                [Page 5]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-        ::= { ipv6MIBObjects 2 }
+        supplied by the transport layer protocol.
 
-   ipv6Interfaces OBJECT-TYPE
-        SYNTAX      Unsigned32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "The number of IPv6 interfaces (regardless of
-           their current state) present on this system."
-        ::= { ipv6MIBObjects 3 }
+        This object is obsoleted by IP-MIB::ipv6IpDefaultHopLimit."
+     DEFVAL  { 64 }
+     ::= { ipv6MIBObjects 2 }
 
-   ipv6IfTableLastChange OBJECT-TYPE
-        SYNTAX      TimeStamp
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "The value of sysUpTime at the time of the last
-          insertion or removal of an entry in the
-          ipv6IfTable. If the number of entries has been
-          unchanged since the last re-initialization of
-          the local network management subsystem, then this
-          object contains a zero value."
-        ::= { ipv6MIBObjects 4 }
+ipv6Interfaces OBJECT-TYPE
+     SYNTAX      Unsigned32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "The number of IPv6 interfaces (regardless of
+        their current state) present on this system.
 
-   -- the IPv6 Interfaces table
+        This object is obsolete; there is no direct replacement
+        but its value can be derived from the number of rows
+        in the IP-MIB::ipv6InterfaceTable."
+     ::= { ipv6MIBObjects 3 }
 
-   ipv6IfTable OBJECT-TYPE
-        SYNTAX     SEQUENCE OF Ipv6IfEntry
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "The IPv6 Interfaces table contains information
-          on the entity's internetwork-layer interfaces.
-          An IPv6 interface constitutes a logical network
-          layer attachment to the layer immediately below
+ipv6IfTableLastChange OBJECT-TYPE
+     SYNTAX      TimeStamp
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "The value of sysUpTime at the time of the last
+       insertion or removal of an entry in the
+       ipv6IfTable. If the number of entries has been
+       unchanged since the last re-initialization of
+       the local network management subsystem, then this
+       object contains a zero value.
 
-          IPv6 including internet layer 'tunnels', such as
-          tunnels over IPv4 or IPv6 itself."
-        ::= { ipv6MIBObjects 5 }
+       This object is obsoleted by
+       IP-MIB::ipv6InterfaceTableLastChange."
+     ::= { ipv6MIBObjects 4 }
 
-    ipv6IfEntry OBJECT-TYPE
-        SYNTAX     Ipv6IfEntry
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "An interface entry containing objects
-           about a particular IPv6 interface."
-        INDEX   { ipv6IfIndex }
+-- the IPv6 Interfaces table
+
+ipv6IfTable OBJECT-TYPE
+     SYNTAX     SEQUENCE OF Ipv6IfEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "The IPv6 Interfaces table contains information
+       on the entity's internetwork-layer interfaces.
+       An IPv6 interface constitutes a logical network
+       layer attachment to the layer immediately below
+
+       IPv6 including internet layer 'tunnels', such as
 
 
 
-Fenner                  Expires November 29, 2015               [Page 6]
+Fenner                  Expires December 2, 2015                [Page 6]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-        ::= { ipv6IfTable 1 }
+       tunnels over IPv4 or IPv6 itself.
 
-    Ipv6IfEntry ::= SEQUENCE {
-            ipv6IfIndex              Ipv6IfIndex,
-            ipv6IfDescr              DisplayString,
-            ipv6IfLowerLayer         VariablePointer,
-            ipv6IfEffectiveMtu       Unsigned32,
-            ipv6IfReasmMaxSize       Unsigned32,
-            ipv6IfIdentifier         Ipv6AddressIfIdentifier,
-            ipv6IfIdentifierLength   INTEGER,
-            ipv6IfPhysicalAddress    PhysAddress,
-            ipv6IfAdminStatus        INTEGER,
-            ipv6IfOperStatus         INTEGER,
-            ipv6IfLastChange         TimeStamp
+       This table is obsoleted by IP-MIB::ipv6InterfaceTable."
+     ::= { ipv6MIBObjects 5 }
+
+ ipv6IfEntry OBJECT-TYPE
+     SYNTAX     Ipv6IfEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "An interface entry containing objects
+        about a particular IPv6 interface.
+
+        This object is obsoleted by IP-MIB::ipv6InterfaceEntry."
+     INDEX   { ipv6IfIndex }
+     ::= { ipv6IfTable 1 }
+
+ Ipv6IfEntry ::= SEQUENCE {
+         ipv6IfIndex              Ipv6IfIndex,
+         ipv6IfDescr              DisplayString,
+         ipv6IfLowerLayer         VariablePointer,
+         ipv6IfEffectiveMtu       Unsigned32,
+         ipv6IfReasmMaxSize       Unsigned32,
+         ipv6IfIdentifier         Ipv6AddressIfIdentifier,
+         ipv6IfIdentifierLength   INTEGER,
+         ipv6IfPhysicalAddress    PhysAddress,
+         ipv6IfAdminStatus        INTEGER,
+         ipv6IfOperStatus         INTEGER,
+         ipv6IfLastChange         TimeStamp
+     }
+
+ ipv6IfIndex OBJECT-TYPE
+     SYNTAX     Ipv6IfIndex
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "A unique non-zero value identifying
+        the particular IPv6 interface.
+
+        This object is obsoleted.  In the IP-MIB,
+        interfaces are simply identified by IfIndex."
+     ::= { ipv6IfEntry 1 }
+
+ ipv6IfDescr OBJECT-TYPE
+     SYNTAX     DisplayString
+     MAX-ACCESS read-write
+     STATUS     obsolete
+     DESCRIPTION
+
+
+
+Fenner                  Expires December 2, 2015                [Page 7]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+       "A textual string containing information about the
+       interface.  This string may be set by the network
+       management system.
+
+       This object is obsoleted by IF-MIB::ifDescr."
+     ::= { ipv6IfEntry 2 }
+
+ ipv6IfLowerLayer OBJECT-TYPE
+    SYNTAX      VariablePointer
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+      "This object identifies the protocol layer over
+       which this network interface operates.  If this
+       network interface operates over the data-link
+       layer, then the value of this object refers to an
+       instance of ifIndex [6]. If this network interface
+       operates over an IPv4 interface, the value of this
+       object refers to an instance of ipAdEntAddr [3].
+
+       If this network interface operates over another
+       IPv6 interface, the value of this object refers to
+       an instance of ipv6IfIndex.  If this network
+       interface is not currently operating over an active
+       protocol layer, then the value of this object
+       should be set to the OBJECT ID { 0 0 }.
+
+       This object is obsolete.  The IF-STACK-TABLE may
+       be used to express relationships between interfaces."
+    ::= { ipv6IfEntry 3 }
+
+ ipv6IfEffectiveMtu OBJECT-TYPE
+    SYNTAX      Unsigned32
+    UNITS       "octets"
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+      "The size of the largest IPv6 packet which can be
+      sent/received on the interface, specified in
+      octets.
+
+      This object is obsolete.  The value of IF-MIB::ifMtu
+      for the corresponding value of ifIndex represents the
+      MTU of the interface."
+ ::= { ipv6IfEntry 4 }
+
+ ipv6IfReasmMaxSize OBJECT-TYPE
+    SYNTAX      Unsigned32 (0..65535)
+
+
+
+Fenner                  Expires December 2, 2015                [Page 8]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+    UNITS       "octets"
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+      "The size of the largest IPv6 datagram which this
+      entity can re-assemble from incoming IPv6 fragmented
+      datagrams received on this interface.
+
+      This object is obsoleted by IP-MIB::ipv6InterfaceReasmMaxSize."
+ ::= { ipv6IfEntry 5 }
+
+ ipv6IfIdentifier OBJECT-TYPE
+     SYNTAX      Ipv6AddressIfIdentifier
+     MAX-ACCESS  read-write
+     STATUS      obsolete
+     DESCRIPTION
+        "The Interface Identifier for this interface that
+
+        is (at least) unique on the link this interface is
+        attached to. The Interface Identifier is combined
+        with an address prefix to form an interface address.
+
+        By default, the Interface Identifier is autoconfigured
+        according to the rules of the link type this
+        interface is attached to.
+
+        This object is obsoleted by IP-MIB::ipv6InterfaceIdentifier."
+     ::= { ipv6IfEntry 6 }
+
+ ipv6IfIdentifierLength OBJECT-TYPE
+     SYNTAX      INTEGER (0..64)
+     UNITS       "bits"
+     MAX-ACCESS  read-write
+     STATUS      obsolete
+     DESCRIPTION
+       "The length of the Interface Identifier in bits.
+
+       This object is obsolete.  It can be derived from the length
+       of IP-MIB::ipv6InterfaceIdentifier; Interface Identifiers
+       that are not an even number of octets are not supported."
+     ::= { ipv6IfEntry 7 }
+
+ ipv6IfPhysicalAddress OBJECT-TYPE
+     SYNTAX      PhysAddress
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "The interface's physical address. For example, for
+
+
+
+Fenner                  Expires December 2, 2015                [Page 9]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+       an IPv6 interface attached to an 802.x link, this
+       object normally contains a MAC address. Note that
+       in some cases this address may differ from the
+       address of the interface's protocol sub-layer.  The
+       interface's media-specific MIB must define the bit
+       and byte ordering and the format of the value of
+       this object. For interfaces which do not have such
+       an address (e.g., a serial line), this object should
+       contain an octet string of zero length.
+
+       This object is obsoleted by IF-MIB::ifPhysAddress."
+     ::= { ipv6IfEntry 8 }
+
+ipv6IfAdminStatus OBJECT-TYPE
+    SYNTAX  INTEGER {
+             up(1),       -- ready to pass packets
+             down(2)
+            }
+    MAX-ACCESS  read-write
+    STATUS      obsolete
+    DESCRIPTION
+      "The desired state of the interface.  When a managed
+      system initializes,  all IPv6 interfaces start with
+      ipv6IfAdminStatus in the down(2) state.  As a result
+      of either explicit management action or per
+      configuration information retained by the managed
+
+      system,  ipv6IfAdminStatus is then changed to
+      the up(1) state (or remains in the down(2) state).
+
+      This object is obsolete.  IPv6 does not have a
+      separate admin status; the admin status of the
+      interface is represented by IF-MIB::ifAdminStatus."
+    ::= { ipv6IfEntry 9 }
+
+ipv6IfOperStatus OBJECT-TYPE
+    SYNTAX  INTEGER {
+             up(1),             -- ready to pass packets
+
+             down(2),
+             noIfIdentifier(3), -- no interface identifier
+
+                                -- status can not be
+                                -- determined for some
+             unknown(4),        -- reason
+
+                                -- some component is
+             notPresent(5)      -- missing
+
+
+
+Fenner                  Expires December 2, 2015               [Page 10]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+            }
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+      "The current operational state of the interface.
+      The noIfIdentifier(3) state indicates that no valid
+      Interface Identifier is assigned to the interface.
+      This state usually indicates that the link-local
+      interface address failed Duplicate Address Detection.
+      If ipv6IfAdminStatus is down(2) then ipv6IfOperStatus
+      should be down(2).  If ipv6IfAdminStatus is changed
+      to up(1) then ipv6IfOperStatus should change to up(1)
+      if the interface is ready to transmit and receive
+      network traffic; it should remain in the down(2) or
+      noIfIdentifier(3) state if and only if there is a
+      fault that prevents it from going to the up(1) state;
+      it should remain in the notPresent(5) state if
+      the interface has missing (typically, lower layer)
+      components.
+
+      This object is obsolete.  IPv6 does not have a
+      separate operational status; the operational status of the
+      interface is represented by IF-MIB::ifOperStatus."
+    ::= { ipv6IfEntry 10 }
+
+ipv6IfLastChange OBJECT-TYPE
+    SYNTAX      TimeStamp
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+        "The value of sysUpTime at the time the interface
+        entered its current operational state.  If the
+        current state was entered prior to the last
+        re-initialization of the local network management
+
+        subsystem, then this object contains a zero
+        value.
+
+        This object is obsolete.  The last change of
+        IF-MIB::ifOperStatus is represented by IF-MIB::ifLastChange."
+    ::= { ipv6IfEntry 11 }
+
+ --  IPv6 Interface Statistics table
+
+ ipv6IfStatsTable OBJECT-TYPE
+     SYNTAX     SEQUENCE OF Ipv6IfStatsEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+
+
+
+Fenner                  Expires December 2, 2015               [Page 11]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+     DESCRIPTION
+         "IPv6 interface traffic statistics.
+
+         This table is obsoleted by the IP-MIB::ipIfStatsTable."
+     ::= { ipv6MIBObjects 6 }
+
+ ipv6IfStatsEntry OBJECT-TYPE
+     SYNTAX     Ipv6IfStatsEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+         "An interface statistics entry containing objects
+         at a particular IPv6 interface.
+
+         This object is obsoleted by the IP-MIB::ipIfStatsEntry."
+     AUGMENTS { ipv6IfEntry }
+     ::= { ipv6IfStatsTable 1 }
+
+ Ipv6IfStatsEntry ::= SEQUENCE {
+         ipv6IfStatsInReceives
+             Counter32,
+         ipv6IfStatsInHdrErrors
+             Counter32,
+         ipv6IfStatsInTooBigErrors
+             Counter32,
+         ipv6IfStatsInNoRoutes
+             Counter32,
+         ipv6IfStatsInAddrErrors
+             Counter32,
+         ipv6IfStatsInUnknownProtos
+             Counter32,
+         ipv6IfStatsInTruncatedPkts
+             Counter32,
+         ipv6IfStatsInDiscards
+             Counter32,
+         ipv6IfStatsInDelivers
+             Counter32,
+         ipv6IfStatsOutForwDatagrams
+             Counter32,
+         ipv6IfStatsOutRequests
+             Counter32,
+         ipv6IfStatsOutDiscards
+
+             Counter32,
+         ipv6IfStatsOutFragOKs
+             Counter32,
+         ipv6IfStatsOutFragFails
+             Counter32,
+
+
+
+Fenner                  Expires December 2, 2015               [Page 12]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+         ipv6IfStatsOutFragCreates
+             Counter32,
+         ipv6IfStatsReasmReqds
+             Counter32,
+         ipv6IfStatsReasmOKs
+             Counter32,
+         ipv6IfStatsReasmFails
+             Counter32,
+         ipv6IfStatsInMcastPkts
+             Counter32,
+         ipv6IfStatsOutMcastPkts
+             Counter32
+     }
+
+ ipv6IfStatsInReceives OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The total number of input datagrams received by
+        the interface, including those received in error.
+
+        This object is obsoleted by IP-MIB::ipIfStatsHCInReceives."
+     ::= { ipv6IfStatsEntry 1 }
+
+ ipv6IfStatsInHdrErrors OBJECT-TYPE
+     SYNTAX     Counter32
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "The number of input datagrams discarded due to
+        errors in their IPv6 headers, including version
+        number mismatch, other format errors, hop count
+        exceeded, errors discovered in processing their
+        IPv6 options, etc.
+
+        This object is obsoleted by IP-MIB::ipIfStatsInHdrErrors."
+     ::= { ipv6IfStatsEntry 2 }
+
+ ipv6IfStatsInTooBigErrors OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "The number of input datagrams that could not be
+       forwarded because their size exceeded the link MTU
+       of outgoing interface.
+
+
+
+
+Fenner                  Expires December 2, 2015               [Page 13]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+       This object is obsoleted.  It was not replicated in the
+       IP-MIB due to feedback that systems did not retain the
+       incoming interface of a packet that failed fragmentation."
+     ::= { ipv6IfStatsEntry 3 }
+
+ ipv6IfStatsInNoRoutes OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of input datagrams discarded because no
+         route could be found to transmit them to their
+         destination.
+
+         This object is obsoleted by IP-MIB::ipIfStatsInNoRoutes."
+     ::= { ipv6IfStatsEntry 4 }
+
+ ipv6IfStatsInAddrErrors OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of input datagrams discarded because
+        the IPv6 address in their IPv6 header's destination
+        field was not a valid address to be received at
+        this entity.  This count includes invalid
+        addresses (e.g., ::0) and unsupported addresses
+        (e.g., addresses with unallocated prefixes).  For
+        entities which are not IPv6 routers and therefore
+        do not forward datagrams, this counter includes
+        datagrams discarded because the destination address
+        was not a local address.
+
+        This object is obsoleted by IP-MIB::ipIfStatsInAddrErrors."
+     ::= { ipv6IfStatsEntry 5 }
+
+ ipv6IfStatsInUnknownProtos OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of locally-addressed datagrams
+        received successfully but discarded because of an
+        unknown or unsupported protocol. This counter is
+        incremented at the interface to which these
+        datagrams were addressed which might not be
+        necessarily the input interface for some of
+        the datagrams.
+
+
+
+Fenner                  Expires December 2, 2015               [Page 14]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+        This object is obsoleted by IP-MIB::ipIfStatsInUnknownProtos."
+     ::= { ipv6IfStatsEntry 6 }
+
+ ipv6IfStatsInTruncatedPkts OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of input datagrams discarded because
+         datagram frame didn't carry enough data.
+
+         This object is obsoleted by IP-MIB::ipIfStatsInTruncatedPkts."
+     ::= { ipv6IfStatsEntry 7 }
+
+ ipv6IfStatsInDiscards OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of input IPv6 datagrams for which no
+        problems were encountered to prevent their
+        continued processing, but which were discarded
+        (e.g., for lack of buffer space).  Note that this
+        counter does not include any datagrams discarded
+        while awaiting re-assembly.
+
+        This object is obsoleted by IP-MIB::ipIfStatsInDiscards."
+     ::= { ipv6IfStatsEntry 8 }
+
+ ipv6IfStatsInDelivers OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+      "The total number of datagrams successfully
+      delivered to IPv6 user-protocols (including ICMP).
+      This counter is incremented at the interface to
+      which these datagrams were addressed which might
+      not be necessarily the input interface for some of
+      the datagrams.
+
+      This object is obsoleted by IP-MIB::ipIfStatsHCInDelivers."
+     ::= { ipv6IfStatsEntry 9 }
+
+ ipv6IfStatsOutForwDatagrams OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+
+
+
+Fenner                  Expires December 2, 2015               [Page 15]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+     DESCRIPTION
+        "The number of output datagrams which this
+        entity received and forwarded to their final
+        destinations.  In entities which do not act
+        as IPv6 routers, this counter will include
+        only those packets which were Source-Routed
+        via this entity, and the Source-Route
+        processing was successful.  Note that for
+        a successfully forwarded datagram the counter
+        of the outgoing interface is incremented.
+
+        This object is obsoleted by
+        IP-MIB::ipIfStatsHCOutForwDatagrams."
+     ::= { ipv6IfStatsEntry 10 }
+
+ ipv6IfStatsOutRequests OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+      "The total number of IPv6 datagrams which local IPv6
+      user-protocols (including ICMP) supplied to IPv6 in
+      requests for transmission.  Note that this counter
+      does not include any datagrams counted in
+      ipv6IfStatsOutForwDatagrams.
+
+      This object is obsoleted by IP-MIB::ipIfStatsHCOutRequests."
+     ::= { ipv6IfStatsEntry 11 }
+
+ ipv6IfStatsOutDiscards OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+         "The number of output IPv6 datagrams for which no
+         problem was encountered to prevent their
+         transmission to their destination, but which were
+         discarded (e.g., for lack of buffer space).  Note
+         that this counter would include datagrams counted
+         in ipv6IfStatsOutForwDatagrams if any such packets
+         met this (discretionary) discard criterion.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutDiscards."
+     ::= { ipv6IfStatsEntry 12 }
+
+ ipv6IfStatsOutFragOKs OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+
+
+
+Fenner                  Expires December 2, 2015               [Page 16]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of IPv6 datagrams that have been
+         successfully fragmented at this output interface.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutFragOKs."
+     ::= { ipv6IfStatsEntry 13 }
+
+ ipv6IfStatsOutFragFails OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of IPv6 datagrams that have been
+         discarded because they needed to be fragmented
+         at this output interface but could not be.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutFragFails."
+     ::= { ipv6IfStatsEntry 14 }
+
+ ipv6IfStatsOutFragCreates OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of output datagram fragments that have
+         been generated as a result of fragmentation at
+         this output interface.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutFragCreates."
+     ::= { ipv6IfStatsEntry 15 }
+
+ ipv6IfStatsReasmReqds OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of IPv6 fragments received which needed
+         to be reassembled at this interface.  Note that this
+         counter is incremented at the interface to which
+         these fragments were addressed which might not
+         be necessarily the input interface for some of
+         the fragments.
+
+         This object is obsoleted by IP-MIB::ipIfStatsReasmReqds."
+     ::= { ipv6IfStatsEntry 16 }
+
+ ipv6IfStatsReasmOKs OBJECT-TYPE
+
+
+
+Fenner                  Expires December 2, 2015               [Page 17]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "The number of IPv6 datagrams successfully
+       reassembled.  Note that this counter is incremented
+       at the interface to which these datagrams were
+       addressed which might not be necessarily the input
+       interface for some of the fragments.
+
+       This object is obsoleted by IP-MIB::ipIfStatsReasmOKs."
+     ::= { ipv6IfStatsEntry 17 }
+
+ ipv6IfStatsReasmFails OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "The number of failures detected by the IPv6 re-
+        assembly algorithm (for whatever reason: timed
+        out, errors, etc.).  Note that this is not
+        necessarily a count of discarded IPv6 fragments
+        since some algorithms (notably the algorithm in
+        RFC 815) can lose track of the number of fragments
+        by combining them as they are received.
+        This counter is incremented at the interface to which
+        these fragments were addressed which might not be
+        necessarily the input interface for some of the
+        fragments.
+
+        This object is obsoleted by IP-MIB::ipIfStatsReasmFails."
+     ::= { ipv6IfStatsEntry 18 }
+
+ ipv6IfStatsInMcastPkts OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "The number of multicast packets received
+         by the interface
+
+         This object is obsoleted by IP-MIB::ipIfStatsHCInMcastPkts."
+     ::= { ipv6IfStatsEntry 19 }
+
+ ipv6IfStatsOutMcastPkts OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+
+
+
+Fenner                  Expires December 2, 2015               [Page 18]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+     DESCRIPTION
+        "The number of multicast packets transmitted
+         by the interface
+
+         This object is obsoleted by IP-MIB::ipIfStatsHCOutMcastPkts."
+     ::= { ipv6IfStatsEntry 20 }
+
+ -- Address Prefix table
+
+ -- The IPv6 Address Prefix table contains information on
+ -- the entity's IPv6 Address Prefixes that are associated
+ -- with IPv6 interfaces.
+
+ ipv6AddrPrefixTable OBJECT-TYPE
+     SYNTAX  SEQUENCE OF Ipv6AddrPrefixEntry
+     MAX-ACCESS  not-accessible
+     STATUS      obsolete
+     DESCRIPTION
+         "The list of IPv6 address prefixes of
+         IPv6 interfaces.
+
+         This table is obsoleted by IP-MIB::ipAddressPrefixTable."
+     ::= { ipv6MIBObjects 7 }
+
+ ipv6AddrPrefixEntry OBJECT-TYPE
+     SYNTAX  Ipv6AddrPrefixEntry
+     MAX-ACCESS  not-accessible
+     STATUS      obsolete
+     DESCRIPTION
+         "An interface entry containing objects of
+         a particular IPv6 address prefix.
+
+         This entry is obsoleted by IP-MIB::ipAddressPrefixEntry."
+     INDEX   { ipv6IfIndex,
+               ipv6AddrPrefix,
+               ipv6AddrPrefixLength }
+     ::= { ipv6AddrPrefixTable 1 }
+
+ Ipv6AddrPrefixEntry ::= SEQUENCE {
+
+      ipv6AddrPrefix                     Ipv6AddressPrefix,
+      ipv6AddrPrefixLength               INTEGER (0..128),
+      ipv6AddrPrefixOnLinkFlag           TruthValue,
+      ipv6AddrPrefixAutonomousFlag       TruthValue,
+      ipv6AddrPrefixAdvPreferredLifetime Unsigned32,
+      ipv6AddrPrefixAdvValidLifetime     Unsigned32
+     }
+
+
+
+
+Fenner                  Expires December 2, 2015               [Page 19]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+ ipv6AddrPrefix OBJECT-TYPE
+     SYNTAX      Ipv6AddressPrefix
+     MAX-ACCESS  not-accessible
+     STATUS      obsolete
+     DESCRIPTION
+       "The prefix associated with the this interface.
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixPrefix."
+     ::= { ipv6AddrPrefixEntry 1 }
+
+ ipv6AddrPrefixLength OBJECT-TYPE
+     SYNTAX      INTEGER (0..128)
+     UNITS       "bits"
+     MAX-ACCESS  not-accessible
+     STATUS      obsolete
+     DESCRIPTION
+       "The length of the prefix (in bits).
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixLength."
+     ::= { ipv6AddrPrefixEntry 2 }
+
+ ipv6AddrPrefixOnLinkFlag OBJECT-TYPE
+     SYNTAX      TruthValue
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "This object has the value 'true(1)', if this
+       prefix can be used  for on-link determination
+       and the value 'false(2)' otherwise.
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixOnLinkFlag."
+     ::= { ipv6AddrPrefixEntry 3 }
+
+ ipv6AddrPrefixAutonomousFlag OBJECT-TYPE
+     SYNTAX      TruthValue
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "Autonomous address configuration flag. When
+       true(1), indicates that this prefix can be used
+       for autonomous address configuration (i.e. can
+       be used to form a local interface address).
+       If false(2), it is not used to autoconfigure
+       a local interface address.
+
+       This object is obsoleted by
+       IP-MIB::ipAddressPrefixAutonomousFlag."
+     ::= { ipv6AddrPrefixEntry 4 }
+
+
+
+Fenner                  Expires December 2, 2015               [Page 20]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+ ipv6AddrPrefixAdvPreferredLifetime OBJECT-TYPE
+     SYNTAX      Unsigned32
+     UNITS       "seconds"
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+        "It is the length of time in seconds that this
+        prefix will remain preferred, i.e. time until
+        deprecation.  A value of 4,294,967,295 represents
+        infinity.
+
+        The address generated from a deprecated prefix
+        should no longer be used as a source address in
+        new communications, but packets received on such
+        an interface are processed as expected.
+
+        This object is obsoleted by
+        IP-MIB::ipAddressPrefixAdvPreferredLifetime."
+     ::= { ipv6AddrPrefixEntry 5 }
+
+ ipv6AddrPrefixAdvValidLifetime OBJECT-TYPE
+     SYNTAX      Unsigned32
+     UNITS       "seconds"
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "It is the length of time in seconds that this
+       prefix will remain valid, i.e. time until
+       invalidation.  A value of 4,294,967,295 represents
+       infinity.
+
+       The address generated from an invalidated prefix
+       should not appear as the destination or source
+       address of a packet.
+
+       This object is obsoleted by
+       IP-MIB::ipAddressPrefixAdvValidLifetime."
+     ::= { ipv6AddrPrefixEntry 6 }
+
+ -- the IPv6 Address table
+
+ -- The IPv6 address table contains this node's IPv6
+ -- addressing information.
+
+ ipv6AddrTable OBJECT-TYPE
+    SYNTAX      SEQUENCE OF Ipv6AddrEntry
+    MAX-ACCESS  not-accessible
+    STATUS      obsolete
+
+
+
+Fenner                  Expires December 2, 2015               [Page 21]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+    DESCRIPTION
+      "The table of addressing information relevant to
+      this node's interface addresses.
+
+      This table is obsoleted by IP-MIB::ipAddressTable."
+    ::= { ipv6MIBObjects 8 }
+
+ ipv6AddrEntry OBJECT-TYPE
+    SYNTAX      Ipv6AddrEntry
+    MAX-ACCESS  not-accessible
+    STATUS      obsolete
+    DESCRIPTION
+        "The addressing information for one of this
+        node's interface addresses.
+
+        This entry is obsoleted by IP-MIB::ipAddressEntry."
+    INDEX   { ipv6IfIndex, ipv6AddrAddress }
+    ::= { ipv6AddrTable 1 }
+
+ Ipv6AddrEntry ::=
+    SEQUENCE {
+         ipv6AddrAddress        Ipv6Address,
+         ipv6AddrPfxLength      INTEGER,
+         ipv6AddrType           INTEGER,
+         ipv6AddrAnycastFlag    TruthValue,
+         ipv6AddrStatus         INTEGER
         }
 
-    ipv6IfIndex OBJECT-TYPE
-        SYNTAX     Ipv6IfIndex
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "A unique non-zero value identifying
-           the particular IPv6 interface."
-        ::= { ipv6IfEntry 1 }
+ ipv6AddrAddress OBJECT-TYPE
+    SYNTAX      Ipv6Address
+    MAX-ACCESS  not-accessible
+    STATUS      obsolete
+    DESCRIPTION
+      "The IPv6 address to which this entry's addressing
+      information pertains.
 
-    ipv6IfDescr OBJECT-TYPE
-        SYNTAX     DisplayString
-        MAX-ACCESS read-write
-        STATUS     obsolete
-        DESCRIPTION
-          "A textual string containing information about the
-          interface.  This string may be set by the network
-          management system."
-        ::= { ipv6IfEntry 2 }
+      This object is obsoleted by IP-MIB::ipAddressAddr."
+    ::= { ipv6AddrEntry 1 }
 
-    ipv6IfLowerLayer OBJECT-TYPE
-       SYNTAX      VariablePointer
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-         "This object identifies the protocol layer over
-          which this network interface operates.  If this
-          network interface operates over the data-link
-          layer, then the value of this object refers to an
-          instance of ifIndex [6]. If this network interface
-          operates over an IPv4 interface, the value of this
-          object refers to an instance of ipAdEntAddr [3].
+ ipv6AddrPfxLength OBJECT-TYPE
+    SYNTAX      INTEGER(0..128)
+    UNITS       "bits"
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+      "The length of the prefix (in bits) associated with
+      the IPv6 address of this entry.
 
 
 
 
-Fenner                  Expires November 29, 2015               [Page 7]
+Fenner                  Expires December 2, 2015               [Page 22]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-          If this network interface operates over another
-          IPv6 interface, the value of this object refers to
-          an instance of ipv6IfIndex.  If this network
-          interface is not currently operating over an active
-          protocol layer, then the value of this object
-          should be set to the OBJECT ID { 0 0 }."
-       ::= { ipv6IfEntry 3 }
+      This object is obsoleted by the IP-MIB::ipAddressPrefixLength
+      in the row of the IP-MIB::ipAddressPrefixTable to which the
+      IP-MIB::ipAddressPrefix points."
+    ::= { ipv6AddrEntry 2 }
 
-    ipv6IfEffectiveMtu OBJECT-TYPE
-       SYNTAX      Unsigned32
-       UNITS       "octets"
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-         "The size of the largest IPv6 packet which can be
-         sent/received on the interface, specified in
-         octets."
-    ::= { ipv6IfEntry 4 }
+ ipv6AddrType OBJECT-TYPE
+    SYNTAX      INTEGER {
+                        -- address has been formed
+                        -- using stateless
+         stateless(1),  -- autoconfiguration
 
-    ipv6IfReasmMaxSize OBJECT-TYPE
-       SYNTAX      Unsigned32 (0..65535)
-       UNITS       "octets"
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-         "The size of the largest IPv6 datagram which this
-         entity can re-assemble from incoming IPv6 fragmented
-         datagrams received on this interface."
-    ::= { ipv6IfEntry 5 }
+                        -- address has been acquired
+                        -- by stateful means
+                        -- (e.g. DHCPv6, manual
+         stateful(2),   -- configuration)
 
-    ipv6IfIdentifier OBJECT-TYPE
-        SYNTAX      Ipv6AddressIfIdentifier
-        MAX-ACCESS  read-write
-        STATUS      obsolete
-        DESCRIPTION
-           "The Interface Identifier for this interface that
+                        -- type can not be determined
+         unknown(3)     -- for some reason.
+       }
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+       "The type of address. Note that 'stateless(1)'
+       refers to an address that was statelessly
+       autoconfigured; 'stateful(2)' refers to a address
+       which was acquired by via a stateful protocol
+       (e.g. DHCPv6, manual configuration).
 
-           is (at least) unique on the link this interface is
-           attached to. The Interface Identifier is combined
-           with an address prefix to form an interface address.
+       This object is obsoleted by IP-MIB::ipAddressOrigin."
+    ::= { ipv6AddrEntry 3 }
 
-           By default, the Interface Identifier is autoconfigured
-           according to the rules of the link type this
-           interface is attached to."
-        ::= { ipv6IfEntry 6 }
+ ipv6AddrAnycastFlag OBJECT-TYPE
+     SYNTAX      TruthValue
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "This object has the value 'true(1)', if this
+       address is an anycast address and the value
+       'false(2)' otherwise.
 
-    ipv6IfIdentifierLength OBJECT-TYPE
-        SYNTAX      INTEGER (0..64)
+       This object is obsoleted by a value of 'anycast(2)'
+       in IP-MIB::ipAddressType."
+     ::= { ipv6AddrEntry 4 }
+
+ ipv6AddrStatus OBJECT-TYPE
+    SYNTAX      INTEGER {
+             preferred(1),
+             deprecated(2),
 
 
 
-Fenner                  Expires November 29, 2015               [Page 8]
+Fenner                  Expires December 2, 2015               [Page 23]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-        UNITS       "bits"
-        MAX-ACCESS  read-write
-        STATUS      obsolete
-        DESCRIPTION
-          "The length of the Interface Identifier in bits."
-        ::= { ipv6IfEntry 7 }
+             invalid(3),
+             inaccessible(4),
+             unknown(5)   -- status can not be determined
+                          -- for some reason.
+            }
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+      "Address status.  The preferred(1) state indicates
+      that this is a valid address that can appear as
+      the destination or source address of a packet.
+      The deprecated(2) state indicates that this is
+      a valid but deprecated address that should no longer
+      be used as a source address in new communications,
+      but packets addressed to such an address are
+      processed as expected. The invalid(3) state indicates
+      that this is not valid address which should not
 
-    ipv6IfPhysicalAddress OBJECT-TYPE
-        SYNTAX      PhysAddress
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "The interface's physical address. For example, for
-          an IPv6 interface attached to an 802.x link, this
-          object normally contains a MAC address. Note that
-          in some cases this address may differ from the
-          address of the interface's protocol sub-layer.  The
-          interface's media-specific MIB must define the bit
-          and byte ordering and the format of the value of
-          this object. For interfaces which do not have such
-          an address (e.g., a serial line), this object should
-          contain an octet string of zero length."
-        ::= { ipv6IfEntry 8 }
+      appear as the destination or source address of
+      a packet. The inaccessible(4) state indicates that
+      the address is not accessible because the interface
+      to which this address is assigned is not operational.
 
-   ipv6IfAdminStatus OBJECT-TYPE
-       SYNTAX  INTEGER {
-                up(1),       -- ready to pass packets
-                down(2)
-               }
-       MAX-ACCESS  read-write
-       STATUS      obsolete
-       DESCRIPTION
-         "The desired state of the interface.  When a managed
-         system initializes,  all IPv6 interfaces start with
-         ipv6IfAdminStatus in the down(2) state.  As a result
-         of either explicit management action or per
-         configuration information retained by the managed
+      This object is obsoleted by IP-MIB::ipAddressStatus."
+    ::= { ipv6AddrEntry 5 }
 
-         system,  ipv6IfAdminStatus is then changed to
-         the up(1) state (or remains in the down(2) state)."
-       ::= { ipv6IfEntry 9 }
+ -- IPv6 Routing objects
 
-   ipv6IfOperStatus OBJECT-TYPE
-       SYNTAX  INTEGER {
-                up(1),             -- ready to pass packets
+ ipv6RouteNumber OBJECT-TYPE
+     SYNTAX      Gauge32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "The number of current ipv6RouteTable entries.
+       This is primarily to avoid having to read
+       the table in order to determine this number.
 
-                down(2),
-                noIfIdentifier(3), -- no interface identifier
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteNumber."
+     ::= { ipv6MIBObjects 9 }
+
+ ipv6DiscardedRoutes OBJECT-TYPE
+     SYNTAX      Counter32
+     MAX-ACCESS  read-only
+     STATUS      obsolete
+     DESCRIPTION
+       "The number of routing entries which were chosen
+        to be discarded even though they are valid.  One
+        possible reason for discarding such an entry could
 
 
 
-Fenner                  Expires November 29, 2015               [Page 9]
+Fenner                  Expires December 2, 2015               [Page 24]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-                                   -- status can not be
-                                   -- determined for some
-                unknown(4),        -- reason
+        be to free-up buffer space for other routing
+        entries.
 
-                                   -- some component is
-                notPresent(5)      -- missing
-               }
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-         "The current operational state of the interface.
-         The noIfIdentifier(3) state indicates that no valid
-         Interface Identifier is assigned to the interface.
-         This state usually indicates that the link-local
-         interface address failed Duplicate Address Detection.
-         If ipv6IfAdminStatus is down(2) then ipv6IfOperStatus
-         should be down(2).  If ipv6IfAdminStatus is changed
-         to up(1) then ipv6IfOperStatus should change to up(1)
-         if the interface is ready to transmit and receive
-         network traffic; it should remain in the down(2) or
-         noIfIdentifier(3) state if and only if there is a
-         fault that prevents it from going to the up(1) state;
-         it should remain in the notPresent(5) state if
-         the interface has missing (typically, lower layer)
-         components."
-       ::= { ipv6IfEntry 10 }
+        This object is obsoleted by
+        IP-FORWARD-MIB::inetCidrRouteDiscards."
+     ::= { ipv6MIBObjects 10 }
 
-   ipv6IfLastChange OBJECT-TYPE
-       SYNTAX      TimeStamp
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-           "The value of sysUpTime at the time the interface
-           entered its current operational state.  If the
-           current state was entered prior to the last
-           re-initialization of the local network management
+ -- IPv6 Routing table
 
-           subsystem, then this object contains a zero
-           value."
-       ::= { ipv6IfEntry 11 }
+ ipv6RouteTable OBJECT-TYPE
+     SYNTAX     SEQUENCE OF Ipv6RouteEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "IPv6 Routing table. This table contains
+       an entry for each valid IPv6 unicast route
+       that can be used for packet forwarding
+       determination.
 
-    --  IPv6 Interface Statistics table
+       This table is obsoleted by IP-FORWARD-MIB::inetCidrRouteTable."
+     ::= { ipv6MIBObjects 11 }
 
-    ipv6IfStatsTable OBJECT-TYPE
-        SYNTAX     SEQUENCE OF Ipv6IfStatsEntry
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
+ ipv6RouteEntry OBJECT-TYPE
+     SYNTAX     Ipv6RouteEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+             "A routing entry.
+
+             This entry is obsoleted by
+             IP-FORWARD-MIB::inetCidrRouteEntry."
+     INDEX   { ipv6RouteDest,
+               ipv6RoutePfxLength,
+               ipv6RouteIndex }
+     ::= { ipv6RouteTable 1 }
+
+ Ipv6RouteEntry ::= SEQUENCE {
+         ipv6RouteDest           Ipv6Address,
+         ipv6RoutePfxLength      INTEGER,
+         ipv6RouteIndex          Unsigned32,
+         ipv6RouteIfIndex        Ipv6IfIndexOrZero,
+         ipv6RouteNextHop        Ipv6Address,
+         ipv6RouteType           INTEGER,
+         ipv6RouteProtocol       INTEGER,
+         ipv6RoutePolicy         Integer32,
+         ipv6RouteAge            Unsigned32,
+         ipv6RouteNextHopRDI     Unsigned32,
+         ipv6RouteMetric         Unsigned32,
 
 
 
-Fenner                  Expires November 29, 2015              [Page 10]
+Fenner                  Expires December 2, 2015               [Page 25]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-            "IPv6 interface traffic statistics."
-        ::= { ipv6MIBObjects 6 }
+         ipv6RouteWeight         Unsigned32,
+         ipv6RouteInfo           RowPointer,
+         ipv6RouteValid          TruthValue
+     }
 
-    ipv6IfStatsEntry OBJECT-TYPE
-        SYNTAX     Ipv6IfStatsEntry
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-            "An interface statistics entry containing objects
-            at a particular IPv6 interface."
-        AUGMENTS { ipv6IfEntry }
-        ::= { ipv6IfStatsTable 1 }
+ ipv6RouteDest OBJECT-TYPE
+     SYNTAX     Ipv6Address
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "The destination IPv6 address of this route.
+       This object may not take a Multicast address
+       value.
 
-    Ipv6IfStatsEntry ::= SEQUENCE {
-            ipv6IfStatsInReceives
-                Counter32,
-            ipv6IfStatsInHdrErrors
-                Counter32,
-            ipv6IfStatsInTooBigErrors
-                Counter32,
-            ipv6IfStatsInNoRoutes
-                Counter32,
-            ipv6IfStatsInAddrErrors
-                Counter32,
-            ipv6IfStatsInUnknownProtos
-                Counter32,
-            ipv6IfStatsInTruncatedPkts
-                Counter32,
-            ipv6IfStatsInDiscards
-                Counter32,
-            ipv6IfStatsInDelivers
-                Counter32,
-            ipv6IfStatsOutForwDatagrams
-                Counter32,
-            ipv6IfStatsOutRequests
-                Counter32,
-            ipv6IfStatsOutDiscards
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteDest."
+     ::= { ipv6RouteEntry 1 }
 
-                Counter32,
-            ipv6IfStatsOutFragOKs
-                Counter32,
-            ipv6IfStatsOutFragFails
-                Counter32,
-            ipv6IfStatsOutFragCreates
-                Counter32,
-            ipv6IfStatsReasmReqds
-                Counter32,
-            ipv6IfStatsReasmOKs
+ ipv6RoutePfxLength OBJECT-TYPE
+     SYNTAX     INTEGER(0..128)
+     UNITS      "bits"
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "Indicates the prefix length of the destination
+       address.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePfxLen."
+     ::= { ipv6RouteEntry 2 }
+
+ ipv6RouteIndex OBJECT-TYPE
+     SYNTAX     Unsigned32
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "The value which uniquely identifies the route
+       among the routes to the same network layer
+       destination.  The way this value is chosen is
+       implementation specific but it must be unique for
+       ipv6RouteDest/ipv6RoutePfxLength pair and remain
+       constant for the life of the route.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy."
+     ::= { ipv6RouteEntry 3 }
+
+ ipv6RouteIfIndex OBJECT-TYPE
+     SYNTAX     Ipv6IfIndexOrZero
+     MAX-ACCESS read-only
+     STATUS     obsolete
 
 
 
-Fenner                  Expires November 29, 2015              [Page 11]
+Fenner                  Expires December 2, 2015               [Page 26]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-                Counter32,
-            ipv6IfStatsReasmFails
-                Counter32,
-            ipv6IfStatsInMcastPkts
-                Counter32,
-            ipv6IfStatsOutMcastPkts
-                Counter32
-        }
+     DESCRIPTION
+       "The index value which uniquely identifies the local
+       interface through which the next hop of this
+       route should be reached.  The interface identified
+       by a particular value of this index is the same
+       interface as identified by the same value of
+       ipv6IfIndex.  For routes of the discard type this
+       value can be zero.
 
-    ipv6IfStatsInReceives OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The total number of input datagrams received by
-           the interface, including those received in error."
-        ::= { ipv6IfStatsEntry 1 }
+       This object is obsoleted by
+       IP-FORWARD-MIB::inetCidrRouteIfIndex."
+     ::= { ipv6RouteEntry 4 }
 
-    ipv6IfStatsInHdrErrors OBJECT-TYPE
-        SYNTAX     Counter32
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "The number of input datagrams discarded due to
-           errors in their IPv6 headers, including version
-           number mismatch, other format errors, hop count
-           exceeded, errors discovered in processing their
-           IPv6 options, etc."
-        ::= { ipv6IfStatsEntry 2 }
+ ipv6RouteNextHop OBJECT-TYPE
+     SYNTAX     Ipv6Address
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+       "On remote routes, the address of the next
+       system en route;  otherwise, ::0
+       ('00000000000000000000000000000000'H in ASN.1
+       string representation).
 
-    ipv6IfStatsInTooBigErrors OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "The number of input datagrams that could not be
-          forwarded because their size exceeded the link MTU
-          of outgoing interface."
-        ::= { ipv6IfStatsEntry 3 }
+       This object is obsoleted by
+       IP-FORWARD-MIB::inetCidrRouteNextHop."
+     ::= { ipv6RouteEntry 5 }
 
-    ipv6IfStatsInNoRoutes OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of input datagrams discarded because no
-            route could be found to transmit them to their
-            destination."
+ ipv6RouteType OBJECT-TYPE
+     SYNTAX     INTEGER {
+        other(1),     -- none of the following
+
+                      -- an route indicating that
+                      -- packets to destinations
+                      -- matching this route are
+        discard(2),   -- to be discarded
+
+                      -- route to directly
+        local(3),     -- connected (sub-)network
+
+                      -- route to a remote
+
+        remote(4)     -- destination
+
+     }
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "The type of route. Note that 'local(3)' refers
 
 
 
-Fenner                  Expires November 29, 2015              [Page 12]
+Fenner                  Expires December 2, 2015               [Page 27]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-        ::= { ipv6IfStatsEntry 4 }
+        to a route for which the next hop is the final
+        destination; 'remote(4)' refers to a route for
+        which  the  next  hop is not the final
+        destination; 'discard(2)' refers to a route
+        indicating that packets to destinations matching
+        this route are to be discarded (sometimes called
+        black-hole route).
 
-    ipv6IfStatsInAddrErrors OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of input datagrams discarded because
-           the IPv6 address in their IPv6 header's destination
-           field was not a valid address to be received at
-           this entity.  This count includes invalid
-           addresses (e.g., ::0) and unsupported addresses
-           (e.g., addresses with unallocated prefixes).  For
-           entities which are not IPv6 routers and therefore
-           do not forward datagrams, this counter includes
-           datagrams discarded because the destination address
-           was not a local address."
-        ::= { ipv6IfStatsEntry 5 }
+        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteType."
+     ::= { ipv6RouteEntry 6 }
 
-    ipv6IfStatsInUnknownProtos OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of locally-addressed datagrams
-           received successfully but discarded because of an
-           unknown or unsupported protocol. This counter is
-           incremented at the interface to which these
-           datagrams were addressed which might not be
-           necessarily the input interface for some of
-           the datagrams."
-        ::= { ipv6IfStatsEntry 6 }
+ ipv6RouteProtocol OBJECT-TYPE
+     SYNTAX     INTEGER {
+       other(1),   -- none of the following
 
-    ipv6IfStatsInTruncatedPkts OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of input datagrams discarded because
-            datagram frame didn't carry enough data."
-        ::= { ipv6IfStatsEntry 7 }
+                   -- non-protocol information,
+                   -- e.g., manually configured
+       local(2),   -- entries
 
-    ipv6IfStatsInDiscards OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of input IPv6 datagrams for which no
+       netmgmt(3), -- static route
+
+                   -- obtained via Neighbor
+                   -- Discovery protocol,
+       ndisc(4),   -- e.g., result of Redirect
+
+                   -- the following are all
+                   -- dynamic routing protocols
+       rip(5),     -- RIPng
+       ospf(6),    -- Open Shortest Path First
+       bgp(7),     -- Border Gateway Protocol
+       idrp(8),    -- InterDomain Routing Protocol
+       igrp(9)     -- InterGateway Routing Protocol
+     }
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+       "The routing mechanism via which this route was
+       learned.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteProto."
+     ::= { ipv6RouteEntry 7 }
+
+ ipv6RoutePolicy OBJECT-TYPE
+     SYNTAX     Integer32
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+      "The general set of conditions that would cause the
 
 
 
-Fenner                  Expires November 29, 2015              [Page 13]
+Fenner                  Expires December 2, 2015               [Page 28]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-           problems were encountered to prevent their
-           continued processing, but which were discarded
-           (e.g., for lack of buffer space).  Note that this
-           counter does not include any datagrams discarded
-           while awaiting re-assembly."
-        ::= { ipv6IfStatsEntry 8 }
+      selection of one multipath route (set of next hops
+      for a given destination) is referred to as 'policy'.
+      Unless the mechanism indicated by ipv6RouteProtocol
+      specified otherwise, the policy specifier is the
+      8-bit Traffic Class field of the IPv6 packet header
+      that is zero extended at the left to a 32-bit value.
 
-    ipv6IfStatsInDelivers OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-         "The total number of datagrams successfully
-         delivered to IPv6 user-protocols (including ICMP).
-         This counter is incremented at the interface to
-         which these datagrams were addressed which might
-         not be necessarily the input interface for some of
-         the datagrams."
-        ::= { ipv6IfStatsEntry 9 }
+      Protocols defining 'policy' otherwise must either
+      define a set of values which are valid for
+      this object or must implement an integer-
+      instanced  policy table for which this object's
+      value acts as an index.
 
-    ipv6IfStatsOutForwDatagrams OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of output datagrams which this
-           entity received and forwarded to their final
-           destinations.  In entities which do not act
-           as IPv6 routers, this counter will include
-           only those packets which were Source-Routed
-           via this entity, and the Source-Route
-           processing was successful.  Note that for
-           a successfully forwarded datagram the counter
-           of the outgoing interface is incremented."
-        ::= { ipv6IfStatsEntry 10 }
+      This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy."
+     ::= { ipv6RouteEntry 8 }
 
-    ipv6IfStatsOutRequests OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-         "The total number of IPv6 datagrams which local IPv6
-         user-protocols (including ICMP) supplied to IPv6 in
-         requests for transmission.  Note that this counter
-         does not include any datagrams counted in
-         ipv6IfStatsOutForwDatagrams."
-        ::= { ipv6IfStatsEntry 11 }
+ ipv6RouteAge OBJECT-TYPE
+     SYNTAX     Unsigned32
+     UNITS      "seconds"
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "The number of seconds since this route was last
+        updated or otherwise determined to be correct.
+        Note that no semantics of `too old' can be implied
+        except through knowledge of the routing protocol
+        by which the route was learned.
+
+        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteAge."
+     ::= { ipv6RouteEntry 9 }
+
+ ipv6RouteNextHopRDI OBJECT-TYPE
+     SYNTAX     Unsigned32
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "The Routing Domain ID of the Next Hop.
+        The  semantics of this object are determined by
+        the routing-protocol specified in  the  route's
+        ipv6RouteProtocol value.   When  this object is
+        unknown or not relevant its value should be set
+        to zero.
+
+        This object is obsolete, and has no replacement.
+        The Routing Domain ID concept did not catch on."
+     ::= { ipv6RouteEntry 10 }
+
+ ipv6RouteMetric OBJECT-TYPE
 
 
 
-
-Fenner                  Expires November 29, 2015              [Page 14]
+Fenner                  Expires December 2, 2015               [Page 29]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-    ipv6IfStatsOutDiscards OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-            "The number of output IPv6 datagrams for which no
-            problem was encountered to prevent their
-            transmission to their destination, but which were
-            discarded (e.g., for lack of buffer space).  Note
-            that this counter would include datagrams counted
-            in ipv6IfStatsOutForwDatagrams if any such packets
-            met this (discretionary) discard criterion."
-        ::= { ipv6IfStatsEntry 12 }
+     SYNTAX     Unsigned32
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "The routing metric for this route. The
+        semantics of this metric are determined by the
+        routing protocol specified in the route's
+        ipv6RouteProtocol value.  When this is unknown
+        or not relevant to the protocol indicated by
+        ipv6RouteProtocol, the object value should be
+        set to its maximum value (4,294,967,295).
 
-    ipv6IfStatsOutFragOKs OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of IPv6 datagrams that have been
-            successfully fragmented at this output interface."
-        ::= { ipv6IfStatsEntry 13 }
+        This object is obsoleted by
+        IP-FORWARD-MIB::inetCidrRouteMetric1."
+     ::= { ipv6RouteEntry 11 }
 
-    ipv6IfStatsOutFragFails OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of IPv6 datagrams that have been
-            discarded because they needed to be fragmented
-            at this output interface but could not be."
-        ::= { ipv6IfStatsEntry 14 }
+ ipv6RouteWeight OBJECT-TYPE
+     SYNTAX     Unsigned32
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "The system internal weight value for this route.
+        The semantics of this value are determined by
+        the implementation specific rules. Generally,
+        within routes with the same ipv6RoutePolicy value,
+        the lower the weight value the more preferred is
+        the route.
 
-    ipv6IfStatsOutFragCreates OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of output datagram fragments that have
-            been generated as a result of fragmentation at
-            this output interface."
-        ::= { ipv6IfStatsEntry 15 }
+        This object is obsoleted, and has not been replaced."
+     ::= { ipv6RouteEntry 12 }
 
-    ipv6IfStatsReasmReqds OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
+ ipv6RouteInfo OBJECT-TYPE
+     SYNTAX     RowPointer
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+        "A reference to MIB definitions specific to the
+        particular routing protocol which is responsible
+        for this route, as determined by the  value
+        specified  in the route's ipv6RouteProto value.
+        If this information is not present,  its  value
+        should be set to the OBJECT ID { 0 0 },
+        which is a syntactically valid object  identifier,
+        and any implementation conforming to ASN.1
+        and the Basic Encoding Rules must  be  able  to
+        generate and recognize this value.
+
+        This object is obsoleted, and has not been replaced."
 
 
 
-Fenner                  Expires November 29, 2015              [Page 15]
+Fenner                  Expires December 2, 2015               [Page 30]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-           "The number of IPv6 fragments received which needed
-            to be reassembled at this interface.  Note that this
-            counter is incremented at the interface to which
-            these fragments were addressed which might not
-            be necessarily the input interface for some of
-            the fragments."
-        ::= { ipv6IfStatsEntry 16 }
+     ::= { ipv6RouteEntry 13 }
 
-    ipv6IfStatsReasmOKs OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "The number of IPv6 datagrams successfully
-          reassembled.  Note that this counter is incremented
-          at the interface to which these datagrams were
-          addressed which might not be necessarily the input
-          interface for some of the fragments."
-        ::= { ipv6IfStatsEntry 17 }
+ ipv6RouteValid OBJECT-TYPE
+     SYNTAX     TruthValue
+     MAX-ACCESS read-write
+     STATUS     obsolete
+     DESCRIPTION
+        "Setting this object to the value 'false(2)' has
+        the effect of invalidating the corresponding entry
+        in the ipv6RouteTable object.  That is, it
+        effectively disassociates the destination
 
-    ipv6IfStatsReasmFails OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of failures detected by the IPv6 re-
-           assembly algorithm (for whatever reason: timed
-           out, errors, etc.).  Note that this is not
-           necessarily a count of discarded IPv6 fragments
-           since some algorithms (notably the algorithm in
-           RFC 815) can lose track of the number of fragments
-           by combining them as they are received.
-           This counter is incremented at the interface to which
-           these fragments were addressed which might not be
-           necessarily the input interface for some of the
-           fragments."
-        ::= { ipv6IfStatsEntry 18 }
+        identified with said entry from the route
+        identified with said entry.  It is an
+        implementation-specific matter as to whether the
+        agent removes an invalidated entry from the table.
+        Accordingly, management stations must be prepared
+        to receive tabular information from agents that
+        corresponds to entries not currently in use.
+        Proper interpretation of such entries requires
+        examination of the relevant ipv6RouteValid
+        object.
 
-    ipv6IfStatsInMcastPkts OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "The number of multicast packets received
-            by the interface"
-        ::= { ipv6IfStatsEntry 19 }
+        This object is obsoleted by
+        IP-FORWARD-MIB::inetCidrRouteStatus."
+     DEFVAL  { true }
+     ::= { ipv6RouteEntry 14 }
 
-    ipv6IfStatsOutMcastPkts OBJECT-TYPE
+ -- IPv6 Address Translation table
+
+ ipv6NetToMediaTable OBJECT-TYPE
+     SYNTAX      SEQUENCE OF Ipv6NetToMediaEntry
+     MAX-ACCESS  not-accessible
+     STATUS      obsolete
+     DESCRIPTION
+       "The IPv6 Address Translation table used for
+       mapping from IPv6 addresses to physical addresses.
+
+       The IPv6 address translation table contain the
+       Ipv6Address to `physical' address equivalencies.
+       Some interfaces do not use translation tables
+       for determining address equivalencies; if all
+       interfaces are of this type, then the Address
+       Translation table is empty, i.e., has zero
+       entries.
+
+       This table is obsoleted by IP-MIB::ipNetToPhysicalTable."
+     ::= { ipv6MIBObjects 12 }
 
 
 
-Fenner                  Expires November 29, 2015              [Page 16]
+Fenner                  Expires December 2, 2015               [Page 31]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "The number of multicast packets transmitted
-            by the interface"
-        ::= { ipv6IfStatsEntry 20 }
+ ipv6NetToMediaEntry OBJECT-TYPE
+     SYNTAX     Ipv6NetToMediaEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "Each entry contains one IPv6 address to `physical'
+       address equivalence.
 
-    -- Address Prefix table
+       This entry is obsoleted by IP-MIB::ipNetToPhysicalEntry."
+     INDEX   { ipv6IfIndex,
+               ipv6NetToMediaNetAddress }
+     ::= { ipv6NetToMediaTable 1 }
 
-    -- The IPv6 Address Prefix table contains information on
-    -- the entity's IPv6 Address Prefixes that are associated
-    -- with IPv6 interfaces.
+ Ipv6NetToMediaEntry ::= SEQUENCE {
+         ipv6NetToMediaNetAddress
+             Ipv6Address,
+         ipv6NetToMediaPhysAddress
 
-    ipv6AddrPrefixTable OBJECT-TYPE
-        SYNTAX  SEQUENCE OF Ipv6AddrPrefixEntry
-        MAX-ACCESS  not-accessible
-        STATUS      obsolete
-        DESCRIPTION
-            "The list of IPv6 address prefixes of
-            IPv6 interfaces."
-        ::= { ipv6MIBObjects 7 }
+             PhysAddress,
+         ipv6NetToMediaType
+             INTEGER,
+         ipv6IfNetToMediaState
+             INTEGER,
+         ipv6IfNetToMediaLastUpdated
+             TimeStamp,
+         ipv6NetToMediaValid
+             TruthValue
+     }
 
-    ipv6AddrPrefixEntry OBJECT-TYPE
-        SYNTAX  Ipv6AddrPrefixEntry
-        MAX-ACCESS  not-accessible
-        STATUS      obsolete
-        DESCRIPTION
-            "An interface entry containing objects of
-            a particular IPv6 address prefix."
-        INDEX   { ipv6IfIndex,
-                  ipv6AddrPrefix,
-                  ipv6AddrPrefixLength }
-        ::= { ipv6AddrPrefixTable 1 }
+ ipv6NetToMediaNetAddress OBJECT-TYPE
+     SYNTAX     Ipv6Address
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+        "The IPv6 Address corresponding to
+        the media-dependent `physical' address.
 
-    Ipv6AddrPrefixEntry ::= SEQUENCE {
+        This object is obsoleted by IP-MIB::ipNetToPhysicalNetAddress."
+     ::= { ipv6NetToMediaEntry 1 }
 
-         ipv6AddrPrefix                     Ipv6AddressPrefix,
-         ipv6AddrPrefixLength               INTEGER (0..128),
-         ipv6AddrPrefixOnLinkFlag           TruthValue,
-         ipv6AddrPrefixAutonomousFlag       TruthValue,
-         ipv6AddrPrefixAdvPreferredLifetime Unsigned32,
-         ipv6AddrPrefixAdvValidLifetime     Unsigned32
-        }
+ ipv6NetToMediaPhysAddress OBJECT-TYPE
+     SYNTAX     PhysAddress
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+       "The media-dependent `physical' address.
 
-    ipv6AddrPrefix OBJECT-TYPE
-        SYNTAX      Ipv6AddressPrefix
-        MAX-ACCESS  not-accessible
+       This object is obsoleted by IP-MIB::ipNetToPhysicalPhysAddress."
 
 
 
-Fenner                  Expires November 29, 2015              [Page 17]
+Fenner                  Expires December 2, 2015               [Page 32]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-        STATUS      obsolete
-        DESCRIPTION
-          "The prefix associated with the this interface."
-        ::= { ipv6AddrPrefixEntry 1 }
-
-    ipv6AddrPrefixLength OBJECT-TYPE
-        SYNTAX      INTEGER (0..128)
-        UNITS       "bits"
-        MAX-ACCESS  not-accessible
-        STATUS      obsolete
-        DESCRIPTION
-          "The length of the prefix (in bits)."
-        ::= { ipv6AddrPrefixEntry 2 }
-
-    ipv6AddrPrefixOnLinkFlag OBJECT-TYPE
-        SYNTAX      TruthValue
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "This object has the value 'true(1)', if this
-          prefix can be used  for on-link determination
-          and the value 'false(2)' otherwise."
-        ::= { ipv6AddrPrefixEntry 3 }
-
-    ipv6AddrPrefixAutonomousFlag OBJECT-TYPE
-        SYNTAX      TruthValue
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "Autonomous address configuration flag. When
-          true(1), indicates that this prefix can be used
-          for autonomous address configuration (i.e. can
-          be used to form a local interface address).
-          If false(2), it is not used to autoconfigure
-          a local interface address."
-        ::= { ipv6AddrPrefixEntry 4 }
-
-    ipv6AddrPrefixAdvPreferredLifetime OBJECT-TYPE
-        SYNTAX      Unsigned32
-        UNITS       "seconds"
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-           "It is the length of time in seconds that this
-           prefix will remain preferred, i.e. time until
-           deprecation.  A value of 4,294,967,295 represents
-           infinity.
-
-
-
-
-Fenner                  Expires November 29, 2015              [Page 18]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-           The address generated from a deprecated prefix
-           should no longer be used as a source address in
-           new communications, but packets received on such
-           an interface are processed as expected."
-        ::= { ipv6AddrPrefixEntry 5 }
-
-    ipv6AddrPrefixAdvValidLifetime OBJECT-TYPE
-        SYNTAX      Unsigned32
-        UNITS       "seconds"
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "It is the length of time in seconds that this
-          prefix will remain valid, i.e. time until
-          invalidation.  A value of 4,294,967,295 represents
-          infinity.
-
-          The address generated from an invalidated prefix
-          should not appear as the destination or source
-          address of a packet."
-        ::= { ipv6AddrPrefixEntry 6 }
-
-    -- the IPv6 Address table
-
-    -- The IPv6 address table contains this node's IPv6
-    -- addressing information.
-
-    ipv6AddrTable OBJECT-TYPE
-       SYNTAX      SEQUENCE OF Ipv6AddrEntry
-       MAX-ACCESS  not-accessible
-       STATUS      obsolete
-       DESCRIPTION
-         "The table of addressing information relevant to
-         this node's interface addresses."
-       ::= { ipv6MIBObjects 8 }
-
-    ipv6AddrEntry OBJECT-TYPE
-       SYNTAX      Ipv6AddrEntry
-       MAX-ACCESS  not-accessible
-       STATUS      obsolete
-       DESCRIPTION
-           "The addressing information for one of this
-           node's interface addresses."
-       INDEX   { ipv6IfIndex, ipv6AddrAddress }
-       ::= { ipv6AddrTable 1 }
-
-    Ipv6AddrEntry ::=
-       SEQUENCE {
-
-
-
-Fenner                  Expires November 29, 2015              [Page 19]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-            ipv6AddrAddress        Ipv6Address,
-            ipv6AddrPfxLength      INTEGER,
-            ipv6AddrType           INTEGER,
-            ipv6AddrAnycastFlag    TruthValue,
-            ipv6AddrStatus         INTEGER
-           }
-
-    ipv6AddrAddress OBJECT-TYPE
-       SYNTAX      Ipv6Address
-       MAX-ACCESS  not-accessible
-       STATUS      obsolete
-       DESCRIPTION
-         "The IPv6 address to which this entry's addressing
-         information pertains."
-       ::= { ipv6AddrEntry 1 }
-
-    ipv6AddrPfxLength OBJECT-TYPE
-       SYNTAX      INTEGER(0..128)
-       UNITS       "bits"
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-         "The length of the prefix (in bits) associated with
-         the IPv6 address of this entry."
-       ::= { ipv6AddrEntry 2 }
-
-    ipv6AddrType OBJECT-TYPE
-       SYNTAX      INTEGER {
-                           -- address has been formed
-                           -- using stateless
-            stateless(1),  -- autoconfiguration
-
-                           -- address has been acquired
-                           -- by stateful means
-                           -- (e.g. DHCPv6, manual
-            stateful(2),   -- configuration)
-
-                           -- type can not be determined
-            unknown(3)     -- for some reason.
-          }
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-          "The type of address. Note that 'stateless(1)'
-          refers to an address that was statelessly
-          autoconfigured; 'stateful(2)' refers to a address
-          which was acquired by via a stateful protocol
-          (e.g. DHCPv6, manual configuration)."
-
-
-
-Fenner                  Expires November 29, 2015              [Page 20]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-       ::= { ipv6AddrEntry 3 }
-
-    ipv6AddrAnycastFlag OBJECT-TYPE
-        SYNTAX      TruthValue
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "This object has the value 'true(1)', if this
-          address is an anycast address and the value
-          'false(2)' otherwise."
-        ::= { ipv6AddrEntry 4 }
-
-    ipv6AddrStatus OBJECT-TYPE
-       SYNTAX      INTEGER {
-                preferred(1),
-                deprecated(2),
-                invalid(3),
-                inaccessible(4),
-                unknown(5)   -- status can not be determined
-                             -- for some reason.
-               }
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-         "Address status.  The preferred(1) state indicates
-         that this is a valid address that can appear as
-         the destination or source address of a packet.
-         The deprecated(2) state indicates that this is
-         a valid but deprecated address that should no longer
-         be used as a source address in new communications,
-         but packets addressed to such an address are
-         processed as expected. The invalid(3) state indicates
-         that this is not valid address which should not
-
-         appear as the destination or source address of
-         a packet. The inaccessible(4) state indicates that
-         the address is not accessible because the interface
-         to which this address is assigned is not operational."
-       ::= { ipv6AddrEntry 5 }
-
-    -- IPv6 Routing objects
-
-    ipv6RouteNumber OBJECT-TYPE
-        SYNTAX      Gauge32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "The number of current ipv6RouteTable entries.
-
-
-
-Fenner                  Expires November 29, 2015              [Page 21]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-          This is primarily to avoid having to read
-          the table in order to determine this number."
-        ::= { ipv6MIBObjects 9 }
-
-    ipv6DiscardedRoutes OBJECT-TYPE
-        SYNTAX      Counter32
-        MAX-ACCESS  read-only
-        STATUS      obsolete
-        DESCRIPTION
-          "The number of routing entries which were chosen
-           to be discarded even though they are valid.  One
-           possible reason for discarding such an entry could
-           be to free-up buffer space for other routing
-           entries."
-        ::= { ipv6MIBObjects 10 }
-
-    -- IPv6 Routing table
-
-    ipv6RouteTable OBJECT-TYPE
-        SYNTAX     SEQUENCE OF Ipv6RouteEntry
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "IPv6 Routing table. This table contains
-          an entry for each valid IPv6 unicast route
-          that can be used for packet forwarding
-          determination."
-        ::= { ipv6MIBObjects 11 }
-
-    ipv6RouteEntry OBJECT-TYPE
-        SYNTAX     Ipv6RouteEntry
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-                "A routing entry."
-        INDEX   { ipv6RouteDest,
-                  ipv6RoutePfxLength,
-                  ipv6RouteIndex }
-        ::= { ipv6RouteTable 1 }
-
-    Ipv6RouteEntry ::= SEQUENCE {
-            ipv6RouteDest           Ipv6Address,
-            ipv6RoutePfxLength      INTEGER,
-            ipv6RouteIndex          Unsigned32,
-            ipv6RouteIfIndex        Ipv6IfIndexOrZero,
-            ipv6RouteNextHop        Ipv6Address,
-            ipv6RouteType           INTEGER,
-            ipv6RouteProtocol       INTEGER,
-
-
-
-Fenner                  Expires November 29, 2015              [Page 22]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-            ipv6RoutePolicy         Integer32,
-            ipv6RouteAge            Unsigned32,
-            ipv6RouteNextHopRDI     Unsigned32,
-            ipv6RouteMetric         Unsigned32,
-            ipv6RouteWeight         Unsigned32,
-            ipv6RouteInfo           RowPointer,
-            ipv6RouteValid          TruthValue
-        }
-
-    ipv6RouteDest OBJECT-TYPE
-        SYNTAX     Ipv6Address
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "The destination IPv6 address of this route.
-          This object may not take a Multicast address
-          value."
-        ::= { ipv6RouteEntry 1 }
-
-    ipv6RoutePfxLength OBJECT-TYPE
-        SYNTAX     INTEGER(0..128)
-        UNITS      "bits"
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "Indicates the prefix length of the destination
-          address."
-        ::= { ipv6RouteEntry 2 }
-
-    ipv6RouteIndex OBJECT-TYPE
-        SYNTAX     Unsigned32
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "The value which uniquely identifies the route
-          among the routes to the same network layer
-          destination.  The way this value is chosen is
-          implementation specific but it must be unique for
-          ipv6RouteDest/ipv6RoutePfxLength pair and remain
-          constant for the life of the route."
-        ::= { ipv6RouteEntry 3 }
-
-    ipv6RouteIfIndex OBJECT-TYPE
-        SYNTAX     Ipv6IfIndexOrZero
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-          "The index value which uniquely identifies the local
-
-
-
-Fenner                  Expires November 29, 2015              [Page 23]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-          interface through which the next hop of this
-          route should be reached.  The interface identified
-          by a particular value of this index is the same
-          interface as identified by the same value of
-          ipv6IfIndex.  For routes of the discard type this
-          value can be zero."
-        ::= { ipv6RouteEntry 4 }
-
-    ipv6RouteNextHop OBJECT-TYPE
-        SYNTAX     Ipv6Address
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-          "On remote routes, the address of the next
-          system en route;  otherwise, ::0
-          ('00000000000000000000000000000000'H in ASN.1
-          string representation)."
-        ::= { ipv6RouteEntry 5 }
-
-    ipv6RouteType OBJECT-TYPE
-        SYNTAX     INTEGER {
-           other(1),     -- none of the following
-
-                         -- an route indicating that
-                         -- packets to destinations
-                         -- matching this route are
-           discard(2),   -- to be discarded
-
-                         -- route to directly
-           local(3),     -- connected (sub-)network
-
-                         -- route to a remote
-
-           remote(4)     -- destination
-
-        }
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "The type of route. Note that 'local(3)' refers
-           to a route for which the next hop is the final
-           destination; 'remote(4)' refers to a route for
-           which  the  next  hop is not the final
-           destination; 'discard(2)' refers to a route
-           indicating that packets to destinations matching
-           this route are to be discarded (sometimes called
-           black-hole route)."
-        ::= { ipv6RouteEntry 6 }
-
-
-
-Fenner                  Expires November 29, 2015              [Page 24]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-    ipv6RouteProtocol OBJECT-TYPE
-        SYNTAX     INTEGER {
-          other(1),   -- none of the following
-
-                      -- non-protocol information,
-                      -- e.g., manually configured
-          local(2),   -- entries
-
-          netmgmt(3), -- static route
-
-                      -- obtained via Neighbor
-                      -- Discovery protocol,
-          ndisc(4),   -- e.g., result of Redirect
-
-                      -- the following are all
-                      -- dynamic routing protocols
-          rip(5),     -- RIPng
-          ospf(6),    -- Open Shortest Path First
-          bgp(7),     -- Border Gateway Protocol
-          idrp(8),    -- InterDomain Routing Protocol
-          igrp(9)     -- InterGateway Routing Protocol
-        }
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-          "The routing mechanism via which this route was
-          learned."
-        ::= { ipv6RouteEntry 7 }
-
-    ipv6RoutePolicy OBJECT-TYPE
-        SYNTAX     Integer32
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-         "The general set of conditions that would cause the
-         selection of one multipath route (set of next hops
-         for a given destination) is referred to as 'policy'.
-         Unless the mechanism indicated by ipv6RouteProtocol
-         specified otherwise, the policy specifier is the
-         8-bit Traffic Class field of the IPv6 packet header
-         that is zero extended at the left to a 32-bit value.
-
-         Protocols defining 'policy' otherwise must either
-         define a set of values which are valid for
-         this object or must implement an integer-
-         instanced  policy table for which this object's
-         value acts as an index."
-        ::= { ipv6RouteEntry 8 }
-
-
-
-Fenner                  Expires November 29, 2015              [Page 25]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-    ipv6RouteAge OBJECT-TYPE
-        SYNTAX     Unsigned32
-        UNITS      "seconds"
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "The number of seconds since this route was last
-           updated or otherwise determined to be correct.
-           Note that no semantics of `too old' can be implied
-           except through knowledge of the routing protocol
-           by which the route was learned."
-        ::= { ipv6RouteEntry 9 }
-
-    ipv6RouteNextHopRDI OBJECT-TYPE
-        SYNTAX     Unsigned32
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "The Routing Domain ID of the Next Hop.
-           The  semantics of this object are determined by
-           the routing-protocol specified in  the  route's
-           ipv6RouteProtocol value.   When  this object is
-           unknown or not relevant its value should be set
-           to zero."
-        ::= { ipv6RouteEntry 10 }
-
-    ipv6RouteMetric OBJECT-TYPE
-        SYNTAX     Unsigned32
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "The routing metric for this route. The
-           semantics of this metric are determined by the
-           routing protocol specified in the route's
-           ipv6RouteProtocol value.  When this is unknown
-           or not relevant to the protocol indicated by
-           ipv6RouteProtocol, the object value should be
-           set to its maximum value (4,294,967,295)."
-        ::= { ipv6RouteEntry 11 }
-
-    ipv6RouteWeight OBJECT-TYPE
-        SYNTAX     Unsigned32
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "The system internal weight value for this route.
-           The semantics of this value are determined by
-           the implementation specific rules. Generally,
-
-
-
-Fenner                  Expires November 29, 2015              [Page 26]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-           within routes with the same ipv6RoutePolicy value,
-           the lower the weight value the more preferred is
-           the route."
-        ::= { ipv6RouteEntry 12 }
-
-    ipv6RouteInfo OBJECT-TYPE
-        SYNTAX     RowPointer
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-           "A reference to MIB definitions specific to the
-           particular routing protocol which is responsible
-           for this route, as determined by the  value
-           specified  in the route's ipv6RouteProto value.
-           If this information is not present,  its  value
-           should be set to the OBJECT ID { 0 0 },
-           which is a syntactically valid object  identifier,
-           and any implementation conforming to ASN.1
-           and the Basic Encoding Rules must  be  able  to
-           generate and recognize this value."
-        ::= { ipv6RouteEntry 13 }
-
-    ipv6RouteValid OBJECT-TYPE
-        SYNTAX     TruthValue
-        MAX-ACCESS read-write
-        STATUS     obsolete
-        DESCRIPTION
-           "Setting this object to the value 'false(2)' has
-           the effect of invalidating the corresponding entry
-           in the ipv6RouteTable object.  That is, it
-           effectively disassociates the destination
-
-           identified with said entry from the route
-           identified with said entry.  It is an
-           implementation-specific matter as to whether the
-           agent removes an invalidated entry from the table.
-           Accordingly, management stations must be prepared
-           to receive tabular information from agents that
-           corresponds to entries not currently in use.
-           Proper interpretation of such entries requires
-           examination of the relevant ipv6RouteValid
-           object."
-        DEFVAL  { true }
-        ::= { ipv6RouteEntry 14 }
-
-    -- IPv6 Address Translation table
-
-    ipv6NetToMediaTable OBJECT-TYPE
-
-
-
-Fenner                  Expires November 29, 2015              [Page 27]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-        SYNTAX      SEQUENCE OF Ipv6NetToMediaEntry
-        MAX-ACCESS  not-accessible
-        STATUS      obsolete
-        DESCRIPTION
-          "The IPv6 Address Translation table used for
-          mapping from IPv6 addresses to physical addresses.
-
-          The IPv6 address translation table contain the
-          Ipv6Address to `physical' address equivalencies.
-          Some interfaces do not use translation tables
-          for determining address equivalencies; if all
-          interfaces are of this type, then the Address
-          Translation table is empty, i.e., has zero
-          entries."
-        ::= { ipv6MIBObjects 12 }
-
-    ipv6NetToMediaEntry OBJECT-TYPE
-        SYNTAX     Ipv6NetToMediaEntry
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-          "Each entry contains one IPv6 address to `physical'
-          address equivalence."
-        INDEX   { ipv6IfIndex,
-                  ipv6NetToMediaNetAddress }
-        ::= { ipv6NetToMediaTable 1 }
-
-    Ipv6NetToMediaEntry ::= SEQUENCE {
-            ipv6NetToMediaNetAddress
-                Ipv6Address,
-            ipv6NetToMediaPhysAddress
-
-                PhysAddress,
-            ipv6NetToMediaType
-                INTEGER,
-            ipv6IfNetToMediaState
-                INTEGER,
-            ipv6IfNetToMediaLastUpdated
-                TimeStamp,
-            ipv6NetToMediaValid
-                TruthValue
-        }
-
-    ipv6NetToMediaNetAddress OBJECT-TYPE
-        SYNTAX     Ipv6Address
-        MAX-ACCESS not-accessible
-        STATUS     obsolete
-        DESCRIPTION
-
-
-
-Fenner                  Expires November 29, 2015              [Page 28]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-           "The IPv6 Address corresponding to
-           the media-dependent `physical' address."
-        ::= { ipv6NetToMediaEntry 1 }
-
-    ipv6NetToMediaPhysAddress OBJECT-TYPE
-        SYNTAX     PhysAddress
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-          "The media-dependent `physical' address."
-        ::= { ipv6NetToMediaEntry 2 }
-
-    ipv6NetToMediaType OBJECT-TYPE
-        SYNTAX     INTEGER {
-                    other(1),    -- none of the following
-                    dynamic(2),  -- dynamically resolved
-                    static(3),   -- statically configured
-                    local(4)     -- local interface
-                   }
-        MAX-ACCESS read-only
-        STATUS     obsolete
-        DESCRIPTION
-                "The type of the mapping. The 'dynamic(2)' type
-                indicates that the IPv6 address to physical
-                addresses mapping has been dynamically
-                resolved using the IPv6 Neighbor Discovery
-                protocol. The static(3)' types indicates that
-                the mapping has been statically configured.
-                The local(4) indicates that the mapping is
-                provided for an entity's own interface address."
-        ::= { ipv6NetToMediaEntry 3 }
-
-   ipv6IfNetToMediaState OBJECT-TYPE
-       SYNTAX      INTEGER {
-                reachable(1), -- confirmed reachability
-
-                stale(2),     -- unconfirmed reachability
-
-                delay(3),     -- waiting for reachability
-                              -- confirmation before entering
-                              -- the probe state
-
-                probe(4),     -- actively probing
-
-                invalid(5),   -- an invalidated mapping
-
-                unknown(6)    -- state can not be determined
-                              -- for some reason.
-
-
-
-Fenner                  Expires November 29, 2015              [Page 29]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-               }
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-           "The Neighbor Unreachability Detection [8] state
-           for the interface when the address mapping in
-           this entry is used."
-       ::= { ipv6NetToMediaEntry 4 }
-
-   ipv6IfNetToMediaLastUpdated OBJECT-TYPE
-       SYNTAX      TimeStamp
-       MAX-ACCESS  read-only
-       STATUS      obsolete
-       DESCRIPTION
-           "The value of sysUpTime at the time this entry
-           was last updated.  If this entry was updated prior
-           to the last re-initialization of the local network
-           management subsystem, then this object contains
-           a zero value."
-       ::= { ipv6NetToMediaEntry 5 }
-
-    ipv6NetToMediaValid OBJECT-TYPE
-        SYNTAX     TruthValue
-        MAX-ACCESS read-write
-        STATUS     obsolete
-        DESCRIPTION
-         "Setting this object to the value 'false(2)' has
-         the effect of invalidating the corresponding entry
-         in the ipv6NetToMediaTable.  That is, it effectively
-         disassociates the interface identified with said
-         entry from the mapping identified with said entry.
-         It is an implementation-specific matter as to
-
-         whether the agent removes an invalidated entry
-         from the table.  Accordingly, management stations
-         must be prepared to receive tabular information
-         from agents that corresponds to entries not
-         currently in use.  Proper interpretation of such
-         entries requires examination of the relevant
-         ipv6NetToMediaValid object."
-        DEFVAL  { true }
-        ::= { ipv6NetToMediaEntry 6 }
-
-   -- definition of IPv6-related notifications.
-   -- Note that we need ipv6NotificationPrefix with the 0
-   -- sub-identifier to make this MIB to translate to
-   -- an SNMPv1 format in a reversible way. For example
-   -- it is needed for proxies that convert SNMPv1 traps
-
-
-
-Fenner                  Expires November 29, 2015              [Page 30]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-   -- to SNMPv2 notifications without MIB knowledge.
-
-   ipv6Notifications      OBJECT IDENTIFIER
-        ::= { ipv6MIB 2 }
-   ipv6NotificationPrefix OBJECT IDENTIFIER
-        ::= { ipv6Notifications 0 }
-
-   ipv6IfStateChange NOTIFICATION-TYPE
-        OBJECTS {
-                 ipv6IfDescr,
-                 ipv6IfOperStatus -- the new state of the If.
+     ::= { ipv6NetToMediaEntry 2 }
+
+ ipv6NetToMediaType OBJECT-TYPE
+     SYNTAX     INTEGER {
+                 other(1),    -- none of the following
+                 dynamic(2),  -- dynamically resolved
+                 static(3),   -- statically configured
+                 local(4)     -- local interface
                 }
-        STATUS             obsolete
-        DESCRIPTION
-           "An ipv6IfStateChange notification signifies
-           that there has been a change in the state of
-           an ipv6 interface.  This notification should
-           be generated when the interface's operational
-           status transitions to or from the up(1) state."
-        ::= { ipv6NotificationPrefix 1 }
+     MAX-ACCESS read-only
+     STATUS     obsolete
+     DESCRIPTION
+             "The type of the mapping. The 'dynamic(2)' type
+             indicates that the IPv6 address to physical
+             addresses mapping has been dynamically
+             resolved using the IPv6 Neighbor Discovery
+             protocol. The static(3)' types indicates that
+             the mapping has been statically configured.
+             The local(4) indicates that the mapping is
+             provided for an entity's own interface address.
 
-   -- conformance information
+             This object is obsoleted by IP-MIB::ipNetToPhysicalType."
+     ::= { ipv6NetToMediaEntry 3 }
 
-   ipv6Conformance OBJECT IDENTIFIER ::= { ipv6MIB 3 }
+ipv6IfNetToMediaState OBJECT-TYPE
+    SYNTAX      INTEGER {
+             reachable(1), -- confirmed reachability
 
-   ipv6Compliances OBJECT IDENTIFIER ::= { ipv6Conformance 1 }
-   ipv6Groups      OBJECT IDENTIFIER ::= { ipv6Conformance 2 }
+             stale(2),     -- unconfirmed reachability
 
-   -- compliance statements
+             delay(3),     -- waiting for reachability
+                           -- confirmation before entering
+                           -- the probe state
 
-   ipv6Compliance MODULE-COMPLIANCE
-       STATUS  obsolete
-       DESCRIPTION
-         "The compliance statement for SNMPv2 entities which
-         implement ipv6 MIB."
-       MODULE  -- this module
-           MANDATORY-GROUPS { ipv6GeneralGroup,
-                              ipv6NotificationGroup }
-             OBJECT    ipv6Forwarding
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
-                   access to this object"
-             OBJECT    ipv6DefaultHopLimit
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
-                   access to this object"
+             probe(4),     -- actively probing
 
+             invalid(5),   -- an invalidated mapping
+
+             unknown(6)    -- state can not be determined
+                           -- for some reason.
+            }
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+        "The Neighbor Unreachability Detection [8] state
+        for the interface when the address mapping in
+        this entry is used.
 
 
-Fenner                  Expires November 29, 2015              [Page 31]
+
+
+Fenner                  Expires December 2, 2015               [Page 33]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-             OBJECT    ipv6IfDescr
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
-                   access to this object"
-             OBJECT    ipv6IfIdentifier
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
-                   access to this object"
-             OBJECT    ipv6IfIdentifierLength
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
-                   access to this object"
+        This object is obsoleted by IP-MIB::ipNetToPhysicalState."
+    ::= { ipv6NetToMediaEntry 4 }
 
-             OBJECT    ipv6IfAdminStatus
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
-                   access to this object"
-             OBJECT    ipv6RouteValid
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
-                   access to this object"
-             OBJECT    ipv6NetToMediaValid
-               MIN-ACCESS  read-only
-               DESCRIPTION
-                  "An agent is not required to provide write
+ipv6IfNetToMediaLastUpdated OBJECT-TYPE
+    SYNTAX      TimeStamp
+    MAX-ACCESS  read-only
+    STATUS      obsolete
+    DESCRIPTION
+        "The value of sysUpTime at the time this entry
+        was last updated.  If this entry was updated prior
+        to the last re-initialization of the local network
+        management subsystem, then this object contains
+        a zero value.
 
-                   access to this object"
-       ::= { ipv6Compliances 1 }
+        This object is obsoleted by IP-MIB::ipNetToPhysicalLastUpdated."
+    ::= { ipv6NetToMediaEntry 5 }
 
-   ipv6GeneralGroup OBJECT-GROUP
-       OBJECTS { ipv6Forwarding,
-                 ipv6DefaultHopLimit,
-                 ipv6Interfaces,
-                 ipv6IfTableLastChange,
-                 ipv6IfDescr,
-                 ipv6IfLowerLayer,
-                 ipv6IfEffectiveMtu,
-                 ipv6IfReasmMaxSize,
-                 ipv6IfIdentifier,
-                 ipv6IfIdentifierLength,
-                 ipv6IfPhysicalAddress,
-                 ipv6IfAdminStatus,
-                 ipv6IfOperStatus,
+ ipv6NetToMediaValid OBJECT-TYPE
+     SYNTAX     TruthValue
+     MAX-ACCESS read-write
+     STATUS     obsolete
+     DESCRIPTION
+      "Setting this object to the value 'false(2)' has
+      the effect of invalidating the corresponding entry
+      in the ipv6NetToMediaTable.  That is, it effectively
+      disassociates the interface identified with said
+      entry from the mapping identified with said entry.
+      It is an implementation-specific matter as to
 
+      whether the agent removes an invalidated entry
+      from the table.  Accordingly, management stations
+      must be prepared to receive tabular information
+      from agents that corresponds to entries not
+      currently in use.  Proper interpretation of such
+      entries requires examination of the relevant
+      ipv6NetToMediaValid object.
+
+      This object is obsoleted by IP-MIB::ipNetToPhysicalRowStatus."
+     DEFVAL  { true }
+     ::= { ipv6NetToMediaEntry 6 }
+
+-- definition of IPv6-related notifications.
+-- Note that we need ipv6NotificationPrefix with the 0
+-- sub-identifier to make this MIB to translate to
+-- an SNMPv1 format in a reversible way. For example
+-- it is needed for proxies that convert SNMPv1 traps
+-- to SNMPv2 notifications without MIB knowledge.
 
 
-Fenner                  Expires November 29, 2015              [Page 32]
+
+
+Fenner                  Expires December 2, 2015               [Page 34]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-                 ipv6IfLastChange,
-                 ipv6IfStatsInReceives,
-                 ipv6IfStatsInHdrErrors,
-                 ipv6IfStatsInTooBigErrors,
-                 ipv6IfStatsInNoRoutes,
-                 ipv6IfStatsInAddrErrors,
-                 ipv6IfStatsInUnknownProtos,
-                 ipv6IfStatsInTruncatedPkts,
-                 ipv6IfStatsInDiscards,
-                 ipv6IfStatsInDelivers,
-                 ipv6IfStatsOutForwDatagrams,
-                 ipv6IfStatsOutRequests,
-                 ipv6IfStatsOutDiscards,
-                 ipv6IfStatsOutFragOKs,
-                 ipv6IfStatsOutFragFails,
-                 ipv6IfStatsOutFragCreates,
-                 ipv6IfStatsReasmReqds,
-                 ipv6IfStatsReasmOKs,
-                 ipv6IfStatsReasmFails,
-                 ipv6IfStatsInMcastPkts,
-                 ipv6IfStatsOutMcastPkts,
-                 ipv6AddrPrefixOnLinkFlag,
-                 ipv6AddrPrefixAutonomousFlag,
-                 ipv6AddrPrefixAdvPreferredLifetime,
-                 ipv6AddrPrefixAdvValidLifetime,
-                 ipv6AddrPfxLength,
-                 ipv6AddrType,
-                 ipv6AddrAnycastFlag,
-                 ipv6AddrStatus,
-                 ipv6RouteNumber,
-                 ipv6DiscardedRoutes,
-                 ipv6RouteIfIndex,
-                 ipv6RouteNextHop,
-                 ipv6RouteType,
-                 ipv6RouteProtocol,
-                 ipv6RoutePolicy,
-                 ipv6RouteAge,
-                 ipv6RouteNextHopRDI,
-                 ipv6RouteMetric,
-                 ipv6RouteWeight,
-                 ipv6RouteInfo,
-                 ipv6RouteValid,
-                 ipv6NetToMediaPhysAddress,
-                 ipv6NetToMediaType,
-                 ipv6IfNetToMediaState,
-                 ipv6IfNetToMediaLastUpdated,
-                 ipv6NetToMediaValid }
-       STATUS    obsolete
+ipv6Notifications      OBJECT IDENTIFIER
+     ::= { ipv6MIB 2 }
+ipv6NotificationPrefix OBJECT IDENTIFIER
+     ::= { ipv6Notifications 0 }
+
+ipv6IfStateChange NOTIFICATION-TYPE
+     OBJECTS {
+              ipv6IfDescr,
+              ipv6IfOperStatus -- the new state of the If.
+             }
+     STATUS             obsolete
+     DESCRIPTION
+        "An ipv6IfStateChange notification signifies
+        that there has been a change in the state of
+        an ipv6 interface.  This notification should
+        be generated when the interface's operational
+        status transitions to or from the up(1) state.
+
+        This object is obsoleted by IF-MIB::linkUp
+        and IF-MIB::linkDown notifications."
+     ::= { ipv6NotificationPrefix 1 }
+
+-- conformance information
+
+ipv6Conformance OBJECT IDENTIFIER ::= { ipv6MIB 3 }
+
+ipv6Compliances OBJECT IDENTIFIER ::= { ipv6Conformance 1 }
+ipv6Groups      OBJECT IDENTIFIER ::= { ipv6Conformance 2 }
+
+-- compliance statements
+
+ipv6Compliance MODULE-COMPLIANCE
+    STATUS  obsolete
+    DESCRIPTION
+      "The compliance statement for SNMPv2 entities which
+      implement ipv6 MIB.
+
+      This compliance statement is obsoleted by
+      IP-MIB::ipMIBCompliance2."
+    MODULE  -- this module
+        MANDATORY-GROUPS { ipv6GeneralGroup,
+                           ipv6NotificationGroup }
+          OBJECT    ipv6Forwarding
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
+                access to this object"
+          OBJECT    ipv6DefaultHopLimit
 
 
 
-Fenner                  Expires November 29, 2015              [Page 33]
+Fenner                  Expires December 2, 2015               [Page 35]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-       DESCRIPTION
-            "The IPv6 group of objects providing for basic
-             management of IPv6 entities."
-       ::= { ipv6Groups 1 }
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
+                access to this object"
+          OBJECT    ipv6IfDescr
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
+                access to this object"
+          OBJECT    ipv6IfIdentifier
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
+                access to this object"
+          OBJECT    ipv6IfIdentifierLength
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
+                access to this object"
 
-   ipv6NotificationGroup NOTIFICATION-GROUP
-       NOTIFICATIONS { ipv6IfStateChange }
-       STATUS    obsolete
-       DESCRIPTION
-            "The notification that an IPv6 entity is required
-             to implement."
-       ::= { ipv6Groups 2 }
+          OBJECT    ipv6IfAdminStatus
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
+                access to this object"
+          OBJECT    ipv6RouteValid
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
+                access to this object"
+          OBJECT    ipv6NetToMediaValid
+            MIN-ACCESS  read-only
+            DESCRIPTION
+               "An agent is not required to provide write
 
-    END
+                access to this object"
+    ::= { ipv6Compliances 1 }
+
+ipv6GeneralGroup OBJECT-GROUP
+    OBJECTS { ipv6Forwarding,
+              ipv6DefaultHopLimit,
+              ipv6Interfaces,
+              ipv6IfTableLastChange,
+              ipv6IfDescr,
+              ipv6IfLowerLayer,
+              ipv6IfEffectiveMtu,
+              ipv6IfReasmMaxSize,
+              ipv6IfIdentifier,
+
+
+
+Fenner                  Expires December 2, 2015               [Page 36]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+              ipv6IfIdentifierLength,
+              ipv6IfPhysicalAddress,
+              ipv6IfAdminStatus,
+              ipv6IfOperStatus,
+              ipv6IfLastChange,
+              ipv6IfStatsInReceives,
+              ipv6IfStatsInHdrErrors,
+              ipv6IfStatsInTooBigErrors,
+              ipv6IfStatsInNoRoutes,
+              ipv6IfStatsInAddrErrors,
+              ipv6IfStatsInUnknownProtos,
+              ipv6IfStatsInTruncatedPkts,
+              ipv6IfStatsInDiscards,
+              ipv6IfStatsInDelivers,
+              ipv6IfStatsOutForwDatagrams,
+              ipv6IfStatsOutRequests,
+              ipv6IfStatsOutDiscards,
+              ipv6IfStatsOutFragOKs,
+              ipv6IfStatsOutFragFails,
+              ipv6IfStatsOutFragCreates,
+              ipv6IfStatsReasmReqds,
+              ipv6IfStatsReasmOKs,
+              ipv6IfStatsReasmFails,
+              ipv6IfStatsInMcastPkts,
+              ipv6IfStatsOutMcastPkts,
+              ipv6AddrPrefixOnLinkFlag,
+              ipv6AddrPrefixAutonomousFlag,
+              ipv6AddrPrefixAdvPreferredLifetime,
+              ipv6AddrPrefixAdvValidLifetime,
+              ipv6AddrPfxLength,
+              ipv6AddrType,
+              ipv6AddrAnycastFlag,
+              ipv6AddrStatus,
+              ipv6RouteNumber,
+              ipv6DiscardedRoutes,
+              ipv6RouteIfIndex,
+              ipv6RouteNextHop,
+              ipv6RouteType,
+              ipv6RouteProtocol,
+              ipv6RoutePolicy,
+              ipv6RouteAge,
+              ipv6RouteNextHopRDI,
+              ipv6RouteMetric,
+              ipv6RouteWeight,
+              ipv6RouteInfo,
+              ipv6RouteValid,
+              ipv6NetToMediaPhysAddress,
+              ipv6NetToMediaType,
+
+
+
+Fenner                  Expires December 2, 2015               [Page 37]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+              ipv6IfNetToMediaState,
+              ipv6IfNetToMediaLastUpdated,
+              ipv6NetToMediaValid }
+    STATUS    obsolete
+    DESCRIPTION
+         "The IPv6 group of objects providing for basic
+          management of IPv6 entities.
+
+          This group is obsoleted by various groups in
+          IP-MIB."
+    ::= { ipv6Groups 1 }
+
+ipv6NotificationGroup NOTIFICATION-GROUP
+    NOTIFICATIONS { ipv6IfStateChange }
+    STATUS    obsolete
+    DESCRIPTION
+         "The notification that an IPv6 entity is required
+          to implement.
+
+          This group is obsoleted by
+          IF-MIB::linkUpDownNotificationsGroup."
+    ::= { ipv6Groups 2 }
+
+ END
 
 4.  Historic IPV6-ICMP-MIB
 
@@ -1889,6 +2123,13 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
                  Tel: +1-978-916-8124
               E-mail: dhaskin@baynetworks.com
 
+
+
+Fenner                  Expires December 2, 2015               [Page 38]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
                       Steve Onishi
 
               Postal: Bay Networks, Inc.
@@ -1898,14 +2139,6 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
                  Tel: +1-978-916-3816
               E-mail: sonishi@baynetworks.com"
-
-
-
-Fenner                  Expires November 29, 2015              [Page 34]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
         DESCRIPTION
           "The MIB module for entities implementing
            the ICMPv6."
@@ -1931,7 +2164,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         DESCRIPTION
          "IPv6 ICMP statistics. This table contains statistics
          of ICMPv6 messages that are received and sourced by
-         the entity."
+         the entity.
+
+         This table is obsolete, because systems were found
+         not to maintain these statistics per-interface."
         ::= { ipv6IcmpMIBObjects 1 }
 
     ipv6IfIcmpEntry OBJECT-TYPE
@@ -1942,6 +2178,14 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
          "An ICMPv6 statistics entry containing
          objects at a particular IPv6 interface.
 
+
+
+
+Fenner                  Expires December 2, 2015               [Page 39]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
          Note that a receiving interface is
          the interface to which a given ICMPv6 message
          is addressed which may not be necessarily
@@ -1950,17 +2194,12 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
          Similarly,  the sending interface is
          the interface that sources a given
          ICMP message which is usually but not
-         necessarily the output interface for the message."
+         necessarily the output interface for the message.
+
+         This table is obsolete, because systems were found
+         not to maintain these statistics per-interface."
         AUGMENTS { ipv6IfEntry }
         ::= { ipv6IfIcmpTable 1 }
-
-
-
-
-Fenner                  Expires November 29, 2015              [Page 35]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
 
     Ipv6IfIcmpEntry ::= SEQUENCE {
             ipv6IfIcmpInMsgs
@@ -1995,6 +2234,14 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
                   Counter32      ,
             ipv6IfIcmpInGroupMembResponses
                   Counter32      ,
+
+
+
+Fenner                  Expires December 2, 2015               [Page 40]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
             ipv6IfIcmpInGroupMembReductions
                   Counter32      ,
             ipv6IfIcmpOutMsgs
@@ -2010,14 +2257,6 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
             ipv6IfIcmpOutParmProblems
                   Counter32      ,
             ipv6IfIcmpOutPktTooBigs
-
-
-
-Fenner                  Expires November 29, 2015              [Page 36]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
                   Counter32      ,
             ipv6IfIcmpOutEchos
                   Counter32      ,
@@ -2051,8 +2290,18 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
          by the interface which includes all those
          counted by ipv6IfIcmpInErrors. Note that this
          interface is the interface to which the
+
+
+
+Fenner                  Expires December 2, 2015               [Page 41]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
          ICMP messages were addressed which may not be
-         necessarily the input interface for the messages."
+         necessarily the input interface for the messages.
+
+         This object has been obsoleted by IP-MIB::icmpStatsInMsgs."
         ::= { ipv6IfIcmpEntry 1 }
 
     ipv6IfIcmpInErrors OBJECT-TYPE
@@ -2062,24 +2311,21 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         DESCRIPTION
          "The number of ICMP messages which the interface
          received but determined as having ICMP-specific
-         errors (bad ICMP checksums, bad length, etc.)."
+         errors (bad ICMP checksums, bad length, etc.).
+
+         This object has been obsoleted by IP-MIB::icmpStatsInErrors."
         ::= { ipv6IfIcmpEntry 2 }
 
     ipv6IfIcmpInDestUnreachs OBJECT-TYPE
-
-
-
-Fenner                  Expires November 29, 2015              [Page 37]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
         SYNTAX     Counter32
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Destination Unreachable
-         messages received by the interface."
+         messages received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 3 }
 
     ipv6IfIcmpInAdminProhibs OBJECT-TYPE
@@ -2089,7 +2335,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         DESCRIPTION
          "The number of ICMP destination
          unreachable/communication administratively
-         prohibited messages received by the interface."
+         prohibited messages received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 4 }
 
     ipv6IfIcmpInTimeExcds OBJECT-TYPE
@@ -2097,8 +2346,19 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
+
+
+
+Fenner                  Expires December 2, 2015               [Page 42]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
          "The number of ICMP Time Exceeded messages
-          received by the interface."
+          received by the interface.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 5 }
 
     ipv6IfIcmpInParmProblems OBJECT-TYPE
@@ -2107,7 +2367,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Parameter Problem messages
-          received by the interface."
+          received by the interface.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 6 }
 
     ipv6IfIcmpInPktTooBigs OBJECT-TYPE
@@ -2116,24 +2379,22 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Packet Too Big messages
-         received by the interface."
+         received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 7 }
 
     ipv6IfIcmpInEchos OBJECT-TYPE
         SYNTAX     Counter32
         MAX-ACCESS read-only
-
-
-
-Fenner                  Expires November 29, 2015              [Page 38]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Echo (request) messages
-          received by the interface."
+          received by the interface.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 8 }
 
     ipv6IfIcmpInEchoReplies OBJECT-TYPE
@@ -2141,8 +2402,19 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
+
+
+
+Fenner                  Expires December 2, 2015               [Page 43]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
          "The number of ICMP Echo Reply messages received
-         by the interface."
+         by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 9 }
 
     ipv6IfIcmpInRouterSolicits OBJECT-TYPE
@@ -2151,7 +2423,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Router Solicit messages
-          received by the interface."
+          received by the interface.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 10 }
 
     ipv6IfIcmpInRouterAdvertisements OBJECT-TYPE
@@ -2160,7 +2435,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Router Advertisement messages
-         received by the interface."
+         received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 11 }
 
     ipv6IfIcmpInNeighborSolicits OBJECT-TYPE
@@ -2169,7 +2447,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Neighbor Solicit messages
-          received by the interface."
+          received by the interface.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 12 }
 
     ipv6IfIcmpInNeighborAdvertisements OBJECT-TYPE
@@ -2177,16 +2458,19 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
-         "The number of ICMP Neighbor Advertisement
 
 
 
-Fenner                  Expires November 29, 2015              [Page 39]
+Fenner                  Expires December 2, 2015               [Page 44]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-         messages received by the interface."
+         "The number of ICMP Neighbor Advertisement
+         messages received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 13 }
 
     ipv6IfIcmpInRedirects OBJECT-TYPE
@@ -2195,7 +2479,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of Redirect messages received
-         by the interface."
+         by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 14 }
 
     ipv6IfIcmpInGroupMembQueries OBJECT-TYPE
@@ -2204,7 +2491,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMPv6 Group Membership Query
-         messages received by the interface."
+         messages received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 15}
 
     ipv6IfIcmpInGroupMembResponses OBJECT-TYPE
@@ -2213,7 +2503,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMPv6 Group Membership Response messages
-         received by the interface."
+         received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 16}
 
      ipv6IfIcmpInGroupMembReductions OBJECT-TYPE
@@ -2221,8 +2514,19 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
+
+
+
+Fenner                  Expires December 2, 2015               [Page 45]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
          "The number of ICMPv6 Group Membership Reduction messages
-         received by the interface."
+         received by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 17}
 
     ipv6IfIcmpOutMsgs OBJECT-TYPE
@@ -2232,15 +2536,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         DESCRIPTION
          "The total number of ICMP messages which this
          interface attempted to send.  Note that this counter
-         includes all those counted by icmpOutErrors."
+         includes all those counted by icmpOutErrors.
+
+         This object has been obsoleted by IP-MIB::icmpStatsOutMsgs."
         ::= { ipv6IfIcmpEntry 18 }
-
-
-
-Fenner                  Expires November 29, 2015              [Page 40]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
 
     ipv6IfIcmpOutErrors OBJECT-TYPE
         SYNTAX     Counter32
@@ -2254,7 +2553,9 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
          such as the inability of IPv6 to route the resultant
          datagram.  In some implementations there may be no
          types of error which contribute to this counter's
-         value."
+         value.
+
+         This object has been obsoleted by IP-MIB::icmpStatsOutErrors."
         ::= { ipv6IfIcmpEntry 19 }
 
     ipv6IfIcmpOutDestUnreachs OBJECT-TYPE
@@ -2264,8 +2565,18 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         DESCRIPTION
          "The number of ICMP Destination Unreachable
 
-         messages sent by the interface."
+         messages sent by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 20 }
+
+
+
+Fenner                  Expires December 2, 2015               [Page 46]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
 
     ipv6IfIcmpOutAdminProhibs OBJECT-TYPE
         SYNTAX     Counter32
@@ -2273,7 +2584,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
           "Number of ICMP dest unreachable/communication
-          administratively prohibited messages sent."
+          administratively prohibited messages sent.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 21 }
 
     ipv6IfIcmpOutTimeExcds OBJECT-TYPE
@@ -2282,7 +2596,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Time Exceeded messages sent
-         by the interface."
+         by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 22 }
 
     ipv6IfIcmpOutParmProblems OBJECT-TYPE
@@ -2290,16 +2607,11 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
-
-
-
-Fenner                  Expires November 29, 2015              [Page 41]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
          "The number of ICMP Parameter Problem messages
-         sent by the interface."
+         sent by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 23 }
 
     ipv6IfIcmpOutPktTooBigs OBJECT-TYPE
@@ -2308,8 +2620,19 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Packet Too Big messages sent
-         by the interface."
+         by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 24 }
+
+
+
+
+Fenner                  Expires December 2, 2015               [Page 47]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
 
     ipv6IfIcmpOutEchos OBJECT-TYPE
         SYNTAX     Counter32
@@ -2317,7 +2640,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Echo (request) messages sent
-         by the interface."
+         by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 25 }
 
     ipv6IfIcmpOutEchoReplies OBJECT-TYPE
@@ -2326,7 +2652,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Echo Reply messages sent
-         by the interface."
+         by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 26 }
 
     ipv6IfIcmpOutRouterSolicits OBJECT-TYPE
@@ -2335,7 +2664,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Router Solicitation messages
-          sent by the interface."
+          sent by the interface.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 27 }
 
     ipv6IfIcmpOutRouterAdvertisements OBJECT-TYPE
@@ -2344,12 +2676,16 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Router Advertisement messages
-         sent by the interface."
+         sent by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 28 }
 
 
 
-Fenner                  Expires November 29, 2015              [Page 42]
+
+Fenner                  Expires December 2, 2015               [Page 48]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
@@ -2360,7 +2696,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Neighbor Solicitation
-          messages sent by the interface."
+          messages sent by the interface.
+
+          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 29 }
 
     ipv6IfIcmpOutNeighborAdvertisements OBJECT-TYPE
@@ -2369,7 +2708,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Neighbor Advertisement
-         messages sent by the interface."
+         messages sent by the interface.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 30 }
 
     ipv6IfIcmpOutRedirects OBJECT-TYPE
@@ -2379,7 +2721,10 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         DESCRIPTION
          "The number of Redirect messages sent. For
          a host, this object will always be zero,
-         since hosts do not send redirects."
+         since hosts do not send redirects.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 31 }
 
     ipv6IfIcmpOutGroupMembQueries OBJECT-TYPE
@@ -2388,8 +2733,18 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMPv6 Group Membership Query
-         messages sent."
+         messages sent.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 32}
+
+
+
+Fenner                  Expires December 2, 2015               [Page 49]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
 
     ipv6IfIcmpOutGroupMembResponses OBJECT-TYPE
         SYNTAX     Counter32
@@ -2397,24 +2752,22 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMPv6 Group Membership Response
-         messages sent."
+         messages sent.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 33}
 
     ipv6IfIcmpOutGroupMembReductions OBJECT-TYPE
         SYNTAX     Counter32
-
-
-
-Fenner                  Expires November 29, 2015              [Page 43]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMPv6 Group Membership Reduction
-         messages sent."
+         messages sent.
+
+         This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
+         in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 34}
 
    -- conformance information
@@ -2432,12 +2785,23 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
        STATUS  obsolete
        DESCRIPTION
          "The compliance statement for SNMPv2 entities which
-         implement ICMPv6."
+         implement ICMPv6.
+
+         This compliance statement has been obsoleted by
+         IP-MIB::ipMIBCompliance2."
        MODULE  -- this module
            MANDATORY-GROUPS { ipv6IcmpGroup }
        ::= { ipv6IcmpCompliances 1 }
 
    ipv6IcmpGroup OBJECT-GROUP
+
+
+
+Fenner                  Expires December 2, 2015               [Page 50]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
        OBJECTS   {
                    ipv6IfIcmpInMsgs,
                    ipv6IfIcmpInErrors,
@@ -2458,14 +2822,6 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
                    ipv6IfIcmpInGroupMembReductions,
                    ipv6IfIcmpOutMsgs,
                    ipv6IfIcmpOutErrors,
-
-
-
-Fenner                  Expires November 29, 2015              [Page 44]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
                    ipv6IfIcmpOutDestUnreachs,
                    ipv6IfIcmpOutAdminProhibs,
                    ipv6IfIcmpOutTimeExcds,
@@ -2485,185 +2841,213 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
        STATUS    obsolete
        DESCRIPTION
             "The ICMPv6 group of objects providing information
-             specific to ICMPv6."
+             specific to ICMPv6.
+
+             This group has been obsoleted by IP-MIB::icmpStatsGroup."
        ::= { ipv6IcmpGroups 1 }
 
     END
 
+
+
+
+
+
+Fenner                  Expires December 2, 2015               [Page 51]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
 5.  Historic IPV6-UDP-MIB
 
-   IPV6-UDP-MIB DEFINITIONS ::= BEGIN
+ IPV6-UDP-MIB DEFINITIONS ::= BEGIN
 
-   IMPORTS
-      MODULE-COMPLIANCE, OBJECT-GROUP      FROM SNMPv2-CONF
-      MODULE-IDENTITY, OBJECT-TYPE,
-      mib-2, experimental                  FROM SNMPv2-SMI
-      Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
+ IMPORTS
+    MODULE-COMPLIANCE, OBJECT-GROUP      FROM SNMPv2-CONF
+    MODULE-IDENTITY, OBJECT-TYPE,
+    mib-2, experimental                  FROM SNMPv2-SMI
+    Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
 
-   ipv6UdpMIB MODULE-IDENTITY
-      LAST-UPDATED "201505282112Z"
-      ORGANIZATION "IETF IPv6 MIB Working Group"
-      CONTACT-INFO
-           "               Mike Daniele
+ ipv6UdpMIB MODULE-IDENTITY
+    LAST-UPDATED "201505282112Z"
+    ORGANIZATION "IETF IPv6 MIB Working Group"
+    CONTACT-INFO
+         "               Mike Daniele
 
-                   Postal: Compaq Computer Corporation
-                           110 Spitbrook Rd
-                           Nashua, NH 03062.
-                           US
+                 Postal: Compaq Computer Corporation
+                         110 Spitbrook Rd
+                         Nashua, NH 03062.
+                         US
 
-                   Phone:  +1 603 884 1423
-                   Email:  daniele@zk3.dec.com"
-      DESCRIPTION
+                 Phone:  +1 603 884 1423
+                 Email:  daniele@zk3.dec.com"
+    DESCRIPTION
+         "The MIB module for entities implementing UDP over IPv6."
+    REVISION "201505282112Z"
+    DESCRIPTION
+         "Deprecating this MIB; it has been replaced by
+         the revised UDP-MIB (RFC4113)."
+    REVISION "9801290000Z"
+    DESCRIPTION
+         "First revision, published as RFC2454"
+    ::= { experimental 87 }
+
+ -- objects specific to UDP for IPv6
+
+ udp      OBJECT IDENTIFIER ::= { mib-2 7 }
+
+ -- the UDP over IPv6 Listener table
+
+ -- This table contains information about this entity's
+ -- UDP/IPv6 endpoints.  Only endpoints utilizing IPv6 addresses
+ -- are contained in this table.  This entity's UDP/IPv4 endpoints
+ -- are contained in udpTable.
+
+ ipv6UdpTable OBJECT-TYPE
+    SYNTAX      SEQUENCE OF Ipv6UdpEntry
+    MAX-ACCESS  not-accessible
 
 
 
-Fenner                  Expires November 29, 2015              [Page 45]
+Fenner                  Expires December 2, 2015               [Page 52]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-           "The MIB module for entities implementing UDP over IPv6."
-      REVISION "201505282112Z"
-      DESCRIPTION
-           "Deprecating this MIB; it has been replaced by
-           the revised UDP-MIB (RFC4113)."
-      REVISION "9801290000Z"
-      DESCRIPTION
-           "First revision, published as RFC2454"
-      ::= { experimental 87 }
+    STATUS      obsolete
+    DESCRIPTION
+         "A table containing UDP listener information for
+          UDP/IPv6 endpoints.
 
-   -- objects specific to UDP for IPv6
+          This table is obsoleted by UDP-MIB::udpEndpointTable."
+    ::= { udp 6 }
 
-   udp      OBJECT IDENTIFIER ::= { mib-2 7 }
+ ipv6UdpEntry OBJECT-TYPE
+    SYNTAX      Ipv6UdpEntry
+    MAX-ACCESS  not-accessible
+    STATUS      obsolete
+    DESCRIPTION
+         "Information about a particular current UDP listener.
 
-   -- the UDP over IPv6 Listener table
+          Note that conceptual rows in this table require an
+          additional index object compared to udpTable, since
+          IPv6 addresses are not guaranteed to be unique on the
+          managed node.
 
-   -- This table contains information about this entity's
-   -- UDP/IPv6 endpoints.  Only endpoints utilizing IPv6 addresses
-   -- are contained in this table.  This entity's UDP/IPv4 endpoints
-   -- are contained in udpTable.
+          This entry is obsoleted by UDP-MIB::udpEndpointTable."
+    INDEX   { ipv6UdpLocalAddress,
+              ipv6UdpLocalPort,
+              ipv6UdpIfIndex }
+    ::= { ipv6UdpTable 1 }
 
-   ipv6UdpTable OBJECT-TYPE
-      SYNTAX      SEQUENCE OF Ipv6UdpEntry
-      MAX-ACCESS  not-accessible
-      STATUS      obsolete
-      DESCRIPTION
-           "A table containing UDP listener information for
-            UDP/IPv6 endpoints."
-      ::= { udp 6 }
+ Ipv6UdpEntry ::= SEQUENCE {
+    ipv6UdpLocalAddress    Ipv6Address,
+    ipv6UdpLocalPort       INTEGER (0..65535),
+    ipv6UdpIfIndex         Ipv6IfIndexOrZero }
 
-   ipv6UdpEntry OBJECT-TYPE
-      SYNTAX      Ipv6UdpEntry
-      MAX-ACCESS  not-accessible
-      STATUS      obsolete
-      DESCRIPTION
-           "Information about a particular current UDP listener.
+ ipv6UdpLocalAddress OBJECT-TYPE
+    SYNTAX       Ipv6Address
+    MAX-ACCESS   not-accessible
+    STATUS       obsolete
+    DESCRIPTION
+         "The local IPv6 address for this UDP listener.
+          In the case of a UDP listener which is willing
+          to accept datagrams for any IPv6 address
+          associated with the managed node, the value ::0
+          is used.
 
-            Note that conceptual rows in this table require an
-            additional index object compared to udpTable, since
-            IPv6 addresses are not guaranteed to be unique on the
-            managed node."
-      INDEX   { ipv6UdpLocalAddress,
-                ipv6UdpLocalPort,
+          This object is obsoleted by UDP-MIB::udpEndpointLocalAddress."
+    ::= { ipv6UdpEntry 1 }
+
+ ipv6UdpLocalPort OBJECT-TYPE
+     SYNTAX     INTEGER (0..65535)
+     MAX-ACCESS not-accessible
+
+
+
+Fenner                  Expires December 2, 2015               [Page 53]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+     STATUS     obsolete
+     DESCRIPTION
+         "The local port number for this UDP listener.
+
+         This object is obsoleted by UDP-MIB::udpEndpointLocalPort."
+     ::= { ipv6UdpEntry 2 }
+
+ ipv6UdpIfIndex OBJECT-TYPE
+    SYNTAX     Ipv6IfIndexOrZero
+    MAX-ACCESS   read-only
+    STATUS     obsolete
+    DESCRIPTION
+         "An index object used to disambiguate conceptual rows in
+          the table, since the ipv6UdpLocalAddress/ipv6UdpLocalPort
+          pair may not be unique.
+
+          This object identifies the local interface that is
+          associated with ipv6UdpLocalAddress for this UDP listener.
+          If such a local interface cannot be determined, this object
+          should take on the value 0.  (A possible example of this
+          would be if the value of ipv6UdpLocalAddress is ::0.)
+
+          The interface identified by a particular non-0 value of
+          this index is the same interface as identified by the same
+          value of ipv6IfIndex.
+
+          The value of this object must remain constant during
+          the life of this UDP endpoint.
+
+          This object is obsoleted by the zone identifier in
+          an InetAddressIPv6z address in
+          UDP-MIB::udpEndpointLocalAddress."
+    ::= { ipv6UdpEntry 3 }
+
+ --
+ -- conformance information
+ --
+
+ ipv6UdpConformance OBJECT IDENTIFIER ::= { ipv6UdpMIB 2 }
+
+ ipv6UdpCompliances OBJECT IDENTIFIER ::= { ipv6UdpConformance 1 }
+ ipv6UdpGroups      OBJECT IDENTIFIER ::= { ipv6UdpConformance 2 }
+
+ -- compliance statements
+
+ ipv6UdpCompliance MODULE-COMPLIANCE
+    STATUS  obsolete
+    DESCRIPTION
+
+
+
+Fenner                  Expires December 2, 2015               [Page 54]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
+         "The compliance statement for SNMPv2 entities which
+          implement UDP over IPv6.
+
+          This object is obsoleted by UDP-MIB::udpMIBCompliance2."
+    MODULE  -- this module
+    MANDATORY-GROUPS { ipv6UdpGroup }
+    ::= { ipv6UdpCompliances 1 }
+
+ ipv6UdpGroup OBJECT-GROUP
+    OBJECTS   { -- these are defined in this module
+                -- ipv6UdpLocalAddress (not-accessible)
+                -- ipv6UdpLocalPort (not-accessible)
                 ipv6UdpIfIndex }
-      ::= { ipv6UdpTable 1 }
+    STATUS    obsolete
+    DESCRIPTION
+         "The group of objects providing management of
+          UDP over IPv6.
 
-   Ipv6UdpEntry ::= SEQUENCE {
-      ipv6UdpLocalAddress    Ipv6Address,
+          This group is obsoleted by several groups in UDP-MIB."
+    ::= { ipv6UdpGroups 1 }
 
-
-
-Fenner                  Expires November 29, 2015              [Page 46]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-      ipv6UdpLocalPort       INTEGER (0..65535),
-      ipv6UdpIfIndex         Ipv6IfIndexOrZero }
-
-   ipv6UdpLocalAddress OBJECT-TYPE
-      SYNTAX       Ipv6Address
-      MAX-ACCESS   not-accessible
-      STATUS       obsolete
-      DESCRIPTION
-           "The local IPv6 address for this UDP listener.
-            In the case of a UDP listener which is willing
-            to accept datagrams for any IPv6 address
-            associated with the managed node, the value ::0
-            is used."
-      ::= { ipv6UdpEntry 1 }
-
-   ipv6UdpLocalPort OBJECT-TYPE
-       SYNTAX     INTEGER (0..65535)
-       MAX-ACCESS not-accessible
-       STATUS     obsolete
-       DESCRIPTION
-           "The local port number for this UDP listener."
-       ::= { ipv6UdpEntry 2 }
-
-   ipv6UdpIfIndex OBJECT-TYPE
-      SYNTAX     Ipv6IfIndexOrZero
-      MAX-ACCESS   read-only
-      STATUS     obsolete
-      DESCRIPTION
-           "An index object used to disambiguate conceptual rows in
-            the table, since the ipv6UdpLocalAddress/ipv6UdpLocalPort
-            pair may not be unique.
-
-            This object identifies the local interface that is
-            associated with ipv6UdpLocalAddress for this UDP listener.
-            If such a local interface cannot be determined, this object
-            should take on the value 0.  (A possible example of this
-            would be if the value of ipv6UdpLocalAddress is ::0.)
-
-            The interface identified by a particular non-0 value of
-            this index is the same interface as identified by the same
-            value of ipv6IfIndex.
-
-            The value of this object must remain constant during
-            the life of this UDP endpoint."
-      ::= { ipv6UdpEntry 3 }
-
-   --
-   -- conformance information
-
-
-
-Fenner                  Expires November 29, 2015              [Page 47]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
-   --
-
-   ipv6UdpConformance OBJECT IDENTIFIER ::= { ipv6UdpMIB 2 }
-
-   ipv6UdpCompliances OBJECT IDENTIFIER ::= { ipv6UdpConformance 1 }
-   ipv6UdpGroups      OBJECT IDENTIFIER ::= { ipv6UdpConformance 2 }
-
-   -- compliance statements
-
-   ipv6UdpCompliance MODULE-COMPLIANCE
-      STATUS  obsolete
-      DESCRIPTION
-           "The compliance statement for SNMPv2 entities which
-            implement UDP over IPv6."
-      MODULE  -- this module
-      MANDATORY-GROUPS { ipv6UdpGroup }
-      ::= { ipv6UdpCompliances 1 }
-
-   ipv6UdpGroup OBJECT-GROUP
-      OBJECTS   { -- these are defined in this module
-                  -- ipv6UdpLocalAddress (not-accessible)
-                  -- ipv6UdpLocalPort (not-accessible)
-                  ipv6UdpIfIndex }
-      STATUS    obsolete
-      DESCRIPTION
-           "The group of objects providing management of
-            UDP over IPv6."
-      ::= { ipv6UdpGroups 1 }
-
-   END
+ END
 
 6.  Historic IPV6-TCP-MIB
 
@@ -2682,14 +3066,6 @@ ipv6TcpMIB MODULE-IDENTITY
         "       Mike Daniele
 
                 Postal: Compaq Computer Corporation
-
-
-
-Fenner                  Expires November 29, 2015              [Page 48]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
                         110 Spitbrook Rd
                         Nashua, NH 03062.
                         US
@@ -2698,6 +3074,14 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
                 Email:  daniele@zk3.dec.com"
    DESCRIPTION
         "The MIB module for entities implementing TCP over IPv6."
+
+
+
+Fenner                  Expires December 2, 2015               [Page 55]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
    REVISION "201505282112Z"
    DESCRIPTION
         "Deprecating this MIB; it has been replaced by
@@ -2725,7 +3109,9 @@ ipv6TcpConnTable OBJECT-TYPE
    STATUS      obsolete
    DESCRIPTION
         "A table containing TCP connection-specific information,
-         for only those connections whose endpoints are IPv6 addresses."
+         for only those connections whose endpoints are IPv6 addresses.
+
+         This table is obsoleted by TCP-MIB::tcpConnectionTable."
    ::= { tcp 16 }
 
 ipv6TcpConnEntry OBJECT-TYPE
@@ -2739,16 +3125,19 @@ ipv6TcpConnEntry OBJECT-TYPE
          exist when (or soon after) the connection makes the transition
          to the CLOSED state.
 
+         Note that conceptual rows in this table require an additional
+         index object compared to tcpConnTable, since IPv6 addresses
+         are not guaranteed to be unique on the managed node.
+
+         This entry is obsoleted by TCP-MIB::tcpConnectionEntry."
 
 
-Fenner                  Expires November 29, 2015              [Page 49]
+
+Fenner                  Expires December 2, 2015               [Page 56]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
-         Note that conceptual rows in this table require an additional
-         index object compared to tcpConnTable, since IPv6 addresses
-         are not guaranteed to be unique on the managed node."
    INDEX   { ipv6TcpConnLocalAddress,
              ipv6TcpConnLocalPort,
              ipv6TcpConnRemAddress,
@@ -2773,7 +3162,10 @@ ipv6TcpConnLocalAddress OBJECT-TYPE
          the case of a connection in the listen state which
          is willing to accept connections for any IPv6
          address associated with the managed node, the value
-         ::0 is used."
+         ::0 is used.
+
+         This object is obsoleted by
+         TCP-MIB::tcpConnectionLocalAddressType."
    ::= { ipv6TcpConnEntry 1 }
 
 ipv6TcpConnLocalPort OBJECT-TYPE
@@ -2781,7 +3173,9 @@ ipv6TcpConnLocalPort OBJECT-TYPE
    MAX-ACCESS not-accessible
    STATUS     obsolete
    DESCRIPTION
-        "The local port number for this TCP connection."
+        "The local port number for this TCP connection.
+
+        This object is obsoleted by TCP-MIB::tcpConnectionLocalPort."
    ::= { ipv6TcpConnEntry 2 }
 
 ipv6TcpConnRemAddress OBJECT-TYPE
@@ -2789,23 +3183,27 @@ ipv6TcpConnRemAddress OBJECT-TYPE
    MAX-ACCESS not-accessible
    STATUS     obsolete
    DESCRIPTION
-        "The remote IPv6 address for this TCP connection."
-   ::= { ipv6TcpConnEntry 3 }
+        "The remote IPv6 address for this TCP connection.
 
-ipv6TcpConnRemPort OBJECT-TYPE
-   SYNTAX     INTEGER (0..65535)
+        This object is obsoleted by TCP-MIB::tcpConnectionRemAddress."
 
 
 
-Fenner                  Expires November 29, 2015              [Page 50]
+Fenner                  Expires December 2, 2015               [Page 57]
 
 Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
 
+   ::= { ipv6TcpConnEntry 3 }
+
+ipv6TcpConnRemPort OBJECT-TYPE
+   SYNTAX     INTEGER (0..65535)
    MAX-ACCESS not-accessible
    STATUS     obsolete
    DESCRIPTION
-        "The remote port number for this TCP connection."
+        "The remote port number for this TCP connection.
+
+        This object is obsoleted by TCP-MIB::tcpConnectionRemPort."
    ::= { ipv6TcpConnEntry 4 }
 
 ipv6TcpConnIfIndex OBJECT-TYPE
@@ -2834,11 +3232,24 @@ ipv6TcpConnIfIndex OBJECT-TYPE
          of ipv6IfIndex.
 
          The value of this object must remain constant during the life
-         of the TCP connection."
+         of the TCP connection.
+
+         This object is obsoleted by the zone identifier in
+         an InetAddressIPv6z address in either
+         TCP-MIB::tcpConnectionLocalAddress or
+         TCP-MIB::tcpConnectionRemAddress."
    ::= { ipv6TcpConnEntry 5 }
 
 ipv6TcpConnState OBJECT-TYPE
    SYNTAX     INTEGER {
+
+
+
+Fenner                  Expires December 2, 2015               [Page 58]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
         closed(1),
         listen(2),
         synSent(3),
@@ -2850,14 +3261,6 @@ ipv6TcpConnState OBJECT-TYPE
         lastAck(9),
         closing(10),
         timeWait(11),
-
-
-
-Fenner                  Expires November 29, 2015              [Page 51]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
         deleteTCB(12) }
    MAX-ACCESS read-write
    STATUS     obsolete
@@ -2878,7 +3281,9 @@ Internet-Draft             ipv6-mibs-obsolete                   May 2015
 
          As an implementation-specific option, a RST segment may be
          sent from the managed node to the other TCP endpoint (note
-         however that RST segments are not sent reliably)."
+         however that RST segments are not sent reliably).
+
+         This object is obsoleted by TCP-MIB::tcpConnectionState."
    ::= { ipv6TcpConnEntry 6 }
 
 --
@@ -2893,10 +3298,21 @@ ipv6TcpGroups      OBJECT IDENTIFIER ::= { ipv6TcpConformance 2 }
 -- compliance statements
 
 ipv6TcpCompliance MODULE-COMPLIANCE
+
+
+
+Fenner                  Expires December 2, 2015               [Page 59]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
    STATUS  obsolete
    DESCRIPTION
         "The compliance statement for SNMPv2 entities which
-         implement TCP over IPv6."
+         implement TCP over IPv6.
+
+         This compliance statement is obsoleted by
+         TCP-MIB::tcpMIBCompliance2."
    MODULE  -- this module
    MANDATORY-GROUPS { ipv6TcpGroup }
    ::= { ipv6TcpCompliances 1 }
@@ -2906,21 +3322,15 @@ ipv6TcpGroup OBJECT-GROUP
                -- ipv6TcpConnLocalAddress (not-accessible)
                -- ipv6TcpConnLocalPort (not-accessible)
                -- ipv6TcpConnRemAddress (not-accessible)
-
-
-
-Fenner                  Expires November 29, 2015              [Page 52]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
-
                -- ipv6TcpConnRemPort (not-accessible)
                -- ipv6TcpConnIfIndex (not-accessible)
                ipv6TcpConnState }
    STATUS    obsolete
    DESCRIPTION
         "The group of objects providing management of
-         TCP over IPv6."
+         TCP over IPv6.
+
+         This group is obsoleted by several groups in TCP-MIB."
    ::= { ipv6TcpGroups 1 }
 
 END
@@ -2942,6 +3352,16 @@ END
    [RFC2454]  Daniele, M., "IP Version 6 Management Information Base for
               the User Datagram Protocol", RFC 2454, December 1998.
 
+
+
+
+
+
+Fenner                  Expires December 2, 2015               [Page 60]
+
+Internet-Draft             ipv6-mibs-obsolete                   May 2015
+
+
    [RFC2465]  Haskin, D. and S. Onishi, "Management Information Base for
               IP Version 6: Textual Conventions and General Group", RFC
               2465, December 1998.
@@ -2958,17 +3378,6 @@ END
 
    [RFC4293]  Routhier, S., "Management Information Base for the
               Internet Protocol (IP)", RFC 4293, April 2006.
-
-
-
-
-
-
-
-Fenner                  Expires November 29, 2015              [Page 53]
-
-Internet-Draft             ipv6-mibs-obsolete                   May 2015
-
 
 Author's Address
 
@@ -3004,21 +3413,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Fenner                  Expires November 29, 2015              [Page 54]
+Fenner                  Expires December 2, 2015               [Page 61]

@@ -47,7 +47,9 @@ ipv6UdpTable OBJECT-TYPE
    STATUS      obsolete
    DESCRIPTION
         "A table containing UDP listener information for
-         UDP/IPv6 endpoints."
+         UDP/IPv6 endpoints.
+
+         This table is obsoleted by UDP-MIB::udpEndpointTable."
    ::= { udp 6 }
 
 ipv6UdpEntry OBJECT-TYPE
@@ -60,7 +62,9 @@ ipv6UdpEntry OBJECT-TYPE
          Note that conceptual rows in this table require an
          additional index object compared to udpTable, since
          IPv6 addresses are not guaranteed to be unique on the
-         managed node."
+         managed node.
+
+         This entry is obsoleted by UDP-MIB::udpEndpointTable."
    INDEX   { ipv6UdpLocalAddress,
              ipv6UdpLocalPort,
              ipv6UdpIfIndex }
@@ -80,7 +84,9 @@ ipv6UdpLocalAddress OBJECT-TYPE
          In the case of a UDP listener which is willing
          to accept datagrams for any IPv6 address
          associated with the managed node, the value ::0
-         is used."
+         is used.
+
+         This object is obsoleted by UDP-MIB::udpEndpointLocalAddress."
    ::= { ipv6UdpEntry 1 }
 
 ipv6UdpLocalPort OBJECT-TYPE
@@ -88,7 +94,9 @@ ipv6UdpLocalPort OBJECT-TYPE
     MAX-ACCESS not-accessible
     STATUS     obsolete
     DESCRIPTION
-        "The local port number for this UDP listener."
+        "The local port number for this UDP listener.
+
+        This object is obsoleted by UDP-MIB::udpEndpointLocalPort."
     ::= { ipv6UdpEntry 2 }
 
 ipv6UdpIfIndex OBJECT-TYPE
@@ -111,7 +119,10 @@ ipv6UdpIfIndex OBJECT-TYPE
          value of ipv6IfIndex.
 
          The value of this object must remain constant during
-         the life of this UDP endpoint."
+         the life of this UDP endpoint.
+
+         This object is obsoleted by the zone identifier in
+         an InetAddressIPv6z address in UDP-MIB::udpEndpointLocalAddress."
    ::= { ipv6UdpEntry 3 }
 
 --
@@ -129,7 +140,9 @@ ipv6UdpCompliance MODULE-COMPLIANCE
    STATUS  obsolete
    DESCRIPTION
         "The compliance statement for SNMPv2 entities which
-         implement UDP over IPv6."
+         implement UDP over IPv6.
+
+         This object is obsoleted by UDP-MIB::udpMIBCompliance2."
    MODULE  -- this module
    MANDATORY-GROUPS { ipv6UdpGroup }
    ::= { ipv6UdpCompliances 1 }
@@ -142,7 +155,9 @@ ipv6UdpGroup OBJECT-GROUP
    STATUS    obsolete
    DESCRIPTION
         "The group of objects providing management of
-         UDP over IPv6."
+         UDP over IPv6.
+
+         This group is obsoleted by several groups in UDP-MIB."
    ::= { ipv6UdpGroups 1 }
 
 END

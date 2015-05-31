@@ -75,7 +75,9 @@
         Accordingly, it is appropriate for an agent to
         return a `wrongValue' response if a management
         station attempts to change this object to an
-        inappropriate value."
+        inappropriate value.
+
+        This object is obsoleted by IP-MIB::ipv6IpForwarding."
       ::= { ipv6MIBObjects 1 }
 
  ipv6DefaultHopLimit OBJECT-TYPE
@@ -86,7 +88,9 @@
         "The default value inserted into the Hop Limit
         field of the IPv6 header of datagrams originated
         at this entity, whenever a Hop Limit value is not
-        supplied by the transport layer protocol."
+        supplied by the transport layer protocol.
+
+        This object is obsoleted by IP-MIB::ipv6IpDefaultHopLimit."
      DEFVAL  { 64 }
      ::= { ipv6MIBObjects 2 }
 
@@ -96,7 +100,11 @@ ipv6Interfaces OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
        "The number of IPv6 interfaces (regardless of
-        their current state) present on this system."
+        their current state) present on this system.
+
+        This object is obsolete; there is no direct replacement
+        but its value can be derived from the number of rows
+        in the IP-MIB::ipv6InterfaceTable."
      ::= { ipv6MIBObjects 3 }
 
 ipv6IfTableLastChange OBJECT-TYPE
@@ -109,7 +117,9 @@ ipv6IfTableLastChange OBJECT-TYPE
        ipv6IfTable. If the number of entries has been
        unchanged since the last re-initialization of
        the local network management subsystem, then this
-       object contains a zero value."
+       object contains a zero value.
+
+       This object is obsoleted by IP-MIB::ipv6InterfaceTableLastChange."
      ::= { ipv6MIBObjects 4 }
 
 -- the IPv6 Interfaces table
@@ -125,7 +135,9 @@ ipv6IfTable OBJECT-TYPE
        layer attachment to the layer immediately below
 
        IPv6 including internet layer 'tunnels', such as
-       tunnels over IPv4 or IPv6 itself."
+       tunnels over IPv4 or IPv6 itself.
+
+       This table is obsoleted by IP-MIB::ipv6InterfaceTable."
      ::= { ipv6MIBObjects 5 }
 
  ipv6IfEntry OBJECT-TYPE
@@ -134,7 +146,9 @@ ipv6IfTable OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
        "An interface entry containing objects
-        about a particular IPv6 interface."
+        about a particular IPv6 interface.
+
+        This object is obsoleted by IP-MIB::ipv6InterfaceEntry."
      INDEX   { ipv6IfIndex }
      ::= { ipv6IfTable 1 }
 
@@ -158,7 +172,10 @@ ipv6IfTable OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
        "A unique non-zero value identifying
-        the particular IPv6 interface."
+        the particular IPv6 interface.
+
+        This object is obsoleted.  In the IP-MIB,
+        interfaces are simply identified by IfIndex."
      ::= { ipv6IfEntry 1 }
 
  ipv6IfDescr OBJECT-TYPE
@@ -168,7 +185,9 @@ ipv6IfTable OBJECT-TYPE
      DESCRIPTION
        "A textual string containing information about the
        interface.  This string may be set by the network
-       management system."
+       management system.
+
+       This object is obsoleted by IF-MIB::ifDescr."
      ::= { ipv6IfEntry 2 }
 
  ipv6IfLowerLayer OBJECT-TYPE
@@ -189,7 +208,10 @@ ipv6IfTable OBJECT-TYPE
        an instance of ipv6IfIndex.  If this network
        interface is not currently operating over an active
        protocol layer, then the value of this object
-       should be set to the OBJECT ID { 0 0 }."
+       should be set to the OBJECT ID { 0 0 }.
+
+       This object is obsolete.  The IF-STACK-TABLE may
+       be used to express relationships between interfaces."
     ::= { ipv6IfEntry 3 }
 
  ipv6IfEffectiveMtu OBJECT-TYPE
@@ -200,7 +222,11 @@ ipv6IfTable OBJECT-TYPE
     DESCRIPTION
       "The size of the largest IPv6 packet which can be
       sent/received on the interface, specified in
-      octets."
+      octets.
+
+      This object is obsolete.  The value of IF-MIB::ifMtu
+      for the corresponding value of ifIndex represents the
+      MTU of the interface."
  ::= { ipv6IfEntry 4 }
 
  ipv6IfReasmMaxSize OBJECT-TYPE
@@ -211,7 +237,9 @@ ipv6IfTable OBJECT-TYPE
     DESCRIPTION
       "The size of the largest IPv6 datagram which this
       entity can re-assemble from incoming IPv6 fragmented
-      datagrams received on this interface."
+      datagrams received on this interface.
+
+      This object is obsoleted by IP-MIB::ipv6InterfaceReasmMaxSize."
  ::= { ipv6IfEntry 5 }
 
  ipv6IfIdentifier OBJECT-TYPE
@@ -227,7 +255,9 @@ ipv6IfTable OBJECT-TYPE
 
         By default, the Interface Identifier is autoconfigured
         according to the rules of the link type this
-        interface is attached to."
+        interface is attached to.
+
+        This object is obsoleted by IP-MIB::ipv6InterfaceIdentifier."
      ::= { ipv6IfEntry 6 }
 
  ipv6IfIdentifierLength OBJECT-TYPE
@@ -236,7 +266,11 @@ ipv6IfTable OBJECT-TYPE
      MAX-ACCESS  read-write
      STATUS      obsolete
      DESCRIPTION
-       "The length of the Interface Identifier in bits."
+       "The length of the Interface Identifier in bits.
+
+       This object is obsolete.  It can be derived from the length
+       of IP-MIB::ipv6InterfaceIdentifier; Interface Identifiers
+       that are not an even number of octets are not supported."
      ::= { ipv6IfEntry 7 }
 
  ipv6IfPhysicalAddress OBJECT-TYPE
@@ -253,7 +287,9 @@ ipv6IfTable OBJECT-TYPE
        and byte ordering and the format of the value of
        this object. For interfaces which do not have such
        an address (e.g., a serial line), this object should
-       contain an octet string of zero length."
+       contain an octet string of zero length.
+
+       This object is obsoleted by IF-MIB::ifPhysAddress."
      ::= { ipv6IfEntry 8 }
 
 ipv6IfAdminStatus OBJECT-TYPE
@@ -271,7 +307,11 @@ ipv6IfAdminStatus OBJECT-TYPE
       configuration information retained by the managed
 
       system,  ipv6IfAdminStatus is then changed to
-      the up(1) state (or remains in the down(2) state)."
+      the up(1) state (or remains in the down(2) state).
+
+      This object is obsolete.  IPv6 does not have a
+      separate admin status; the admin status of the
+      interface is represented by IF-MIB::ifAdminStatus."
     ::= { ipv6IfEntry 9 }
 
 ipv6IfOperStatus OBJECT-TYPE
@@ -305,7 +345,11 @@ ipv6IfOperStatus OBJECT-TYPE
       fault that prevents it from going to the up(1) state;
       it should remain in the notPresent(5) state if
       the interface has missing (typically, lower layer)
-      components."
+      components.
+
+      This object is obsolete.  IPv6 does not have a
+      separate operational status; the operational status of the
+      interface is represented by IF-MIB::ifOperStatus."
     ::= { ipv6IfEntry 10 }
 
 ipv6IfLastChange OBJECT-TYPE
@@ -319,7 +363,10 @@ ipv6IfLastChange OBJECT-TYPE
         re-initialization of the local network management
 
         subsystem, then this object contains a zero
-        value."
+        value.
+
+        This object is obsolete.  The last change of
+        IF-MIB::ifOperStatus is represented by IF-MIB::ifLastChange."
     ::= { ipv6IfEntry 11 }
 
  --  IPv6 Interface Statistics table
@@ -329,7 +376,9 @@ ipv6IfLastChange OBJECT-TYPE
      MAX-ACCESS not-accessible
      STATUS     obsolete
      DESCRIPTION
-         "IPv6 interface traffic statistics."
+         "IPv6 interface traffic statistics.
+
+         This table is obsoleted by the IP-MIB::ipIfStatsTable."
      ::= { ipv6MIBObjects 6 }
 
  ipv6IfStatsEntry OBJECT-TYPE
@@ -338,7 +387,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
          "An interface statistics entry containing objects
-         at a particular IPv6 interface."
+         at a particular IPv6 interface.
+
+         This object is obsoleted by the IP-MIB::ipIfStatsEntry."
      AUGMENTS { ipv6IfEntry }
      ::= { ipv6IfStatsTable 1 }
 
@@ -392,7 +443,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
         "The total number of input datagrams received by
-        the interface, including those received in error."
+        the interface, including those received in error.
+
+        This object is obsoleted by IP-MIB::ipIfStatsHCInReceives."
      ::= { ipv6IfStatsEntry 1 }
 
  ipv6IfStatsInHdrErrors OBJECT-TYPE
@@ -404,7 +457,9 @@ ipv6IfLastChange OBJECT-TYPE
         errors in their IPv6 headers, including version
         number mismatch, other format errors, hop count
         exceeded, errors discovered in processing their
-        IPv6 options, etc."
+        IPv6 options, etc.
+
+        This object is obsoleted by IP-MIB::ipIfStatsInHdrErrors."
      ::= { ipv6IfStatsEntry 2 }
 
  ipv6IfStatsInTooBigErrors OBJECT-TYPE
@@ -414,7 +469,11 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
        "The number of input datagrams that could not be
        forwarded because their size exceeded the link MTU
-       of outgoing interface."
+       of outgoing interface.
+
+       This object is obsoleted.  It was not replicated in the
+       IP-MIB due to feedback that systems did not retain the
+       incoming interface of a packet that failed fragmentation."
      ::= { ipv6IfStatsEntry 3 }
 
  ipv6IfStatsInNoRoutes OBJECT-TYPE
@@ -424,7 +483,9 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
         "The number of input datagrams discarded because no
          route could be found to transmit them to their
-         destination."
+         destination.
+
+         This object is obsoleted by IP-MIB::ipIfStatsInNoRoutes."
      ::= { ipv6IfStatsEntry 4 }
 
  ipv6IfStatsInAddrErrors OBJECT-TYPE
@@ -441,7 +502,9 @@ ipv6IfLastChange OBJECT-TYPE
         entities which are not IPv6 routers and therefore
         do not forward datagrams, this counter includes
         datagrams discarded because the destination address
-        was not a local address."
+        was not a local address.
+
+        This object is obsoleted by IP-MIB::ipIfStatsInAddrErrors."
      ::= { ipv6IfStatsEntry 5 }
 
  ipv6IfStatsInUnknownProtos OBJECT-TYPE
@@ -455,7 +518,9 @@ ipv6IfLastChange OBJECT-TYPE
         incremented at the interface to which these
         datagrams were addressed which might not be
         necessarily the input interface for some of
-        the datagrams."
+        the datagrams.
+
+        This object is obsoleted by IP-MIB::ipIfStatsInUnknownProtos."
      ::= { ipv6IfStatsEntry 6 }
 
  ipv6IfStatsInTruncatedPkts OBJECT-TYPE
@@ -464,7 +529,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
         "The number of input datagrams discarded because
-         datagram frame didn't carry enough data."
+         datagram frame didn't carry enough data.
+
+         This object is obsoleted by IP-MIB::ipIfStatsInTruncatedPkts."
      ::= { ipv6IfStatsEntry 7 }
 
  ipv6IfStatsInDiscards OBJECT-TYPE
@@ -477,7 +544,9 @@ ipv6IfLastChange OBJECT-TYPE
         continued processing, but which were discarded
         (e.g., for lack of buffer space).  Note that this
         counter does not include any datagrams discarded
-        while awaiting re-assembly."
+        while awaiting re-assembly.
+
+        This object is obsoleted by IP-MIB::ipIfStatsInDiscards."
      ::= { ipv6IfStatsEntry 8 }
 
  ipv6IfStatsInDelivers OBJECT-TYPE
@@ -490,7 +559,9 @@ ipv6IfLastChange OBJECT-TYPE
       This counter is incremented at the interface to
       which these datagrams were addressed which might
       not be necessarily the input interface for some of
-      the datagrams."
+      the datagrams.
+
+      This object is obsoleted by IP-MIB::ipIfStatsHCInDelivers."
      ::= { ipv6IfStatsEntry 9 }
 
  ipv6IfStatsOutForwDatagrams OBJECT-TYPE
@@ -506,7 +577,9 @@ ipv6IfLastChange OBJECT-TYPE
         via this entity, and the Source-Route
         processing was successful.  Note that for
         a successfully forwarded datagram the counter
-        of the outgoing interface is incremented."
+        of the outgoing interface is incremented.
+
+        This object is obsoleted by IP-MIB::ipIfStatsHCOutForwDatagrams."
      ::= { ipv6IfStatsEntry 10 }
 
  ipv6IfStatsOutRequests OBJECT-TYPE
@@ -518,7 +591,9 @@ ipv6IfLastChange OBJECT-TYPE
       user-protocols (including ICMP) supplied to IPv6 in
       requests for transmission.  Note that this counter
       does not include any datagrams counted in
-      ipv6IfStatsOutForwDatagrams."
+      ipv6IfStatsOutForwDatagrams.
+
+      This object is obsoleted by IP-MIB::ipIfStatsHCOutRequests."
      ::= { ipv6IfStatsEntry 11 }
 
  ipv6IfStatsOutDiscards OBJECT-TYPE
@@ -532,7 +607,9 @@ ipv6IfLastChange OBJECT-TYPE
          discarded (e.g., for lack of buffer space).  Note
          that this counter would include datagrams counted
          in ipv6IfStatsOutForwDatagrams if any such packets
-         met this (discretionary) discard criterion."
+         met this (discretionary) discard criterion.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutDiscards."
      ::= { ipv6IfStatsEntry 12 }
 
  ipv6IfStatsOutFragOKs OBJECT-TYPE
@@ -541,7 +618,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
         "The number of IPv6 datagrams that have been
-         successfully fragmented at this output interface."
+         successfully fragmented at this output interface.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutFragOKs."
      ::= { ipv6IfStatsEntry 13 }
 
  ipv6IfStatsOutFragFails OBJECT-TYPE
@@ -551,7 +630,9 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
         "The number of IPv6 datagrams that have been
          discarded because they needed to be fragmented
-         at this output interface but could not be."
+         at this output interface but could not be.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutFragFails."
      ::= { ipv6IfStatsEntry 14 }
 
  ipv6IfStatsOutFragCreates OBJECT-TYPE
@@ -561,7 +642,9 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
         "The number of output datagram fragments that have
          been generated as a result of fragmentation at
-         this output interface."
+         this output interface.
+
+         This object is obsoleted by IP-MIB::ipIfStatsOutFragCreates."
      ::= { ipv6IfStatsEntry 15 }
 
  ipv6IfStatsReasmReqds OBJECT-TYPE
@@ -574,7 +657,9 @@ ipv6IfLastChange OBJECT-TYPE
          counter is incremented at the interface to which
          these fragments were addressed which might not
          be necessarily the input interface for some of
-         the fragments."
+         the fragments.
+
+         This object is obsoleted by IP-MIB::ipIfStatsReasmReqds."
      ::= { ipv6IfStatsEntry 16 }
 
  ipv6IfStatsReasmOKs OBJECT-TYPE
@@ -586,7 +671,9 @@ ipv6IfLastChange OBJECT-TYPE
        reassembled.  Note that this counter is incremented
        at the interface to which these datagrams were
        addressed which might not be necessarily the input
-       interface for some of the fragments."
+       interface for some of the fragments.
+
+       This object is obsoleted by IP-MIB::ipIfStatsReasmOKs."
      ::= { ipv6IfStatsEntry 17 }
 
  ipv6IfStatsReasmFails OBJECT-TYPE
@@ -604,7 +691,9 @@ ipv6IfLastChange OBJECT-TYPE
         This counter is incremented at the interface to which
         these fragments were addressed which might not be
         necessarily the input interface for some of the
-        fragments."
+        fragments.
+
+        This object is obsoleted by IP-MIB::ipIfStatsReasmFails."
      ::= { ipv6IfStatsEntry 18 }
 
  ipv6IfStatsInMcastPkts OBJECT-TYPE
@@ -613,7 +702,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
         "The number of multicast packets received
-         by the interface"
+         by the interface
+
+         This object is obsoleted by IP-MIB::ipIfStatsHCInMcastPkts."
      ::= { ipv6IfStatsEntry 19 }
 
  ipv6IfStatsOutMcastPkts OBJECT-TYPE
@@ -622,7 +713,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
         "The number of multicast packets transmitted
-         by the interface"
+         by the interface
+
+         This object is obsoleted by IP-MIB::ipIfStatsHCOutMcastPkts."
      ::= { ipv6IfStatsEntry 20 }
 
  -- Address Prefix table
@@ -637,7 +730,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
          "The list of IPv6 address prefixes of
-         IPv6 interfaces."
+         IPv6 interfaces.
+
+         This table is obsoleted by IP-MIB::ipAddressPrefixTable."
      ::= { ipv6MIBObjects 7 }
 
  ipv6AddrPrefixEntry OBJECT-TYPE
@@ -646,7 +741,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
          "An interface entry containing objects of
-         a particular IPv6 address prefix."
+         a particular IPv6 address prefix.
+
+         This entry is obsoleted by IP-MIB::ipAddressPrefixEntry."
      INDEX   { ipv6IfIndex,
                ipv6AddrPrefix,
                ipv6AddrPrefixLength }
@@ -667,7 +764,9 @@ ipv6IfLastChange OBJECT-TYPE
      MAX-ACCESS  not-accessible
      STATUS      obsolete
      DESCRIPTION
-       "The prefix associated with the this interface."
+       "The prefix associated with the this interface.
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixPrefix."
      ::= { ipv6AddrPrefixEntry 1 }
 
  ipv6AddrPrefixLength OBJECT-TYPE
@@ -676,7 +775,9 @@ ipv6IfLastChange OBJECT-TYPE
      MAX-ACCESS  not-accessible
      STATUS      obsolete
      DESCRIPTION
-       "The length of the prefix (in bits)."
+       "The length of the prefix (in bits).
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixLength."
      ::= { ipv6AddrPrefixEntry 2 }
 
  ipv6AddrPrefixOnLinkFlag OBJECT-TYPE
@@ -686,7 +787,9 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
        "This object has the value 'true(1)', if this
        prefix can be used  for on-link determination
-       and the value 'false(2)' otherwise."
+       and the value 'false(2)' otherwise.
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixOnLinkFlag."
      ::= { ipv6AddrPrefixEntry 3 }
 
  ipv6AddrPrefixAutonomousFlag OBJECT-TYPE
@@ -699,7 +802,9 @@ ipv6IfLastChange OBJECT-TYPE
        for autonomous address configuration (i.e. can
        be used to form a local interface address).
        If false(2), it is not used to autoconfigure
-       a local interface address."
+       a local interface address.
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixAutonomousFlag."
      ::= { ipv6AddrPrefixEntry 4 }
 
  ipv6AddrPrefixAdvPreferredLifetime OBJECT-TYPE
@@ -716,7 +821,9 @@ ipv6IfLastChange OBJECT-TYPE
         The address generated from a deprecated prefix
         should no longer be used as a source address in
         new communications, but packets received on such
-        an interface are processed as expected."
+        an interface are processed as expected.
+
+        This object is obsoleted by IP-MIB::ipAddressPrefixAdvPreferredLifetime."
      ::= { ipv6AddrPrefixEntry 5 }
 
  ipv6AddrPrefixAdvValidLifetime OBJECT-TYPE
@@ -732,7 +839,9 @@ ipv6IfLastChange OBJECT-TYPE
 
        The address generated from an invalidated prefix
        should not appear as the destination or source
-       address of a packet."
+       address of a packet.
+
+       This object is obsoleted by IP-MIB::ipAddressPrefixAdvValidLifetime."
      ::= { ipv6AddrPrefixEntry 6 }
 
  -- the IPv6 Address table
@@ -746,7 +855,9 @@ ipv6IfLastChange OBJECT-TYPE
     STATUS      obsolete
     DESCRIPTION
       "The table of addressing information relevant to
-      this node's interface addresses."
+      this node's interface addresses.
+
+      This table is obsoleted by IP-MIB::ipAddressTable."
     ::= { ipv6MIBObjects 8 }
 
  ipv6AddrEntry OBJECT-TYPE
@@ -755,7 +866,9 @@ ipv6IfLastChange OBJECT-TYPE
     STATUS      obsolete
     DESCRIPTION
         "The addressing information for one of this
-        node's interface addresses."
+        node's interface addresses.
+
+        This entry is obsoleted by IP-MIB::ipAddressEntry."
     INDEX   { ipv6IfIndex, ipv6AddrAddress }
     ::= { ipv6AddrTable 1 }
 
@@ -774,7 +887,9 @@ ipv6IfLastChange OBJECT-TYPE
     STATUS      obsolete
     DESCRIPTION
       "The IPv6 address to which this entry's addressing
-      information pertains."
+      information pertains.
+
+      This object is obsoleted by IP-MIB::ipAddressAddr."
     ::= { ipv6AddrEntry 1 }
 
  ipv6AddrPfxLength OBJECT-TYPE
@@ -784,7 +899,11 @@ ipv6IfLastChange OBJECT-TYPE
     STATUS      obsolete
     DESCRIPTION
       "The length of the prefix (in bits) associated with
-      the IPv6 address of this entry."
+      the IPv6 address of this entry.
+
+      This object is obsoleted by the IP-MIB::ipAddressPrefixLength
+      in the row of the IP-MIB::ipAddressPrefixTable to which the
+      IP-MIB::ipAddressPrefix points."
     ::= { ipv6AddrEntry 2 }
 
  ipv6AddrType OBJECT-TYPE
@@ -808,7 +927,9 @@ ipv6IfLastChange OBJECT-TYPE
        refers to an address that was statelessly
        autoconfigured; 'stateful(2)' refers to a address
        which was acquired by via a stateful protocol
-       (e.g. DHCPv6, manual configuration)."
+       (e.g. DHCPv6, manual configuration).
+
+       This object is obsoleted by IP-MIB::ipAddressOrigin."
     ::= { ipv6AddrEntry 3 }
 
  ipv6AddrAnycastFlag OBJECT-TYPE
@@ -818,7 +939,10 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
        "This object has the value 'true(1)', if this
        address is an anycast address and the value
-       'false(2)' otherwise."
+       'false(2)' otherwise.
+
+       This object is obsoleted by a value of 'anycast(2)'
+       in IP-MIB::ipAddressType."
      ::= { ipv6AddrEntry 4 }
 
  ipv6AddrStatus OBJECT-TYPE
@@ -846,7 +970,9 @@ ipv6IfLastChange OBJECT-TYPE
       appear as the destination or source address of
       a packet. The inaccessible(4) state indicates that
       the address is not accessible because the interface
-      to which this address is assigned is not operational."
+      to which this address is assigned is not operational.
+
+      This object is obsoleted by IP-MIB::ipAddressStatus."
     ::= { ipv6AddrEntry 5 }
 
  -- IPv6 Routing objects
@@ -858,7 +984,9 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
        "The number of current ipv6RouteTable entries.
        This is primarily to avoid having to read
-       the table in order to determine this number."
+       the table in order to determine this number.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteNumber."
      ::= { ipv6MIBObjects 9 }
 
  ipv6DiscardedRoutes OBJECT-TYPE
@@ -870,7 +998,9 @@ ipv6IfLastChange OBJECT-TYPE
         to be discarded even though they are valid.  One
         possible reason for discarding such an entry could
         be to free-up buffer space for other routing
-        entries."
+        entries.
+
+        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteDiscards."
      ::= { ipv6MIBObjects 10 }
 
  -- IPv6 Routing table
@@ -883,7 +1013,9 @@ ipv6IfLastChange OBJECT-TYPE
        "IPv6 Routing table. This table contains
        an entry for each valid IPv6 unicast route
        that can be used for packet forwarding
-       determination."
+       determination.
+
+       This table is obsoleted by IP-FORWARD-MIB::inetCidrRouteTable."
      ::= { ipv6MIBObjects 11 }
 
  ipv6RouteEntry OBJECT-TYPE
@@ -891,7 +1023,9 @@ ipv6IfLastChange OBJECT-TYPE
      MAX-ACCESS not-accessible
      STATUS     obsolete
      DESCRIPTION
-             "A routing entry."
+             "A routing entry.
+
+             This entry is obsoleted by IP-FORWARD-MIB::inetCidrRouteEntry."
      INDEX   { ipv6RouteDest,
                ipv6RoutePfxLength,
                ipv6RouteIndex }
@@ -921,7 +1055,9 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
        "The destination IPv6 address of this route.
        This object may not take a Multicast address
-       value."
+       value.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteDest."
      ::= { ipv6RouteEntry 1 }
 
  ipv6RoutePfxLength OBJECT-TYPE
@@ -931,7 +1067,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
        "Indicates the prefix length of the destination
-       address."
+       address.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePfxLen."
      ::= { ipv6RouteEntry 2 }
 
  ipv6RouteIndex OBJECT-TYPE
@@ -944,7 +1082,9 @@ ipv6IfLastChange OBJECT-TYPE
        destination.  The way this value is chosen is
        implementation specific but it must be unique for
        ipv6RouteDest/ipv6RoutePfxLength pair and remain
-       constant for the life of the route."
+       constant for the life of the route.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy."
      ::= { ipv6RouteEntry 3 }
 
  ipv6RouteIfIndex OBJECT-TYPE
@@ -958,7 +1098,9 @@ ipv6IfLastChange OBJECT-TYPE
        by a particular value of this index is the same
        interface as identified by the same value of
        ipv6IfIndex.  For routes of the discard type this
-       value can be zero."
+       value can be zero.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteIfIndex."
      ::= { ipv6RouteEntry 4 }
 
  ipv6RouteNextHop OBJECT-TYPE
@@ -969,7 +1111,9 @@ ipv6IfLastChange OBJECT-TYPE
        "On remote routes, the address of the next
        system en route;  otherwise, ::0
        ('00000000000000000000000000000000'H in ASN.1
-       string representation)."
+       string representation).
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteNextHop."
      ::= { ipv6RouteEntry 5 }
 
  ipv6RouteType OBJECT-TYPE
@@ -999,7 +1143,9 @@ ipv6IfLastChange OBJECT-TYPE
         destination; 'discard(2)' refers to a route
         indicating that packets to destinations matching
         this route are to be discarded (sometimes called
-        black-hole route)."
+        black-hole route).
+
+        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteType."
      ::= { ipv6RouteEntry 6 }
 
  ipv6RouteProtocol OBJECT-TYPE
@@ -1028,7 +1174,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
        "The routing mechanism via which this route was
-       learned."
+       learned.
+
+       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteProto."
      ::= { ipv6RouteEntry 7 }
 
  ipv6RoutePolicy OBJECT-TYPE
@@ -1048,7 +1196,9 @@ ipv6IfLastChange OBJECT-TYPE
       define a set of values which are valid for
       this object or must implement an integer-
       instanced  policy table for which this object's
-      value acts as an index."
+      value acts as an index.
+
+      This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy."
      ::= { ipv6RouteEntry 8 }
 
  ipv6RouteAge OBJECT-TYPE
@@ -1061,7 +1211,9 @@ ipv6IfLastChange OBJECT-TYPE
         updated or otherwise determined to be correct.
         Note that no semantics of `too old' can be implied
         except through knowledge of the routing protocol
-        by which the route was learned."
+        by which the route was learned.
+
+        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteAge."
      ::= { ipv6RouteEntry 9 }
 
  ipv6RouteNextHopRDI OBJECT-TYPE
@@ -1074,7 +1226,10 @@ ipv6IfLastChange OBJECT-TYPE
         the routing-protocol specified in  the  route's
         ipv6RouteProtocol value.   When  this object is
         unknown or not relevant its value should be set
-        to zero."
+        to zero.
+
+        This object is obsolete, and has no replacement.
+        The Routing Domain ID concept did not catch on."
      ::= { ipv6RouteEntry 10 }
 
  ipv6RouteMetric OBJECT-TYPE
@@ -1088,7 +1243,9 @@ ipv6IfLastChange OBJECT-TYPE
         ipv6RouteProtocol value.  When this is unknown
         or not relevant to the protocol indicated by
         ipv6RouteProtocol, the object value should be
-        set to its maximum value (4,294,967,295)."
+        set to its maximum value (4,294,967,295).
+
+        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteMetric1."
      ::= { ipv6RouteEntry 11 }
 
  ipv6RouteWeight OBJECT-TYPE
@@ -1101,7 +1258,9 @@ ipv6IfLastChange OBJECT-TYPE
         the implementation specific rules. Generally,
         within routes with the same ipv6RoutePolicy value,
         the lower the weight value the more preferred is
-        the route."
+        the route.
+
+        This object is obsoleted, and has not been replaced."
      ::= { ipv6RouteEntry 12 }
 
  ipv6RouteInfo OBJECT-TYPE
@@ -1118,7 +1277,9 @@ ipv6IfLastChange OBJECT-TYPE
         which is a syntactically valid object  identifier,
         and any implementation conforming to ASN.1
         and the Basic Encoding Rules must  be  able  to
-        generate and recognize this value."
+        generate and recognize this value.
+
+        This object is obsoleted, and has not been replaced."
      ::= { ipv6RouteEntry 13 }
 
  ipv6RouteValid OBJECT-TYPE
@@ -1140,7 +1301,9 @@ ipv6IfLastChange OBJECT-TYPE
         corresponds to entries not currently in use.
         Proper interpretation of such entries requires
         examination of the relevant ipv6RouteValid
-        object."
+        object.
+
+        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteStatus."
      DEFVAL  { true }
      ::= { ipv6RouteEntry 14 }
 
@@ -1160,7 +1323,9 @@ ipv6IfLastChange OBJECT-TYPE
        for determining address equivalencies; if all
        interfaces are of this type, then the Address
        Translation table is empty, i.e., has zero
-       entries."
+       entries.
+
+       This table is obsoleted by IP-MIB::ipNetToPhysicalTable."
      ::= { ipv6MIBObjects 12 }
 
  ipv6NetToMediaEntry OBJECT-TYPE
@@ -1169,7 +1334,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
        "Each entry contains one IPv6 address to `physical'
-       address equivalence."
+       address equivalence.
+
+       This entry is obsoleted by IP-MIB::ipNetToPhysicalEntry."
      INDEX   { ipv6IfIndex,
                ipv6NetToMediaNetAddress }
      ::= { ipv6NetToMediaTable 1 }
@@ -1196,7 +1363,9 @@ ipv6IfLastChange OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
         "The IPv6 Address corresponding to
-        the media-dependent `physical' address."
+        the media-dependent `physical' address.
+
+        This object is obsoleted by IP-MIB::ipNetToPhysicalNetAddress."
      ::= { ipv6NetToMediaEntry 1 }
 
  ipv6NetToMediaPhysAddress OBJECT-TYPE
@@ -1204,7 +1373,9 @@ ipv6IfLastChange OBJECT-TYPE
      MAX-ACCESS read-only
      STATUS     obsolete
      DESCRIPTION
-       "The media-dependent `physical' address."
+       "The media-dependent `physical' address.
+
+       This object is obsoleted by IP-MIB::ipNetToPhysicalPhysAddress."
      ::= { ipv6NetToMediaEntry 2 }
 
  ipv6NetToMediaType OBJECT-TYPE
@@ -1224,7 +1395,9 @@ ipv6IfLastChange OBJECT-TYPE
              protocol. The static(3)' types indicates that
              the mapping has been statically configured.
              The local(4) indicates that the mapping is
-             provided for an entity's own interface address."
+             provided for an entity's own interface address.
+
+             This object is obsoleted by IP-MIB::ipNetToPhysicalType."
      ::= { ipv6NetToMediaEntry 3 }
 
 ipv6IfNetToMediaState OBJECT-TYPE
@@ -1249,7 +1422,9 @@ ipv6IfNetToMediaState OBJECT-TYPE
     DESCRIPTION
         "The Neighbor Unreachability Detection [8] state
         for the interface when the address mapping in
-        this entry is used."
+        this entry is used.
+
+        This object is obsoleted by IP-MIB::ipNetToPhysicalState."
     ::= { ipv6NetToMediaEntry 4 }
 
 ipv6IfNetToMediaLastUpdated OBJECT-TYPE
@@ -1261,7 +1436,9 @@ ipv6IfNetToMediaLastUpdated OBJECT-TYPE
         was last updated.  If this entry was updated prior
         to the last re-initialization of the local network
         management subsystem, then this object contains
-        a zero value."
+        a zero value.
+
+        This object is obsoleted by IP-MIB::ipNetToPhysicalLastUpdated."
     ::= { ipv6NetToMediaEntry 5 }
 
  ipv6NetToMediaValid OBJECT-TYPE
@@ -1282,7 +1459,9 @@ ipv6IfNetToMediaLastUpdated OBJECT-TYPE
       from agents that corresponds to entries not
       currently in use.  Proper interpretation of such
       entries requires examination of the relevant
-      ipv6NetToMediaValid object."
+      ipv6NetToMediaValid object.
+
+      This object is obsoleted by IP-MIB::ipNetToPhysicalRowStatus."
      DEFVAL  { true }
      ::= { ipv6NetToMediaEntry 6 }
 
@@ -1309,7 +1488,10 @@ ipv6IfStateChange NOTIFICATION-TYPE
         that there has been a change in the state of
         an ipv6 interface.  This notification should
         be generated when the interface's operational
-        status transitions to or from the up(1) state."
+        status transitions to or from the up(1) state.
+
+        This object is obsoleted by IF-MIB::linkUp
+        and IF-MIB::linkDown notifications."
      ::= { ipv6NotificationPrefix 1 }
 
 -- conformance information
@@ -1325,7 +1507,9 @@ ipv6Compliance MODULE-COMPLIANCE
     STATUS  obsolete
     DESCRIPTION
       "The compliance statement for SNMPv2 entities which
-      implement ipv6 MIB."
+      implement ipv6 MIB.
+
+      This compliance statement is obsoleted by IP-MIB::ipMIBCompliance2."
     MODULE  -- this module
         MANDATORY-GROUPS { ipv6GeneralGroup,
                            ipv6NotificationGroup }
@@ -1437,7 +1621,10 @@ ipv6GeneralGroup OBJECT-GROUP
     STATUS    obsolete
     DESCRIPTION
          "The IPv6 group of objects providing for basic
-          management of IPv6 entities."
+          management of IPv6 entities.
+
+          This group is obsoleted by various groups in
+          IP-MIB."
     ::= { ipv6Groups 1 }
 
 ipv6NotificationGroup NOTIFICATION-GROUP
@@ -1445,7 +1632,9 @@ ipv6NotificationGroup NOTIFICATION-GROUP
     STATUS    obsolete
     DESCRIPTION
          "The notification that an IPv6 entity is required
-          to implement."
+          to implement.
+
+          This group is obsoleted by IF-MIB::linkUpDownNotificationsGroup."
     ::= { ipv6Groups 2 }
 
  END

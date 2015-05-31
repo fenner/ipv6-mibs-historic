@@ -122,7 +122,8 @@ ipv6UdpIfIndex OBJECT-TYPE
          the life of this UDP endpoint.
 
          This object is obsoleted by the zone identifier in
-         an InetAddressIPv6z address in UDP-MIB::udpEndpointLocalAddress."
+         an InetAddressIPv6z address in
+         UDP-MIB::udpEndpointLocalAddress."
    ::= { ipv6UdpEntry 3 }
 
 --

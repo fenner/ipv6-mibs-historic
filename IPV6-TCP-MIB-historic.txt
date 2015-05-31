@@ -95,7 +95,8 @@ ipv6TcpConnLocalAddress OBJECT-TYPE
          address associated with the managed node, the value
          ::0 is used.
 
-         This object is obsoleted by TCP-MIB::tcpConnectionLocalAddressType."
+         This object is obsoleted by
+         TCP-MIB::tcpConnectionLocalAddressType."
    ::= { ipv6TcpConnEntry 1 }
 
 ipv6TcpConnLocalPort OBJECT-TYPE
@@ -157,8 +158,9 @@ ipv6TcpConnIfIndex OBJECT-TYPE
          of the TCP connection.
 
          This object is obsoleted by the zone identifier in
-         an InetAddressIPv6z address in either TCP-MIB::tcpConnectionLocalAddress
-         or TCP-MIB::tcpConnectionRemAddress."
+         an InetAddressIPv6z address in either
+         TCP-MIB::tcpConnectionLocalAddress or
+         TCP-MIB::tcpConnectionRemAddress."
    ::= { ipv6TcpConnEntry 5 }
 
 ipv6TcpConnState OBJECT-TYPE
@@ -216,7 +218,8 @@ ipv6TcpCompliance MODULE-COMPLIANCE
         "The compliance statement for SNMPv2 entities which
          implement TCP over IPv6.
 
-         This compliance statement is obsoleted by TCP-MIB::tcpMIBCompliance2."
+         This compliance statement is obsoleted by
+         TCP-MIB::tcpMIBCompliance2."
    MODULE  -- this module
    MANDATORY-GROUPS { ipv6TcpGroup }
    ::= { ipv6TcpCompliances 1 }

@@ -119,7 +119,8 @@ ipv6IfTableLastChange OBJECT-TYPE
        the local network management subsystem, then this
        object contains a zero value.
 
-       This object is obsoleted by IP-MIB::ipv6InterfaceTableLastChange."
+       This object is obsoleted by
+       IP-MIB::ipv6InterfaceTableLastChange."
      ::= { ipv6MIBObjects 4 }
 
 -- the IPv6 Interfaces table
@@ -579,7 +580,8 @@ ipv6IfLastChange OBJECT-TYPE
         a successfully forwarded datagram the counter
         of the outgoing interface is incremented.
 
-        This object is obsoleted by IP-MIB::ipIfStatsHCOutForwDatagrams."
+        This object is obsoleted by
+        IP-MIB::ipIfStatsHCOutForwDatagrams."
      ::= { ipv6IfStatsEntry 10 }
 
  ipv6IfStatsOutRequests OBJECT-TYPE
@@ -804,7 +806,8 @@ ipv6IfLastChange OBJECT-TYPE
        If false(2), it is not used to autoconfigure
        a local interface address.
 
-       This object is obsoleted by IP-MIB::ipAddressPrefixAutonomousFlag."
+       This object is obsoleted by
+       IP-MIB::ipAddressPrefixAutonomousFlag."
      ::= { ipv6AddrPrefixEntry 4 }
 
  ipv6AddrPrefixAdvPreferredLifetime OBJECT-TYPE
@@ -823,7 +826,8 @@ ipv6IfLastChange OBJECT-TYPE
         new communications, but packets received on such
         an interface are processed as expected.
 
-        This object is obsoleted by IP-MIB::ipAddressPrefixAdvPreferredLifetime."
+        This object is obsoleted by
+        IP-MIB::ipAddressPrefixAdvPreferredLifetime."
      ::= { ipv6AddrPrefixEntry 5 }
 
  ipv6AddrPrefixAdvValidLifetime OBJECT-TYPE
@@ -841,7 +845,8 @@ ipv6IfLastChange OBJECT-TYPE
        should not appear as the destination or source
        address of a packet.
 
-       This object is obsoleted by IP-MIB::ipAddressPrefixAdvValidLifetime."
+       This object is obsoleted by
+       IP-MIB::ipAddressPrefixAdvValidLifetime."
      ::= { ipv6AddrPrefixEntry 6 }
 
  -- the IPv6 Address table
@@ -1000,7 +1005,8 @@ ipv6IfLastChange OBJECT-TYPE
         be to free-up buffer space for other routing
         entries.
 
-        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteDiscards."
+        This object is obsoleted by
+        IP-FORWARD-MIB::inetCidrRouteDiscards."
      ::= { ipv6MIBObjects 10 }
 
  -- IPv6 Routing table
@@ -1025,7 +1031,8 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
              "A routing entry.
 
-             This entry is obsoleted by IP-FORWARD-MIB::inetCidrRouteEntry."
+             This entry is obsoleted by
+             IP-FORWARD-MIB::inetCidrRouteEntry."
      INDEX   { ipv6RouteDest,
                ipv6RoutePfxLength,
                ipv6RouteIndex }
@@ -1100,7 +1107,8 @@ ipv6IfLastChange OBJECT-TYPE
        ipv6IfIndex.  For routes of the discard type this
        value can be zero.
 
-       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteIfIndex."
+       This object is obsoleted by
+       IP-FORWARD-MIB::inetCidrRouteIfIndex."
      ::= { ipv6RouteEntry 4 }
 
  ipv6RouteNextHop OBJECT-TYPE
@@ -1113,7 +1121,8 @@ ipv6IfLastChange OBJECT-TYPE
        ('00000000000000000000000000000000'H in ASN.1
        string representation).
 
-       This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteNextHop."
+       This object is obsoleted by
+       IP-FORWARD-MIB::inetCidrRouteNextHop."
      ::= { ipv6RouteEntry 5 }
 
  ipv6RouteType OBJECT-TYPE
@@ -1245,7 +1254,8 @@ ipv6IfLastChange OBJECT-TYPE
         ipv6RouteProtocol, the object value should be
         set to its maximum value (4,294,967,295).
 
-        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteMetric1."
+        This object is obsoleted by
+        IP-FORWARD-MIB::inetCidrRouteMetric1."
      ::= { ipv6RouteEntry 11 }
 
  ipv6RouteWeight OBJECT-TYPE
@@ -1303,7 +1313,8 @@ ipv6IfLastChange OBJECT-TYPE
         examination of the relevant ipv6RouteValid
         object.
 
-        This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteStatus."
+        This object is obsoleted by
+        IP-FORWARD-MIB::inetCidrRouteStatus."
      DEFVAL  { true }
      ::= { ipv6RouteEntry 14 }
 
@@ -1509,7 +1520,8 @@ ipv6Compliance MODULE-COMPLIANCE
       "The compliance statement for SNMPv2 entities which
       implement ipv6 MIB.
 
-      This compliance statement is obsoleted by IP-MIB::ipMIBCompliance2."
+      This compliance statement is obsoleted by
+      IP-MIB::ipMIBCompliance2."
     MODULE  -- this module
         MANDATORY-GROUPS { ipv6GeneralGroup,
                            ipv6NotificationGroup }
@@ -1634,7 +1646,8 @@ ipv6NotificationGroup NOTIFICATION-GROUP
          "The notification that an IPv6 entity is required
           to implement.
 
-          This group is obsoleted by IF-MIB::linkUpDownNotificationsGroup."
+          This group is obsoleted by
+          IF-MIB::linkUpDownNotificationsGroup."
     ::= { ipv6Groups 2 }
 
  END

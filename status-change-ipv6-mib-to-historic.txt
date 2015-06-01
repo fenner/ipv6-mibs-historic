@@ -9,7 +9,7 @@ never changed from being Proposed Standard.
 
 This causes an unclear situation when simply looking at MIB
 repositories, so we are reclassifying the original documents
-([RFC2452], [RFC2454], and [RFC2465]) as historic.
+([RFC2452], [RFC2454], [RFC2465] and [RFC2466]) as historic.
 
 A companion document simply republishes these documents with the
 SMI syntax changed to obsolete.
@@ -25,6 +25,9 @@ SMI syntax changed to obsolete.
    [RFC2465]  Haskin, D. and S. Onishi, "Management Information Base for
               IP Version 6: Textual Conventions and General Group", RFC
               2465, December 1998.
+
+   [RFC2466]  Haskin, D. and S. Onishi, "Management Information Base for
+              IP Version 6: ICMPv6 Group", RFC 2466, December 1998.
 
    [RFC4022]  Raghunarayan, R., "Management Information Base for the
               Transmission Control Protocol (TCP)", RFC 4022, March

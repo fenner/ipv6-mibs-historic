@@ -2148,7 +2148,7 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
           the revised IP-MIB (RFC4293)."
         REVISION "9801082155Z"
         DESCRIPTION
-          "First revision, published as RFC2465"
+          "First revision, published as RFC2466"
         ::= { mib-2 56 }
 
     -- the ICMPv6 group
@@ -3341,7 +3341,7 @@ END
 
    It is expected that the publication of this document will be
    accompanied by a note from the IESG reclassifying [RFC2452],
-   [RFC2454], and [RFC2465] to Historic.
+   [RFC2454], [RFC2465], and [RFC2466] to Historic.
 
 8.  Informative References
 
@@ -3366,6 +3366,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
               IP Version 6: Textual Conventions and General Group", RFC
               2465, December 1998.
 
+   [RFC2466]  Haskin, D. and S. Onishi, "Management Information Base for
+              IP Version 6: ICMPv6 Group", RFC 2466, December 1998.
+
    [RFC4022]  Raghunarayan, R., "Management Information Base for the
               Transmission Control Protocol (TCP)", RFC 4022, March
               2005.
@@ -3389,9 +3392,6 @@ Author's Address
 
    Phone: +1-408-547-5572
    Email: fenner@fenron.com
-
-
-
 
 
 

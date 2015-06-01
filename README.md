@@ -90,6 +90,7 @@ It is expected that the publication of this document
 will be accompanied by a note from the IESG reclassifying
 {{?RFC2452}},
 {{?RFC2454}},
+{{?RFC2465}},
 and
-{{?RFC2465}}
+{{?RFC2466}}
 to Historic.

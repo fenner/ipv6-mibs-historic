@@ -38,7 +38,7 @@
        the revised IP-MIB (RFC4293)."
      REVISION "9801082155Z"
      DESCRIPTION
-       "First revision, published as RFC2465"
+       "First revision, published as RFC2466"
      ::= { mib-2 56 }
 
  -- the ICMPv6 group

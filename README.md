@@ -4,7 +4,7 @@ coding: utf-8
 title: Republishing the IPV6-MIBs as obsolete
 abbrev: ipv6-mibs-obsolete
 docname: draft-fenner-ipv6-mibs-obsolete-00
-category: historic
+category: info
 
 stand_alone: yes
 pi: [toc, sortrefs, symrefs, comments]

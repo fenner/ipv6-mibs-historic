@@ -94,3 +94,25 @@ will be accompanied by a note from the IESG reclassifying
 and
 {{?RFC2466}}
 to Historic.
+
+# Security Considerations
+
+This document contains only obsolete objects, which {{!RFC2578}}
+says "should not be implemented and/or can be removed if previously
+implemented".  Since the contents of this document should not be
+implemented, it has no security implications.  If there
+were any security implications based on these objects in an
+implementation, removing these objects as {{RFC2578}} suggests
+would improve the security of that implementation.
+
+# IANA Considerations
+
+In
+[smi-numbers](http://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml),
+the entries for RFC2452 and RFC2454, in the "SMI Experimental Codes" section,
+have an annotation "(Historic)" or "(Historical)".
+IANA is asked to add the same annotation to the entries in the "SMI Network Management MGMT Codes"
+section for RFC2465 and RFC2466.[^1]
+
+[^1]: Other objects have "(DEPRECATED)" annotations; should we try to unify this?
+{:source="fenner"}

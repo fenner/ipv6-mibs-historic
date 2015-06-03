@@ -133,3 +133,7 @@ section for RFC2465 and RFC2466.[^1]
 
 * Added the 6.c.iii Legend to the copyright statement, since the original
     RFCs were published before pre-5378.
+
+* Used "MIB module" instead of "MIB" when referring to a module, and
+    changed REVISION DESCRIPTION to "Obsoleting", not "Deprecating".
+

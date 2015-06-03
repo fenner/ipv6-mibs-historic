@@ -8,6 +8,7 @@ category: info
 
 stand_alone: yes
 pi: [toc, sortrefs, symrefs, comments]
+ipr: pre5378Trust200902
 
 author:
   -
@@ -116,3 +117,19 @@ section for RFC2465 and RFC2466.[^1]
 
 [^1]: Other objects have "(DEPRECATED)" annotations; should we try to unify this?
 {:source="fenner"}
+
+--- back
+
+# Change history
+
+## Changes since -00
+
+* Realized that IPV6-ICMP-MIB was {{?RFC2466}}, so modified the added
+    REVISION clause and the Reclassification section.
+
+* Added Security Considerations
+
+* Added IANA Considerations
+
+* Added the 6.c.iii Legend to the copyright statement, since the original
+    RFCs were published before pre-5378.

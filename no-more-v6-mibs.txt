@@ -8,17 +8,17 @@ Intended status: Informational                             June 03, 2015
 Expires: December 5, 2015
 
 
-                 Republishing the IPV6-MIBs as obsolete
+             Republishing the IPV6-MIB modules as obsolete
                    draft-fenner-ipv6-mibs-obsolete-00
 
 Abstract
 
    In 2005, the IPv6 MIB update group published updated versions of the
-   IP-MIB, UDP-MIB, TCP-MIB and IP-FORWARD-MIB, which use the
+   IP-MIB, UDP-MIB, TCP-MIB and IP-FORWARD-MIB modules, which use the
    InetAddressType/InetAddress construct to handle IPv4 and IPv6 in the
    same table.  This document contains versions of the obsoleted
-   IPV6-MIB, IPV6-TC, IPV6-ICMP-MIB, IPV6-TCP-MIB and IPV6-UDP-MIB, for
-   the purpose of updating MIB repositories.
+   IPV6-MIB, IPV6-TC, IPV6-ICMP-MIB, IPV6-TCP-MIB and IPV6-UDP-MIB
+   modules, for the purpose of updating MIB module repositories.
 
 Status of This Memo
 
@@ -96,16 +96,16 @@ Table of Contents
 
    In 2005, the IPv6 MIB update group published updated versions of the
    IP-MIB [RFC4293], UDP-MIB [RFC4113], TCP-MIB [RFC4022] and IP-
-   FORWARD-MIB [RFC4292], which use the InetAddressType/InetAddress
-   construct to handle IPv4 and IPv6 in the same table.  These documents
-   were marked in the RFC Index as obsoleting the corresponding
-   IPV6-MIBs, but the extracted content of these MIBs never changed in
-   MIB repositories, and the original RFCs (as is normal IETF policy)
-   never changed from being Proposed Standard.
+   FORWARD-MIB [RFC4292] modules, which use the InetAddressType/
+   InetAddress construct to handle IPv4 and IPv6 in the same table.
+   These documents were marked in the RFC Index as obsoleting the
+   corresponding IPV6-MIBs, but the extracted content of these MIBs
+   never changed in MIB repositories, and the original RFCs (as is
+   normal IETF policy) never changed from being Proposed Standard.
 
    This causes an unclear situation when simply looking at MIB
-   repositories, so we are simply republishing these documents with the
-   SMI syntax changed to obsolete.
+   repositories, so we are simply republishing these MIB modules with
+   the SMI syntax changed to obsolete.
 
 
 
@@ -245,7 +245,7 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
         protocol."
      REVISION "201505282112Z"
      DESCRIPTION
-       "Deprecating this MIB; it has been replaced by
+       "Obsoleting this MIB module; it has been replaced by
        the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
        (RFC4292)."
      REVISION "9801082155Z"
@@ -2162,7 +2162,7 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
            the ICMPv6."
         REVISION "201505282112Z"
         DESCRIPTION
-          "Deprecating this MIB; it has been replaced by
+          "Obsoleting this MIB module; it has been replaced by
           the revised IP-MIB (RFC4293)."
         REVISION "9801082155Z"
         DESCRIPTION
@@ -2902,7 +2902,7 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
          "The MIB module for entities implementing UDP over IPv6."
     REVISION "201505282112Z"
     DESCRIPTION
-         "Deprecating this MIB; it has been replaced by
+         "Obsoleting this MIB module; it has been replaced by
          the revised UDP-MIB (RFC4113)."
     REVISION "9801290000Z"
     DESCRIPTION
@@ -3101,7 +3101,7 @@ ipv6TcpMIB MODULE-IDENTITY
         "The MIB module for entities implementing TCP over IPv6."
    REVISION "201505282112Z"
    DESCRIPTION
-        "Deprecating this MIB; it has been replaced by
+        "Obsoleting this MIB module; it has been replaced by
         the revised TCP-MIB (RFC4022)."
    REVISION "9801290000Z"
    DESCRIPTION

@@ -3452,15 +3452,15 @@ A.1.  Changes since -00
    o  Added the 6.c.iii Legend to the copyright statement, since the
       original RFCs were published before pre-5378.
 
+   o  Used "MIB module" instead of "MIB" when referring to a module, and
+      changed REVISION DESCRIPTION to "Obsoleting", not "Deprecating".
+
 Editorial Comments
 
 [_1] fenner: Other objects have "(DEPRECATED)" annotations; should we
      try to unify this?
 
 Author's Address
-
-
-
 
 
 

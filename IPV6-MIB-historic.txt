@@ -41,7 +41,7 @@
         protocol."
      REVISION "201505282112Z"
      DESCRIPTION
-       "Deprecating this MIB; it has been replaced by
+       "Obsoleting this MIB module; it has been replaced by
        the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
        (RFC4292)."
      REVISION "9801082155Z"

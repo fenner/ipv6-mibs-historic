@@ -23,7 +23,7 @@ ipv6TcpMIB MODULE-IDENTITY
         "The MIB module for entities implementing TCP over IPv6."
    REVISION "201505282112Z"
    DESCRIPTION
-        "Deprecating this MIB; it has been replaced by
+        "Obsoleting this MIB module; it has been replaced by
         the revised TCP-MIB (RFC4022)."
    REVISION "9801290000Z"
    DESCRIPTION

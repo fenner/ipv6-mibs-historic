@@ -3,8 +3,9 @@ coding: utf-8
 
 title: Republishing the IPV6-MIB modules as obsolete
 abbrev: ipv6-mibs-obsolete
-docname: draft-fenner-ipv6-mibs-obsolete-00
+docname: draft-fenner-ipv6-mibs-obsolete-01
 category: info
+obsoletes: 2452, 2454, 2465, 2466
 
 stand_alone: yes
 pi: [toc, sortrefs, symrefs, comments]
@@ -85,10 +86,7 @@ MIB modules with the SMI syntax changed to obsolete.
 
 # Reclassification
 
-(This section may be removed by the RFC Editor.)
-
-It is expected that the publication of this document
-will be accompanied by a note from the IESG reclassifying
+This document reclassifies
 {{?RFC2452}},
 {{?RFC2454}},
 {{?RFC2465}},

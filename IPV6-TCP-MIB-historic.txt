@@ -20,7 +20,8 @@ ipv6TcpMIB MODULE-IDENTITY
                 Phone:  +1 603 884 1423
                 Email:  daniele@zk3.dec.com"
    DESCRIPTION
-        "The MIB module for entities implementing TCP over IPv6."
+        "The obsolete MIB module for entities implementing TCP
+        over IPv6.  Use the TCP-MIB instead."
    REVISION "201505282112Z"
    DESCRIPTION
         "Obsoleting this MIB module; it has been replaced by

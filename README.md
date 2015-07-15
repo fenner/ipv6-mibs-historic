@@ -135,3 +135,12 @@ section for RFC2465 and RFC2466.[^1]
 * Used "MIB module" instead of "MIB" when referring to a module, and
     changed REVISION DESCRIPTION to "Obsoleting", not "Deprecating".
 
+* Added "Obsoletes:" header to document
+
+* Switched to pre-5378 IPR statement, since the original RFCs were
+    pre-5378.
+
+## Changes since -01
+
+* Updated the DESCRIPTION of MODULE-IDENTITY to improve the "MIB index"
+    problem.

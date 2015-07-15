@@ -37,8 +37,8 @@
               Tel: +1-978-916-3816
            E-mail: sonishi@baynetworks.com"
      DESCRIPTION
-       "The MIB module for entities implementing the IPv6
-        protocol."
+       "The obsolete MIB module for entities implementing the IPv6
+        protocol.  Use the IP-MIB or IP-FORWARD-MIB instead."
      REVISION "201505282112Z"
      DESCRIPTION
        "Obsoleting this MIB module; it has been replaced by

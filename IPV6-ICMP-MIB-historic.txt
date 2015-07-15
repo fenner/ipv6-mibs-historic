@@ -30,8 +30,8 @@
               Tel: +1-978-916-3816
            E-mail: sonishi@baynetworks.com"
      DESCRIPTION
-       "The MIB module for entities implementing
-        the ICMPv6."
+       "The obsolete MIB module for entities implementing
+        the ICMPv6.  Use the IP-MIB instead."
      REVISION "201505282112Z"
      DESCRIPTION
        "Obsoleting this MIB module; it has been replaced by

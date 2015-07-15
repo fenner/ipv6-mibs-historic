@@ -4,10 +4,10 @@
 
 Network Working Group                                          B. Fenner
 Internet-Draft                                     Arista Networks, Inc.
-Obsoletes: 2452, 2454, 2465, 2466 (if                      June 30, 2015
+Obsoletes: 2452, 2454, 2465, 2466 (if                      July 15, 2015
            approved)
 Intended status: Informational
-Expires: January 1, 2016
+Expires: January 16, 2016
 
 
              Republishing the IPV6-MIB modules as obsolete
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 1, 2016.
+   This Internet-Draft will expire on January 16, 2016.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Fenner                   Expires January 1, 2016                [Page 1]
+Fenner                  Expires January 16, 2016                [Page 1]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -81,7 +81,7 @@ Table of Contents
    3.  Historic IPV6-MIB . . . . . . . . . . . . . . . . . . . . . .   4
    4.  Historic IPV6-ICMP-MIB  . . . . . . . . . . . . . . . . . . .  39
    5.  Historic IPV6-UDP-MIB . . . . . . . . . . . . . . . . . . . .  52
-   6.  Historic IPV6-TCP-MIB . . . . . . . . . . . . . . . . . . . .  55
+   6.  Historic IPV6-TCP-MIB . . . . . . . . . . . . . . . . . . . .  56
    7.  Reclassification  . . . . . . . . . . . . . . . . . . . . . .  61
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .  61
    9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  61
@@ -91,7 +91,8 @@ Table of Contents
      10.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . .  62
    Appendix A.  Change history . . . . . . . . . . . . . . . . . . .  62
      A.1.  Changes since -00 . . . . . . . . . . . . . . . . . . . .  62
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  62
+     A.2.  Changes since -01 . . . . . . . . . . . . . . . . . . . .  62
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  63
 
 1.  Motivation
 
@@ -108,10 +109,9 @@ Table of Contents
 
 
 
-
-Fenner                   Expires January 1, 2016                [Page 2]
+Fenner                  Expires January 16, 2016                [Page 2]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
    This causes an unclear situation when simply looking at MIB
@@ -165,9 +165,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016                [Page 3]
+Fenner                  Expires January 16, 2016                [Page 3]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
           internetwork-layer interface must remain constant
@@ -221,9 +221,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016                [Page 4]
+Fenner                  Expires January 16, 2016                [Page 4]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
            Postal: Bay Networks, Inc.
@@ -245,8 +245,8 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
               Tel: +1-978-916-3816
            E-mail: sonishi@baynetworks.com"
      DESCRIPTION
-       "The MIB module for entities implementing the IPv6
-        protocol."
+       "The obsolete MIB module for entities implementing the IPv6
+        protocol.  Use the IP-MIB or IP-FORWARD-MIB instead."
      REVISION "201505282112Z"
      DESCRIPTION
        "Obsoleting this MIB module; it has been replaced by
@@ -277,9 +277,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016                [Page 5]
+Fenner                  Expires January 16, 2016                [Page 5]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         entity.  IPv6 routers forward datagrams.  IPv6
@@ -333,9 +333,9 @@ ipv6IfTableLastChange OBJECT-TYPE
 
 
 
-Fenner                   Expires January 1, 2016                [Page 6]
+Fenner                  Expires January 16, 2016                [Page 6]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
        ipv6IfTable. If the number of entries has been
@@ -389,9 +389,9 @@ ipv6IfTable OBJECT-TYPE
 
 
 
-Fenner                   Expires January 1, 2016                [Page 7]
+Fenner                  Expires January 16, 2016                [Page 7]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          ipv6IfAdminStatus        INTEGER,
@@ -445,9 +445,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016                [Page 8]
+Fenner                  Expires January 16, 2016                [Page 8]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
        This object is obsolete.  The IF-STACK-TABLE may
@@ -501,9 +501,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016                [Page 9]
+Fenner                  Expires January 16, 2016                [Page 9]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
      ::= { ipv6IfEntry 6 }
@@ -557,9 +557,9 @@ ipv6IfAdminStatus OBJECT-TYPE
 
 
 
-Fenner                   Expires January 1, 2016               [Page 10]
+Fenner                  Expires January 16, 2016               [Page 10]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
       system,  ipv6IfAdminStatus is then changed to
@@ -613,9 +613,9 @@ ipv6IfLastChange OBJECT-TYPE
 
 
 
-Fenner                   Expires January 1, 2016               [Page 11]
+Fenner                  Expires January 16, 2016               [Page 11]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
     MAX-ACCESS  read-only
@@ -669,9 +669,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 12]
+Fenner                  Expires January 16, 2016               [Page 12]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          ipv6IfStatsInAddrErrors
@@ -725,9 +725,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 13]
+Fenner                  Expires January 16, 2016               [Page 13]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
      MAX-ACCESS read-only
@@ -781,9 +781,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 14]
+Fenner                  Expires January 16, 2016               [Page 14]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         (e.g., addresses with unallocated prefixes).  For
@@ -837,9 +837,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 15]
+Fenner                  Expires January 16, 2016               [Page 15]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         This object is obsoleted by IP-MIB::ipIfStatsInDiscards."
@@ -893,9 +893,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 16]
+Fenner                  Expires January 16, 2016               [Page 16]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
       This object is obsoleted by IP-MIB::ipIfStatsHCOutRequests."
@@ -949,9 +949,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 17]
+Fenner                  Expires January 16, 2016               [Page 17]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          been generated as a result of fragmentation at
@@ -1005,9 +1005,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 18]
+Fenner                  Expires January 16, 2016               [Page 18]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         these fragments were addressed which might not be
@@ -1061,9 +1061,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 19]
+Fenner                  Expires January 16, 2016               [Page 19]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
      MAX-ACCESS  not-accessible
@@ -1117,9 +1117,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 20]
+Fenner                  Expires January 16, 2016               [Page 20]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
        "This object has the value 'true(1)', if this
@@ -1173,9 +1173,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 21]
+Fenner                  Expires January 16, 2016               [Page 21]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
      DESCRIPTION
@@ -1229,9 +1229,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 22]
+Fenner                  Expires January 16, 2016               [Page 22]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          ipv6AddrStatus         INTEGER
@@ -1285,9 +1285,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 23]
+Fenner                  Expires January 16, 2016               [Page 23]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
        which was acquired by via a stateful protocol
@@ -1341,9 +1341,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 24]
+Fenner                  Expires January 16, 2016               [Page 24]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
  -- IPv6 Routing objects
@@ -1397,9 +1397,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 25]
+Fenner                  Expires January 16, 2016               [Page 25]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
      DESCRIPTION
@@ -1453,9 +1453,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 26]
+Fenner                  Expires January 16, 2016               [Page 26]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
        This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePfxLen."
@@ -1509,9 +1509,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 27]
+Fenner                  Expires January 16, 2016               [Page 27]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
  ipv6RouteType OBJECT-TYPE
@@ -1565,9 +1565,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 28]
+Fenner                  Expires January 16, 2016               [Page 28]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
        rip(5),     -- RIPng
@@ -1621,9 +1621,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 29]
+Fenner                  Expires January 16, 2016               [Page 29]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteAge."
@@ -1677,9 +1677,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 30]
+Fenner                  Expires January 16, 2016               [Page 30]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         This object is obsoleted, and has not been replaced."
@@ -1733,9 +1733,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 31]
+Fenner                  Expires January 16, 2016               [Page 31]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
  -- IPv6 Address Translation table
@@ -1789,9 +1789,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 32]
+Fenner                  Expires January 16, 2016               [Page 32]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
      }
@@ -1845,9 +1845,9 @@ ipv6IfNetToMediaState OBJECT-TYPE
 
 
 
-Fenner                   Expires January 1, 2016               [Page 33]
+Fenner                  Expires January 16, 2016               [Page 33]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
              stale(2),     -- unconfirmed reachability
@@ -1901,9 +1901,9 @@ ipv6IfNetToMediaLastUpdated OBJECT-TYPE
 
 
 
-Fenner                   Expires January 1, 2016               [Page 34]
+Fenner                  Expires January 16, 2016               [Page 34]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
       whether the agent removes an invalidated entry
@@ -1957,9 +1957,9 @@ ipv6Groups      OBJECT IDENTIFIER ::= { ipv6Conformance 2 }
 
 
 
-Fenner                   Expires January 1, 2016               [Page 35]
+Fenner                  Expires January 16, 2016               [Page 35]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
 -- compliance statements
@@ -2013,9 +2013,9 @@ ipv6Compliance MODULE-COMPLIANCE
 
 
 
-Fenner                   Expires January 1, 2016               [Page 36]
+Fenner                  Expires January 16, 2016               [Page 36]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
                 access to this object"
@@ -2069,9 +2069,9 @@ ipv6GeneralGroup OBJECT-GROUP
 
 
 
-Fenner                   Expires January 1, 2016               [Page 37]
+Fenner                  Expires January 16, 2016               [Page 37]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
               ipv6AddrPfxLength,
@@ -2125,9 +2125,9 @@ ipv6NotificationGroup NOTIFICATION-GROUP
 
 
 
-Fenner                   Expires January 1, 2016               [Page 38]
+Fenner                  Expires January 16, 2016               [Page 38]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
 4.  Historic IPV6-ICMP-MIB
@@ -2164,8 +2164,8 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
                  Tel: +1-978-916-3816
               E-mail: sonishi@baynetworks.com"
         DESCRIPTION
-          "The MIB module for entities implementing
-           the ICMPv6."
+          "The obsolete MIB module for entities implementing
+           the ICMPv6.  Use the IP-MIB instead."
         REVISION "201505282112Z"
         DESCRIPTION
           "Obsoleting this MIB module; it has been replaced by
@@ -2181,9 +2181,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 39]
+Fenner                  Expires January 16, 2016               [Page 39]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
     -- Per-interface ICMPv6 statistics table
@@ -2237,9 +2237,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 40]
+Fenner                  Expires January 16, 2016               [Page 40]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
                   Counter32      ,
@@ -2293,9 +2293,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 41]
+Fenner                  Expires January 16, 2016               [Page 41]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
                   Counter32      ,
@@ -2349,9 +2349,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 42]
+Fenner                  Expires January 16, 2016               [Page 42]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
@@ -2405,9 +2405,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 43]
+Fenner                  Expires January 16, 2016               [Page 43]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
@@ -2461,9 +2461,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 44]
+Fenner                  Expires January 16, 2016               [Page 44]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
@@ -2517,9 +2517,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 45]
+Fenner                  Expires January 16, 2016               [Page 45]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
@@ -2573,9 +2573,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 46]
+Fenner                  Expires January 16, 2016               [Page 46]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
          include errors discovered outside the ICMP layer
@@ -2629,9 +2629,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 47]
+Fenner                  Expires January 16, 2016               [Page 47]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         MAX-ACCESS read-only
@@ -2685,9 +2685,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 48]
+Fenner                  Expires January 16, 2016               [Page 48]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         MAX-ACCESS read-only
@@ -2741,9 +2741,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 49]
+Fenner                  Expires January 16, 2016               [Page 49]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
         MAX-ACCESS read-only
@@ -2797,9 +2797,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 50]
+Fenner                  Expires January 16, 2016               [Page 50]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
    ipv6IcmpConformance OBJECT IDENTIFIER ::= { ipv6IcmpMIB 2 }
@@ -2853,9 +2853,9 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-Fenner                   Expires January 1, 2016               [Page 51]
+Fenner                  Expires January 16, 2016               [Page 51]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
                    ipv6IfIcmpOutEchoReplies,
@@ -2902,18 +2902,19 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
                  Phone:  +1 603 884 1423
                  Email:  daniele@zk3.dec.com"
     DESCRIPTION
-         "The MIB module for entities implementing UDP over IPv6."
+         "The obsolete MIB module for entities implementing UDP
+         over IPv6.  Use the UDP-MIB instead."
     REVISION "201505282112Z"
     DESCRIPTION
-         "Obsoleting this MIB module; it has been replaced by
 
 
 
-Fenner                   Expires January 1, 2016               [Page 52]
+Fenner                  Expires January 16, 2016               [Page 52]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
+         "Obsoleting this MIB module; it has been replaced by
          the revised UDP-MIB (RFC4113)."
     REVISION "9801290000Z"
     DESCRIPTION
@@ -2961,15 +2962,15 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
     ::= { ipv6UdpTable 1 }
 
  Ipv6UdpEntry ::= SEQUENCE {
-    ipv6UdpLocalAddress    Ipv6Address,
 
 
 
-Fenner                   Expires January 1, 2016               [Page 53]
+Fenner                  Expires January 16, 2016               [Page 53]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
 
+    ipv6UdpLocalAddress    Ipv6Address,
     ipv6UdpLocalPort       INTEGER (0..65535),
     ipv6UdpIfIndex         Ipv6IfIndexOrZero }
 
@@ -3017,14 +3018,15 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
           value of ipv6IfIndex.
 
           The value of this object must remain constant during
-          the life of this UDP endpoint.
 
 
 
-Fenner                   Expires January 1, 2016               [Page 54]
+Fenner                  Expires January 16, 2016               [Page 54]
 
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
 
+
+          the life of this UDP endpoint.
 
           This object is obsoleted by the zone identifier in
           an InetAddressIPv6z address in
@@ -3068,20 +3070,24 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
  END
 
+
+
+
+
+
+
+
+Fenner                  Expires January 16, 2016               [Page 55]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
 6.  Historic IPV6-TCP-MIB
 
 IPV6-TCP-MIB DEFINITIONS ::= BEGIN
 
 IMPORTS
    MODULE-COMPLIANCE, OBJECT-GROUP      FROM SNMPv2-CONF
-
-
-
-Fenner                   Expires January 1, 2016               [Page 55]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
-
    MODULE-IDENTITY, OBJECT-TYPE,
    mib-2, experimental                  FROM SNMPv2-SMI
    Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
@@ -3100,7 +3106,8 @@ ipv6TcpMIB MODULE-IDENTITY
                 Phone:  +1 603 884 1423
                 Email:  daniele@zk3.dec.com"
    DESCRIPTION
-        "The MIB module for entities implementing TCP over IPv6."
+        "The obsolete MIB module for entities implementing TCP
+        over IPv6.  Use the TCP-MIB instead."
    REVISION "201505282112Z"
    DESCRIPTION
         "Obsoleting this MIB module; it has been replaced by
@@ -3123,20 +3130,20 @@ tcp      OBJECT IDENTIFIER ::= { mib-2 6 }
 -- endpoints are contained in tcpConnTable.
 
 ipv6TcpConnTable OBJECT-TYPE
+
+
+
+Fenner                  Expires January 16, 2016               [Page 56]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
    SYNTAX      SEQUENCE OF Ipv6TcpConnEntry
    MAX-ACCESS  not-accessible
    STATUS      obsolete
    DESCRIPTION
         "A table containing TCP connection-specific information,
          for only those connections whose endpoints are IPv6 addresses.
-
-
-
-
-Fenner                   Expires January 1, 2016               [Page 56]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
 
          This table is obsoleted by TCP-MIB::tcpConnectionTable."
    ::= { tcp 16 }
@@ -3179,6 +3186,14 @@ ipv6TcpConnLocalAddress OBJECT-TYPE
    DESCRIPTION
         "The local IPv6 address for this TCP connection. In
          the case of a connection in the listen state which
+
+
+
+Fenner                  Expires January 16, 2016               [Page 57]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
          is willing to accept connections for any IPv6
          address associated with the managed node, the value
          ::0 is used.
@@ -3186,13 +3201,6 @@ ipv6TcpConnLocalAddress OBJECT-TYPE
          This object is obsoleted by
          TCP-MIB::tcpConnectionLocalAddressType."
    ::= { ipv6TcpConnEntry 1 }
-
-
-
-Fenner                   Expires January 1, 2016               [Page 57]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
 
 ipv6TcpConnLocalPort OBJECT-TYPE
    SYNTAX     INTEGER (0..65535)
@@ -3235,6 +3243,13 @@ ipv6TcpConnIfIndex OBJECT-TYPE
          If the connection's remote address (ipv6TcpConnRemAddress)
          is a link-local address and the connection's local address
 
+
+
+Fenner                  Expires January 16, 2016               [Page 58]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
          (ipv6TcpConnLocalAddress) is not a link-local address, this
          object identifies a local interface on the same link as
          the connection's remote link-local address.
@@ -3242,14 +3257,6 @@ ipv6TcpConnIfIndex OBJECT-TYPE
          Otherwise, this object identifies the local interface that
          is associated with the ipv6TcpConnLocalAddress for this
          TCP connection.  If such a local interface cannot be determined,
-
-
-
-Fenner                   Expires January 1, 2016               [Page 58]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
-
          this object should take on the value 0.  (A possible example
          of this would be if the value of ipv6TcpConnLocalAddress is ::0.)
 
@@ -3291,6 +3298,14 @@ ipv6TcpConnState OBJECT-TYPE
          for SNMPv2) if a management station attempts to set this
          object to any other value.
 
+
+
+
+Fenner                  Expires January 16, 2016               [Page 59]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
          If a management station sets this object to the value
          deleteTCB(12), then this has the effect of deleting the TCB
          (as defined in RFC 793) of the corresponding connection on
@@ -3298,14 +3313,6 @@ ipv6TcpConnState OBJECT-TYPE
          connection.
 
          As an implementation-specific option, a RST segment may be
-
-
-
-Fenner                   Expires January 1, 2016               [Page 59]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
-
          sent from the managed node to the other TCP endpoint (note
          however that RST segments are not sent reliably).
 
@@ -3348,19 +3355,17 @@ ipv6TcpGroup OBJECT-GROUP
         "The group of objects providing management of
          TCP over IPv6.
 
+
+
+Fenner                  Expires January 16, 2016               [Page 60]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
          This group is obsoleted by several groups in TCP-MIB."
    ::= { ipv6TcpGroups 1 }
 
 END
-
-
-
-
-
-Fenner                   Expires January 1, 2016               [Page 60]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
 
 7.  Reclassification
 
@@ -3406,17 +3411,15 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
               IP Version 6: Textual Conventions and General Group", RFC
               2465, December 1998.
 
+
+
+Fenner                  Expires January 16, 2016               [Page 61]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
    [RFC2466]  Haskin, D. and S. Onishi, "Management Information Base for
               IP Version 6: ICMPv6 Group", RFC 2466, December 1998.
-
-
-
-
-
-Fenner                   Expires January 1, 2016               [Page 61]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
 
    [RFC4022]  Raghunarayan, R., "Management Information Base for the
               Transmission Control Protocol (TCP)", RFC 4022, March
@@ -3452,27 +3455,31 @@ A.1.  Changes since -00
    o  Used "MIB module" instead of "MIB" when referring to a module, and
       changed REVISION DESCRIPTION to "Obsoleting", not "Deprecating".
 
+   o  Added "Obsoletes:" header to document
+
+   o  Switched to pre-5378 IPR statement, since the original RFCs were
+      pre-5378.
+
+A.2.  Changes since -01
+
+   o  Updated the DESCRIPTION of MODULE-IDENTITY to improve the "MIB
+      index" problem.
+
+
+
+
+
+Fenner                  Expires January 16, 2016               [Page 62]
+
+Internet-Draft             ipv6-mibs-obsolete                  July 2015
+
+
 Editorial Comments
 
 [_1] fenner: Other objects have "(DEPRECATED)" annotations; should we
      try to unify this?
 
 Author's Address
-
-
-
-
-
-
-
-
-
-
-
-Fenner                   Expires January 1, 2016               [Page 62]
-
-Internet-Draft             ipv6-mibs-obsolete                  June 2015
-
 
    Bill Fenner
    Arista Networks, Inc.
@@ -3518,11 +3525,4 @@ Internet-Draft             ipv6-mibs-obsolete                  June 2015
 
 
 
-
-
-
-
-
-
-
-Fenner                   Expires January 1, 2016               [Page 63]
+Fenner                  Expires January 16, 2016               [Page 63]

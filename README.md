@@ -110,11 +110,29 @@ In
 [smi-numbers](http://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml),
 the entries for RFC2452 and RFC2454, in the "SMI Experimental Codes" section,
 have an annotation "(Historic)" or "(Historical)".
-IANA is asked to add the same annotation to the entries in the "SMI Network Management MGMT Codes"
-section for RFC2465 and RFC2466.[^1]
 
-[^1]: Other objects have "(DEPRECATED)" annotations; should we try to unify this?
-{:source="fenner"}
+IANA is asked to make the following changes to the "SMI Network Management MGMT Codes Internet-standard MIB"
+section:
+
+* Remove RFC1213 from the references for mib-2.5 "icmp".
+
+* Update the reference for mib-2.6 "tcp" to point to RFC4022.
+
+* Remove RFC1213 from the references for mib-2.7 "udp".
+
+* Remove RFC2012 from the references for mib-2.49 "tcpMIB".
+
+* Add the "(Historic)" annotation for the entries for mib-2.55 "ipv6MIB" and for
+    mib-2.56 "ipv6IcmpMIB", and update the reference to point to this document.
+
+IANA is asked to make the following changes to the "SMI Experimental Codes" section:
+
+* Add the "(Historic)" annotation for experimental.74 "IPV6 MIB"
+
+* Change the "(Historical)" annotation for experimental.87 "ipv6UdpMIB" to "(Historic)"
+
+* Update the reference for experimental.86 "ipv6TcpMIB" and
+    experimental.87 "ipv6UdpMIB" to point to this document.
 
 --- back
 
@@ -144,3 +162,5 @@ section for RFC2465 and RFC2466.[^1]
 
 * Updated the DESCRIPTION of MODULE-IDENTITY to improve the "MIB index"
     problem.
+
+* Updated IANA considerations.

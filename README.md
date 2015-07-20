@@ -3,7 +3,7 @@ coding: utf-8
 
 title: Republishing the IPV6-MIB modules as obsolete
 abbrev: ipv6-mibs-obsolete
-docname: draft-fenner-ipv6-mibs-obsolete-01
+docname: draft-fenner-ipv6-mibs-obsolete-02
 category: info
 obsoletes: 2452, 2454, 2465, 2466
 

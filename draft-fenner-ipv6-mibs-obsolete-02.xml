@@ -10,7 +10,7 @@
 <?rfc symrefs="yes"?>
 <?rfc comments="yes"?>
 
-<rfc ipr="pre5378Trust200902" docName="draft-fenner-ipv6-mibs-obsolete-01" category="info" obsoletes="2452, 2454, 2465, 2466">
+<rfc ipr="pre5378Trust200902" docName="draft-fenner-ipv6-mibs-obsolete-02" category="info" obsoletes="2452, 2454, 2465, 2466">
 
   <front>
     <title abbrev="ipv6-mibs-obsolete">Republishing the IPV6-MIB modules as obsolete</title>

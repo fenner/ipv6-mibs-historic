@@ -152,7 +152,6 @@
                Counter32      ,
          ipv6IfIcmpOutGroupMembReductions
                Counter32
-
      }
 
  ipv6IfIcmpInMsgs OBJECT-TYPE

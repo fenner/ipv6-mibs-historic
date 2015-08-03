@@ -43,7 +43,6 @@ Ipv6IfIndex ::= TEXTUAL-CONVENTION
        internetwork-layer interface must remain constant
        at least from one re-initialization of the entity's
        network management system to the next
-
        re-initialization."
      SYNTAX       Integer32 (1..2147483647)
 

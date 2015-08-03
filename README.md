@@ -1,11 +1,13 @@
 ---
 coding: utf-8
 
-title: Republishing the IPV6-MIB modules as obsolete
+title: Republishing the IPV6-specific MIB modules as obsolete
 abbrev: ipv6-mibs-obsolete
-docname: draft-fenner-ipv6-mibs-obsolete-02
+docname: draft-ietf-v6ops-ipv6-mibs-obsolete-00
 category: info
 obsoletes: 2452, 2454, 2465, 2466
+area: Internet
+workgroup: IPv6 Maintenance
 
 stand_alone: yes
 pi: [toc, sortrefs, symrefs, comments]
@@ -138,7 +140,7 @@ IANA is asked to make the following changes to the "SMI Experimental Codes" sect
 
 # Change history
 
-## Changes since -00
+## Changes since draft-fenner-ipv6-mibs-obsolete-00
 
 * Realized that IPV6-ICMP-MIB was {{?RFC2466}}, so modified the added
     REVISION clause and the Reclassification section.
@@ -158,9 +160,16 @@ IANA is asked to make the following changes to the "SMI Experimental Codes" sect
 * Switched to pre-5378 IPR statement, since the original RFCs were
     pre-5378.
 
-## Changes since -01
+## Changes since draft-fenner-ipv6-mibs-obsolete-01
 
 * Updated the DESCRIPTION of MODULE-IDENTITY to improve the "MIB index"
     problem.
 
 * Updated IANA considerations.
+
+## Changes since draft-fenner-ipv6-mibs-obsolete-02
+
+* Fixed "IPV6-MIB" in title
+
+* Fixed some extra blank lines in the source MIBs, introduced by the
+    process of extraction from RFCs.

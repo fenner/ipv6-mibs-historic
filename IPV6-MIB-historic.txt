@@ -249,7 +249,6 @@ ipv6IfTable OBJECT-TYPE
      STATUS      obsolete
      DESCRIPTION
         "The Interface Identifier for this interface that
-
         is (at least) unique on the link this interface is
         attached to. The Interface Identifier is combined
         with an address prefix to form an interface address.
@@ -306,7 +305,6 @@ ipv6IfAdminStatus OBJECT-TYPE
       ipv6IfAdminStatus in the down(2) state.  As a result
       of either explicit management action or per
       configuration information retained by the managed
-
       system,  ipv6IfAdminStatus is then changed to
       the up(1) state (or remains in the down(2) state).
 
@@ -362,7 +360,6 @@ ipv6IfLastChange OBJECT-TYPE
         entered its current operational state.  If the
         current state was entered prior to the last
         re-initialization of the local network management
-
         subsystem, then this object contains a zero
         value.
 
@@ -418,7 +415,6 @@ ipv6IfLastChange OBJECT-TYPE
          ipv6IfStatsOutRequests
              Counter32,
          ipv6IfStatsOutDiscards
-
              Counter32,
          ipv6IfStatsOutFragOKs
              Counter32,
@@ -752,7 +748,6 @@ ipv6IfLastChange OBJECT-TYPE
      ::= { ipv6AddrPrefixTable 1 }
 
  Ipv6AddrPrefixEntry ::= SEQUENCE {
-
       ipv6AddrPrefix                     Ipv6AddressPrefix,
       ipv6AddrPrefixLength               INTEGER (0..128),
       ipv6AddrPrefixOnLinkFlag           TruthValue,
@@ -971,7 +966,6 @@ ipv6IfLastChange OBJECT-TYPE
       but packets addressed to such an address are
       processed as expected. The invalid(3) state indicates
       that this is not valid address which should not
-
       appear as the destination or source address of
       a packet. The inaccessible(4) state indicates that
       the address is not accessible because the interface
@@ -1301,7 +1295,6 @@ ipv6IfLastChange OBJECT-TYPE
         the effect of invalidating the corresponding entry
         in the ipv6RouteTable object.  That is, it
         effectively disassociates the destination
-
         identified with said entry from the route
         identified with said entry.  It is an
         implementation-specific matter as to whether the
@@ -1356,7 +1349,6 @@ ipv6IfLastChange OBJECT-TYPE
          ipv6NetToMediaNetAddress
              Ipv6Address,
          ipv6NetToMediaPhysAddress
-
              PhysAddress,
          ipv6NetToMediaType
              INTEGER,
@@ -1463,7 +1455,6 @@ ipv6IfNetToMediaLastUpdated OBJECT-TYPE
       disassociates the interface identified with said
       entry from the mapping identified with said entry.
       It is an implementation-specific matter as to
-
       whether the agent removes an invalidated entry
       from the table.  Accordingly, management stations
       must be prepared to receive tabular information
@@ -1565,7 +1556,6 @@ ipv6Compliance MODULE-COMPLIANCE
             MIN-ACCESS  read-only
             DESCRIPTION
                "An agent is not required to provide write
-
                 access to this object"
     ::= { ipv6Compliances 1 }
 

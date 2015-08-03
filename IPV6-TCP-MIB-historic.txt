@@ -140,7 +140,6 @@ ipv6TcpConnIfIndex OBJECT-TYPE
 
          If the connection's remote address (ipv6TcpConnRemAddress)
          is a link-local address and the connection's local address
-
          (ipv6TcpConnLocalAddress) is not a link-local address, this
          object identifies a local interface on the same link as
          the connection's remote link-local address.

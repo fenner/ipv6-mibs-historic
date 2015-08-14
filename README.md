@@ -3,7 +3,7 @@ coding: utf-8
 
 title: Republishing the IPV6-specific MIB modules as obsolete
 abbrev: ipv6-mibs-obsolete
-docname: draft-ietf-v6ops-ipv6-mibs-obsolete-00
+docname: draft-ietf-6man-ipv6-mibs-obsolete-00
 category: info
 obsoletes: 2452, 2454, 2465, 2466
 area: Internet

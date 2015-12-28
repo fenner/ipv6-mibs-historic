@@ -44,7 +44,7 @@
        "Obsoleting this MIB module; it has been replaced by
        the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
        (RFC4292)."
-     REVISION "9801082155Z"
+     REVISION "9802052155Z"
      DESCRIPTION
        "First revision, published as RFC2465"
      ::= { mib-2 55 }

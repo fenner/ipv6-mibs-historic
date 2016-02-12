@@ -3,7 +3,7 @@ coding: utf-8
 
 title: Republishing the IPV6-specific MIB modules as obsolete
 abbrev: ipv6-mibs-obsolete
-docname: draft-ietf-6man-ipv6-mibs-obsolete-00
+docname: draft-ietf-6man-ipv6-mibs-obsolete-01
 category: info
 obsoletes: 2452, 2454, 2465, 2466
 area: Internet
@@ -139,6 +139,15 @@ IANA is asked to make the following changes to the "SMI Experimental Codes" sect
 --- back
 
 # Change history
+
+## Changes since draft-ietf-6man-ipv6-mibs-obsolete-01
+
+Thanks to an excellent review by Mike Heard.
+
+* Correct the REVISION clause for the original IPV6-MIB
+
+* Remove the illegal sub-typing from SEQUENCE definitions in
+    IPV6-MIB, IPV6-UDP-MIB and IPV6-TCP-MIB.
 
 ## Changes since draft-fenner-ipv6-mibs-obsolete-00
 

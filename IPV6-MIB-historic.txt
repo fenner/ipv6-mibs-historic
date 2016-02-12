@@ -44,7 +44,7 @@
        "Obsoleting this MIB module; it has been replaced by
        the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
        (RFC4292)."
-     REVISION "9801082155Z"
+     REVISION "9802052155Z"
      DESCRIPTION
        "First revision, published as RFC2465"
      ::= { mib-2 55 }
@@ -749,7 +749,7 @@ ipv6IfLastChange OBJECT-TYPE
 
  Ipv6AddrPrefixEntry ::= SEQUENCE {
       ipv6AddrPrefix                     Ipv6AddressPrefix,
-      ipv6AddrPrefixLength               INTEGER (0..128),
+      ipv6AddrPrefixLength               INTEGER,
       ipv6AddrPrefixOnLinkFlag           TruthValue,
       ipv6AddrPrefixAutonomousFlag       TruthValue,
       ipv6AddrPrefixAdvPreferredLifetime Unsigned32,

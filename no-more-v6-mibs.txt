@@ -91,7 +91,7 @@ Table of Contents
      10.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . .  63
    Appendix A.  Change history . . . . . . . . . . . . . . . . . . .  63
      A.1.  Changes since draft-ietf-6man-ipv6-mibs-obsolete-01 . . .  63
-     A.2.  Changes since draft-ietf-6man-ipv6-mibs-obsolete-01 . . .  63
+     A.2.  Changes since draft-ietf-6man-ipv6-mibs-obsolete-00 . . .  63
      A.3.  Changes since draft-fenner-ipv6-mibs-obsolete-00  . . . .  63
      A.4.  Changes since draft-fenner-ipv6-mibs-obsolete-01  . . . .  64
      A.5.  Changes since draft-fenner-ipv6-mibs-obsolete-02  . . . .  64
@@ -3504,7 +3504,7 @@ A.1.  Changes since draft-ietf-6man-ipv6-mibs-obsolete-01
       had neglected RFC2579's requirement to note the obsoleting object
       for TEXTUAL-CONVENTIONs too.
 
-A.2.  Changes since draft-ietf-6man-ipv6-mibs-obsolete-01
+A.2.  Changes since draft-ietf-6man-ipv6-mibs-obsolete-00
 
    Thanks to an excellent review by Mike Heard.
 

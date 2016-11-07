@@ -11,7 +11,9 @@ Ipv6Address ::= TEXTUAL-CONVENTION
      DESCRIPTION
        "This data type is used to model IPv6 addresses.
         This is a binary string of 16 octets in network
-        byte-order."
+        byte-order.
+
+        This object is obsoleted by INET-ADDRESS-MIB::InetAddress."
      SYNTAX       OCTET STRING (SIZE (16))
 
 Ipv6AddressPrefix ::= TEXTUAL-CONVENTION
@@ -20,7 +22,9 @@ Ipv6AddressPrefix ::= TEXTUAL-CONVENTION
      DESCRIPTION
        "This data type is used to model IPv6 address
        prefixes. This is a binary string of up to 16
-       octets in network byte-order."
+       octets in network byte-order.
+
+       This object is obsoleted by INET-ADDRESS-MIB::InetAddress."
      SYNTAX       OCTET STRING (SIZE (0..16))
 
 Ipv6AddressIfIdentifier ::= TEXTUAL-CONVENTION
@@ -29,7 +33,9 @@ Ipv6AddressIfIdentifier ::= TEXTUAL-CONVENTION
      DESCRIPTION
        "This data type is used to model IPv6 address
        interface identifiers. This is a binary string
-        of up to 8 octets in network byte-order."
+        of up to 8 octets in network byte-order.
+
+       This object is obsoleted by IP-MIB::Ipv6AddressIfIdentifierTC."
      SYNTAX      OCTET STRING (SIZE (0..8))
 
 Ipv6IfIndex ::= TEXTUAL-CONVENTION
@@ -43,7 +49,9 @@ Ipv6IfIndex ::= TEXTUAL-CONVENTION
        internetwork-layer interface must remain constant
        at least from one re-initialization of the entity's
        network management system to the next
-       re-initialization."
+       re-initialization.
+
+       This object is obsoleted by IF-MIB::InterfaceIndex."
      SYNTAX       Integer32 (1..2147483647)
 
 Ipv6IfIndexOrZero ::= TEXTUAL-CONVENTION
@@ -60,7 +68,9 @@ Ipv6IfIndexOrZero ::= TEXTUAL-CONVENTION
          which uses this syntax.  Examples of the usage of
          zero might include situations where interface was
          unknown, or when none or all interfaces need to be
-         referenced."
+         referenced.
+
+         This object is obsoleted by IF-MIB::InterfaceIndexOrZero."
      SYNTAX       Integer32 (0..2147483647)
 
 END

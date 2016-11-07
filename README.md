@@ -3,7 +3,7 @@ coding: utf-8
 
 title: Republishing the IPV6-specific MIB modules as obsolete
 abbrev: ipv6-mibs-obsolete
-docname: draft-ietf-6man-ipv6-mibs-obsolete-01
+docname: draft-ietf-6man-ipv6-mibs-obsolete-02
 category: info
 obsoletes: 2452, 2454, 2465, 2466
 area: Internet
@@ -52,9 +52,20 @@ extracted content of these MIBs never changed in
 MIB repositories, and the original RFCs (as is normal
 IETF policy) never changed from being Proposed Standard.
 
+Note that the timeline of these MIB modules looks like
+shown below (and it is the added support for IPv6 in the later
+revision of the original modules that people often overlook).
+
+                           IPv6-MIB--------X
+                                            \
+                  IP-MIB-------------------IP-MIB--->
+
 This causes an unclear situation when simply looking at
 MIB repositories, so we are simply republishing these
 MIB modules with the SMI syntax changed to obsolete.
+This is an unusual step, and is not the intended path with
+every obsolete MIB module; the special history of these
+modules lead to this special step.
 
 # Historic IPV6-TC
 
@@ -141,6 +152,17 @@ IANA is asked to make the following changes to the "SMI Experimental Codes" sect
 # Change history
 
 ## Changes since draft-ietf-6man-ipv6-mibs-obsolete-01
+
+* Thanks to ops-dir comments by Dan Romascanu and Juergen Schoenwaelder,
+    updated the motiviation text to include Juergen's ASCII art history
+    and a specific mention that this is not the intended disposition of
+    all obsolete MIBs.
+
+* Thanks to gen-art review by Jouni Korhonen, who pointed out that I had
+    neglected RFC2579's requirement to note the obsoleting object for
+    TEXTUAL-CONVENTIONs too.
+
+## Changes since draft-ietf-6man-ipv6-mibs-obsolete-00
 
 Thanks to an excellent review by Mike Heard.
 

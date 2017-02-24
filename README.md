@@ -44,7 +44,7 @@ which use the InetAddressType/InetAddress
 construct to handle IPv4 and IPv6 in the same table.
 This document contains versions of the obsoleted
 IPV6-MIB, IPV6-TC, IPV6-ICMP-MIB, IPV6-TCP-MIB,
-and IPV6-UDP-MIB modules, for the purpose of updating
+and IPV6-UDP-MIB modules for the purpose of updating
 MIB module repositories.
 This document obsoletes RFCs 2452, 2454, 2465, and 2466 (i.e., the
 RFCs containing these MIBs) and reclassifies them as Historic.

@@ -1,17 +1,27 @@
 ---
 coding: utf-8
 
-title: Republishing the IPV6-specific MIB modules as obsolete
-abbrev: ipv6-mibs-obsolete
+title: The IPv6-Specific MIB Modules Are Obsolete
+abbrev: IPv6 MIB Modules Obsolete
 docname: draft-ietf-6man-ipv6-mibs-obsolete-02
 category: info
 obsoletes: 2452, 2454, 2465, 2466
 area: Internet
 workgroup: IPv6 Maintenance
+date: 2017-02
 
 stand_alone: yes
-pi: [toc, sortrefs, symrefs, comments]
+pi:
+  toc: yes
+  sortrefs: yes
+  symrefs: yes
+  comments: yes
+  compact: yes
+  subcompact: no
 ipr: pre5378Trust200902
+submissionType: IETF
+consensus: yes
+number: 8096
 
 author:
   -
@@ -20,39 +30,42 @@ author:
     org: Arista Networks, Inc.
     street: 5453 Great America Parkway
     city: Santa Clara
+    region: CA
     code: 95054
-    country: USA
+    country: United States of America
     phone: +1-408-547-5572
     email: fenner@fenron.com
 
 --- abstract
 
-In 2005, the IPv6 MIB update group published
+In 2005-2006, the IPv6 MIB update group published
 updated versions of the IP-MIB, UDP-MIB,
-TCP-MIB and IP-FORWARD-MIB modules,
+TCP-MIB, and IP-FORWARD-MIB modules,
 which use the InetAddressType/InetAddress
 construct to handle IPv4 and IPv6 in the same table.
 This document contains versions of the obsoleted
-IPV6-MIB, IPV6-TC, IPV6-ICMP-MIB, IPV6-TCP-MIB
+IPV6-MIB, IPV6-TC, IPV6-ICMP-MIB, IPV6-TCP-MIB,
 and IPV6-UDP-MIB modules, for the purpose of updating
 MIB module repositories.
+This document obsoletes RFCs 2452, 2454, 2465, and 2466 (i.e., the
+RFCs containing these MIBs) and reclassifies them as Historic.
 
 --- middle
 
 # Motivation
 
-In 2005, the IPv6 MIB update group published
+In 2005-2006, the IPv6 MIB update group published
 updated versions of the IP-MIB {{?RFC4293}}, UDP-MIB {{?RFC4113}},
-TCP-MIB {{?RFC4022}} and IP-FORWARD-MIB {{?RFC4292}} modules,
+TCP-MIB {{?RFC4022}}, and IP-FORWARD-MIB {{?RFC4292}} modules,
 which use the InetAddressType/InetAddress
 construct to handle IPv4 and IPv6 in the same table.
-These documents were marked in the RFC Index as
-obsoleting the corresponding IPV6-MIBs, but the
+The RFC Editor marked these documents as obsoleting
+the corresponding IPV6-MIBs, but the
 extracted content of these MIBs never changed in
 MIB repositories, and the original RFCs (as is normal
 IETF policy) never changed from being Proposed Standard.
 
-Note that the timeline of these MIB modules looks like
+Note that the timeline of these MIB modules is as
 shown below (and it is the added support for IPv6 in the later
 revision of the original modules that people often overlook).
 
@@ -62,10 +75,11 @@ revision of the original modules that people often overlook).
 
 This causes an unclear situation when simply looking at
 MIB repositories, so we are simply republishing these
-MIB modules with the SMI syntax changed to obsolete.
-This is an unusual step, and is not the intended path with
+MIB modules with the Structure of Management Information (SMI)
+syntax changed to obsolete.
+This is an unusual step, and it is not the intended path with
 every obsolete MIB module; the special history of these
-modules lead to this special step.
+modules led to this special step.
 
 # Historic IPV6-TC
 
@@ -119,88 +133,30 @@ would improve the security of that implementation.
 
 # IANA Considerations
 
-In
-[smi-numbers](http://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml),
-the entries for RFC2452 and RFC2454, in the "SMI Experimental Codes" section,
-have an annotation "(Historic)" or "(Historical)".
+IANA has updated the SMI Numbers registry at
+[smi-numbers](http://www.iana.org/assignments/smi-numbers/) as
+described below.
 
-IANA is asked to make the following changes to the "SMI Network Management MGMT Codes Internet-standard MIB"
-section:
+IANA has updated the "SMI Network Management MGMT Codes Internet-standard MIB"
+section as follows:
 
-* Remove RFC1213 from the references for mib-2.5 "icmp".
+* Removed RFC1213 from the references for mib-2.5 ("icmp").
 
-* Update the reference for mib-2.6 "tcp" to point to RFC4022.
+* Updated the reference for mib-2.6 ("tcp") to point to RFC4022.
 
-* Remove RFC1213 from the references for mib-2.7 "udp".
+* Removed RFC1213 from the references for mib-2.7 ("udp").
 
-* Remove RFC2012 from the references for mib-2.49 "tcpMIB".
+* Removed RFC2012 from the references for mib-2.49 ("tcpMIB").
 
-* Add the "(Historic)" annotation for the entries for mib-2.55 "ipv6MIB" and for
-    mib-2.56 "ipv6IcmpMIB", and update the reference to point to this document.
+* Added the "(Historic)" annotation for the entries for mib-2.55 ("ipv6MIB") and
+    mib-2.56 ("ipv6IcmpMIB") and updated the reference of each to point to this document.
 
-IANA is asked to make the following changes to the "SMI Experimental Codes" section:
+IANA has updated the following changes to the "SMI Experimental Codes" section as follows:
 
-* Add the "(Historic)" annotation for experimental.74 "IPV6 MIB"
+* Added the "(Historic)" annotation for experimental.74 ("IPV6 MIB")
 
-* Change the "(Historical)" annotation for experimental.87 "ipv6UdpMIB" to "(Historic)"
+* Changed the "(Historical)" annotation for experimental.87 ("ipv6UdpMIB") to "(Historic)"
 
-* Update the reference for experimental.86 "ipv6TcpMIB" and
-    experimental.87 "ipv6UdpMIB" to point to this document.
+* Updated the reference for experimental.86 ("ipv6TcpMIB") and
+    experimental.87 ("ipv6UdpMIB") to point to this document.
 
---- back
-
-# Change history
-
-## Changes since draft-ietf-6man-ipv6-mibs-obsolete-01
-
-* Thanks to ops-dir comments by Dan Romascanu and Juergen Schoenwaelder,
-    updated the motiviation text to include Juergen's ASCII art history
-    and a specific mention that this is not the intended disposition of
-    all obsolete MIBs.
-
-* Thanks to gen-art review by Jouni Korhonen, who pointed out that I had
-    neglected RFC2579's requirement to note the obsoleting object for
-    TEXTUAL-CONVENTIONs too.
-
-## Changes since draft-ietf-6man-ipv6-mibs-obsolete-00
-
-Thanks to an excellent review by Mike Heard.
-
-* Correct the REVISION clause for the original IPV6-MIB
-
-* Remove the illegal sub-typing from SEQUENCE definitions in
-    IPV6-MIB, IPV6-UDP-MIB and IPV6-TCP-MIB.
-
-## Changes since draft-fenner-ipv6-mibs-obsolete-00
-
-* Realized that IPV6-ICMP-MIB was {{?RFC2466}}, so modified the added
-    REVISION clause and the Reclassification section.
-
-* Added Security Considerations
-
-* Added IANA Considerations
-
-* Added the 6.c.iii Legend to the copyright statement, since the original
-    RFCs were published before pre-5378.
-
-* Used "MIB module" instead of "MIB" when referring to a module, and
-    changed REVISION DESCRIPTION to "Obsoleting", not "Deprecating".
-
-* Added "Obsoletes:" header to document
-
-* Switched to pre-5378 IPR statement, since the original RFCs were
-    pre-5378.
-
-## Changes since draft-fenner-ipv6-mibs-obsolete-01
-
-* Updated the DESCRIPTION of MODULE-IDENTITY to improve the "MIB index"
-    problem.
-
-* Updated IANA considerations.
-
-## Changes since draft-fenner-ipv6-mibs-obsolete-02
-
-* Fixed "IPV6-MIB" in title
-
-* Fixed some extra blank lines in the source MIBs, introduced by the
-    process of extraction from RFCs.

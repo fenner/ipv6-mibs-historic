@@ -13,7 +13,7 @@
      Ipv6IfIndexOrZero                     FROM IPV6-TC;
 
  ipv6MIB MODULE-IDENTITY
-     LAST-UPDATED "201505282112Z"
+     LAST-UPDATED "201702220000Z"
      ORGANIZATION "IETF IPv6 Working Group"
      CONTACT-INFO
        "           Dimitry Haskin
@@ -39,7 +39,7 @@
      DESCRIPTION
        "The obsolete MIB module for entities implementing the IPv6
         protocol.  Use the IP-MIB or IP-FORWARD-MIB instead."
-     REVISION "201505282112Z"
+     REVISION "201702220000Z"
      DESCRIPTION
        "Obsoleting this MIB module; it has been replaced by
        the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
@@ -102,7 +102,7 @@ ipv6Interfaces OBJECT-TYPE
        "The number of IPv6 interfaces (regardless of
         their current state) present on this system.
 
-        This object is obsolete; there is no direct replacement
+        This object is obsolete; there is no direct replacement,
         but its value can be derived from the number of rows
         in the IP-MIB::ipv6InterfaceTable."
      ::= { ipv6MIBObjects 3 }
@@ -1231,7 +1231,7 @@ ipv6IfLastChange OBJECT-TYPE
         unknown or not relevant its value should be set
         to zero.
 
-        This object is obsolete, and has no replacement.
+        This object is obsolete, and it has no replacement.
         The Routing Domain ID concept did not catch on."
      ::= { ipv6RouteEntry 10 }
 
@@ -1264,7 +1264,7 @@ ipv6IfLastChange OBJECT-TYPE
         the lower the weight value the more preferred is
         the route.
 
-        This object is obsoleted, and has not been replaced."
+        This object is obsoleted, and it has not been replaced."
      ::= { ipv6RouteEntry 12 }
 
  ipv6RouteInfo OBJECT-TYPE
@@ -1283,7 +1283,7 @@ ipv6IfLastChange OBJECT-TYPE
         and the Basic Encoding Rules must  be  able  to
         generate and recognize this value.
 
-        This object is obsoleted, and has not been replaced."
+        This object is obsoleted, and it has not been replaced."
      ::= { ipv6RouteEntry 13 }
 
  ipv6RouteValid OBJECT-TYPE

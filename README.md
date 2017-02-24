@@ -3,7 +3,6 @@ coding: utf-8
 
 title: The IPv6-Specific MIB Modules Are Obsolete
 abbrev: IPv6 MIB Modules Obsolete
-docname: draft-ietf-6man-ipv6-mibs-obsolete-02
 category: info
 obsoletes: 2452, 2454, 2465, 2466
 area: Internet
@@ -140,22 +139,22 @@ described below.
 IANA has updated the "SMI Network Management MGMT Codes Internet-standard MIB"
 section as follows:
 
-* Removed RFC1213 from the references for mib-2.5 ("icmp").
+* Removed RFC 1213 as a reference for mib-2.5 ("icmp").
 
-* Updated the reference for mib-2.6 ("tcp") to point to RFC4022.
+* Updated the reference for mib-2.6 ("tcp") to point to RFC 4022.
 
-* Removed RFC1213 from the references for mib-2.7 ("udp").
+* Removed RFC 1213 as a reference for mib-2.7 ("udp").
 
-* Removed RFC2012 from the references for mib-2.49 ("tcpMIB").
+* Removed RFC 2012 as a reference for mib-2.49 ("tcpMIB").
 
 * Added the "(Historic)" annotation for the entries for mib-2.55 ("ipv6MIB") and
     mib-2.56 ("ipv6IcmpMIB") and updated the reference of each to point to this document.
 
-IANA has updated the following changes to the "SMI Experimental Codes" section as follows:
+IANA has updated the "SMI Experimental Codes" section as follows:
 
-* Added the "(Historic)" annotation for experimental.74 ("IPV6 MIB")
+* Added the "(Historic)" annotation for experimental.74 ("IPv6 MIB").
 
-* Changed the "(Historical)" annotation for experimental.87 ("ipv6UdpMIB") to "(Historic)"
+* Changed the "(Historical)" annotation for experimental.87 ("ipv6UdpMIB") to "(Historic)".
 
 * Updated the reference for experimental.86 ("ipv6TcpMIB") and
     experimental.87 ("ipv6UdpMIB") to point to this document.

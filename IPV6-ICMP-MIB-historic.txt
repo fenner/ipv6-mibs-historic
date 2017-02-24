@@ -7,7 +7,7 @@
      ipv6IfEntry                      FROM IPV6-MIB;
 
  ipv6IcmpMIB MODULE-IDENTITY
-     LAST-UPDATED "201505282112Z"
+     LAST-UPDATED "201702220000Z"
      ORGANIZATION "IETF IPv6 Working Group"
      CONTACT-INFO
        "           Dimitry Haskin
@@ -32,7 +32,7 @@
      DESCRIPTION
        "The obsolete MIB module for entities implementing
         the ICMPv6.  Use the IP-MIB instead."
-     REVISION "201505282112Z"
+     REVISION "201702220000Z"
      DESCRIPTION
        "Obsoleting this MIB module; it has been replaced by
        the revised IP-MIB (RFC4293)."
@@ -56,7 +56,7 @@
       of ICMPv6 messages that are received and sourced by
       the entity.
 
-      This table is obsolete, because systems were found
+      This table is obsolete because systems were found
       not to maintain these statistics per-interface."
      ::= { ipv6IcmpMIBObjects 1 }
 
@@ -78,7 +78,7 @@
       ICMP message which is usually but not
       necessarily the output interface for the message.
 
-      This table is obsolete, because systems were found
+      This table is obsolete because systems were found
       not to maintain these statistics per-interface."
      AUGMENTS { ipv6IfEntry }
      ::= { ipv6IfIcmpTable 1 }

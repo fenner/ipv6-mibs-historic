@@ -7,7 +7,7 @@ IMPORTS
    Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
 
 ipv6TcpMIB MODULE-IDENTITY
-   LAST-UPDATED "201505282112Z"
+   LAST-UPDATED "201702220000Z"
    ORGANIZATION "IETF IPv6 MIB Working Group"
    CONTACT-INFO
         "       Mike Daniele
@@ -22,7 +22,7 @@ ipv6TcpMIB MODULE-IDENTITY
    DESCRIPTION
         "The obsolete MIB module for entities implementing TCP
         over IPv6.  Use the TCP-MIB instead."
-   REVISION "201505282112Z"
+   REVISION "201702220000Z"
    DESCRIPTION
         "Obsoleting this MIB module; it has been replaced by
         the revised TCP-MIB (RFC4022)."
@@ -184,7 +184,7 @@ ipv6TcpConnState OBJECT-TYPE
 
          The only value which may be set by a management station is
          deleteTCB(12).  Accordingly, it is appropriate for an agent
-         to return an error response (`badValue' for SNMPv1, 'wrongValue'
+         to return an error response ('badValue' for SNMPv1, 'wrongValue'
          for SNMPv2) if a management station attempts to set this
          object to any other value.
 

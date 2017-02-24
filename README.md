@@ -76,7 +76,7 @@ revision of the original modules that people often overlook).
 This causes an unclear situation when simply looking at
 MIB repositories, so we are simply republishing these
 MIB modules with the Structure of Management Information (SMI)
-syntax changed to obsolete.
+status changed to obsolete.
 This is an unusual step, and it is not the intended path with
 every obsolete MIB module; the special history of these
 modules led to this special step.

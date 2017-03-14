@@ -35,6 +35,11 @@ author:
     phone: +1-408-547-5572
     email: fenner@fenron.com
 
+informative:
+  RFC1213:
+  RFC1573:
+  RFC2461:
+
 --- abstract
 
 In 2005-2006, the IPv6 MIB update group published

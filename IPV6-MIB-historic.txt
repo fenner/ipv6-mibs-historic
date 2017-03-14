@@ -200,9 +200,9 @@ ipv6IfTable OBJECT-TYPE
        which this network interface operates.  If this
        network interface operates over the data-link
        layer, then the value of this object refers to an
-       instance of ifIndex [6]. If this network interface
+       instance of ifIndex [RFC1573]. If this network interface
        operates over an IPv4 interface, the value of this
-       object refers to an instance of ipAdEntAddr [3].
+       object refers to an instance of ipAdEntAddr [RFC1213].
 
        If this network interface operates over another
        IPv6 interface, the value of this object refers to
@@ -1423,7 +1423,7 @@ ipv6IfNetToMediaState OBJECT-TYPE
     MAX-ACCESS  read-only
     STATUS      obsolete
     DESCRIPTION
-        "The Neighbor Unreachability Detection [8] state
+        "The Neighbor Unreachability Detection [RFC2461] state
         for the interface when the address mapping in
         this entry is used.
 

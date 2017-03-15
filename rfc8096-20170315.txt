@@ -79,18 +79,18 @@ Table of Contents
 
    1.  Motivation  . . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Historic IPV6-TC  . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Historic IPV6-MIB . . . . . . . . . . . . . . . . . . . . . .   4
+   3.  Historic IPV6-MIB . . . . . . . . . . . . . . . . . . . . . .   5
    4.  Historic IPV6-ICMP-MIB  . . . . . . . . . . . . . . . . . . .  39
    5.  Historic IPV6-UDP-MIB . . . . . . . . . . . . . . . . . . . .  52
    6.  Historic IPV6-TCP-MIB . . . . . . . . . . . . . . . . . . . .  56
    7.  Reclassification  . . . . . . . . . . . . . . . . . . . . . .  61
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .  61
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  61
+   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  62
    10. References  . . . . . . . . . . . . . . . . . . . . . . . . .  62
      10.1.  Normative References . . . . . . . . . . . . . . . . . .  62
      10.2.  Informative References . . . . . . . . . . . . . . . . .  62
-     10.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . .  63
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  63
+     10.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . .  64
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  64
 
 1.  Motivation
 
@@ -131,6 +131,11 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
   IPV6-TC DEFINITIONS ::= BEGIN
 
+
+  -- Copyright (C) The Internet Society (2017). This version
+  -- of this MIB module is part of RFC 8096; see the RFC itself
+  -- for full legal notices.
+
   IMPORTS
        Integer32                FROM SNMPv2-SMI
        TEXTUAL-CONVENTION       FROM SNMPv2-TC;
@@ -152,18 +157,13 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
        STATUS       obsolete
        DESCRIPTION
          "This data type is used to model IPv6 address
-         prefixes. This is a binary string of up to 16
+         prefixes.  This is a binary string of up to 16
          octets in network byte-order.
 
          This object is obsoleted by INET-ADDRESS-MIB::InetAddress."
        SYNTAX       OCTET STRING (SIZE (0..16))
 
   Ipv6AddressIfIdentifier ::= TEXTUAL-CONVENTION
-       DISPLAY-HINT "2x:"
-       STATUS       obsolete
-       DESCRIPTION
-         "This data type is used to model IPv6 address
-         interface identifiers. This is a binary string
 
 
 
@@ -172,6 +172,11 @@ Fenner                        Informational                     [Page 3]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
+       DISPLAY-HINT "2x:"
+       STATUS       obsolete
+       DESCRIPTION
+         "This data type is used to model IPv6 address
+         interface identifiers.  This is a binary string
           of up to 8 octets in network byte-order.
 
          This object is obsoleted by IP-MIB::Ipv6AddressIfIdentifierTC."
@@ -183,8 +188,8 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
        DESCRIPTION
          "A unique value, greater than zero for each
          internetwork-layer interface in the managed
-         system. It is recommended that values are assigned
-         contiguously starting from 1. The value for each
+         system.  It is recommended that values are assigned
+         contiguously starting from 1.  The value for each
          internetwork-layer interface must remain constant
          at least from one re-initialization of the entity's
          network management system to the next
@@ -214,12 +219,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
   END
 
-3.  Historic IPV6-MIB
 
- IPV6-MIB DEFINITIONS ::= BEGIN
-
- IMPORTS
-     MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
 
 
 
@@ -228,6 +228,12 @@ Fenner                        Informational                     [Page 4]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
+3.  Historic IPV6-MIB
+
+ IPV6-MIB DEFINITIONS ::= BEGIN
+
+ IMPORTS
+     MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
      mib-2, Counter32, Unsigned32, Integer32,
      Gauge32                               FROM SNMPv2-SMI
      DisplayString, PhysAddress, TruthValue, TimeStamp,
@@ -264,18 +270,12 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
            E-mail: sonishi@baynetworks.com"
      DESCRIPTION
        "The obsolete MIB module for entities implementing the IPv6
-        protocol.  Use the IP-MIB or IP-FORWARD-MIB instead."
-     REVISION "201702220000Z"
-     DESCRIPTION
-       "Obsoleting this MIB module; it has been replaced by
-       the revised IP-MIB (RFC4293) and IP-FORWARD-MIB
-       (RFC4292)."
-     REVISION "9802052155Z"
-     DESCRIPTION
-       "First revision, published as RFC2465"
-     ::= { mib-2 55 }
+        protocol.  Use the IP-MIB or IP-FORWARD-MIB instead.
 
- -- the IPv6 general group
+        Copyright (C) The Internet Society (2017). This version
+        of this MIB module is part of RFC 8096; see the RFC itself
+        for full legal notices."
+     REVISION "201702220000Z"
 
 
 
@@ -283,6 +283,17 @@ Fenner                        Informational                     [Page 5]
 
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
+
+     DESCRIPTION
+       "Obsoleting this MIB module; it has been replaced by
+       the revised IP-MIB (RFC 4293) and IP-FORWARD-MIB
+       (RFC 4292)."
+     REVISION "9802052155Z"
+     DESCRIPTION
+       "First revision, published as RFC 2465"
+     ::= { mib-2 55 }
+
+ -- the IPv6 general group
 
  ipv6MIBObjects OBJECT IDENTIFIER   ::= { ipv6MIB 1 }
 
@@ -321,6 +332,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         "The default value inserted into the Hop Limit
         field of the IPv6 header of datagrams originated
         at this entity, whenever a Hop Limit value is not
+
+
+
+Fenner                        Informational                     [Page 6]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         supplied by the transport layer protocol.
 
         This object is obsoleted by IP-MIB::ipv6IpDefaultHopLimit."
@@ -332,14 +351,6 @@ ipv6Interfaces OBJECT-TYPE
      MAX-ACCESS  read-only
      STATUS      obsolete
      DESCRIPTION
-
-
-
-Fenner                        Informational                     [Page 6]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
        "The number of IPv6 interfaces (regardless of
         their current state) present on this system.
 
@@ -355,7 +366,7 @@ ipv6IfTableLastChange OBJECT-TYPE
      DESCRIPTION
        "The value of sysUpTime at the time of the last
        insertion or removal of an entry in the
-       ipv6IfTable. If the number of entries has been
+       ipv6IfTable.  If the number of entries has been
        unchanged since the last re-initialization of
        the local network management subsystem, then this
        object contains a zero value.
@@ -377,6 +388,14 @@ ipv6IfTable OBJECT-TYPE
        layer attachment to the layer immediately below
 
        IPv6 including internet layer 'tunnels', such as
+
+
+
+Fenner                        Informational                     [Page 7]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
        tunnels over IPv4 or IPv6 itself.
 
        This table is obsoleted by IP-MIB::ipv6InterfaceTable."
@@ -388,14 +407,6 @@ ipv6IfTable OBJECT-TYPE
      STATUS     obsolete
      DESCRIPTION
        "An interface entry containing objects
-
-
-
-Fenner                        Informational                     [Page 7]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
         about a particular IPv6 interface.
 
         This object is obsoleted by IP-MIB::ipv6InterfaceEntry."
@@ -433,6 +444,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      MAX-ACCESS read-write
      STATUS     obsolete
      DESCRIPTION
+
+
+
+Fenner                        Informational                     [Page 8]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
        "A textual string containing information about the
        interface.  This string may be set by the network
        management system.
@@ -444,20 +463,12 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
     SYNTAX      VariablePointer
     MAX-ACCESS  read-only
     STATUS      obsolete
-
-
-
-Fenner                        Informational                     [Page 8]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
     DESCRIPTION
       "This object identifies the protocol layer over
        which this network interface operates.  If this
        network interface operates over the data-link
        layer, then the value of this object refers to an
-       instance of ifIndex [RFC1573]. If this network interface
+       instance of ifIndex [RFC1573].  If this network interface
        operates over an IPv4 interface, the value of this
        object refers to an instance of ipAdEntAddr [RFC1213].
 
@@ -489,6 +500,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
  ipv6IfReasmMaxSize OBJECT-TYPE
     SYNTAX      Unsigned32 (0..65535)
+
+
+
+Fenner                        Informational                     [Page 9]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
     UNITS       "octets"
     MAX-ACCESS  read-only
     STATUS      obsolete
@@ -500,14 +519,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
       This object is obsoleted by IP-MIB::ipv6InterfaceReasmMaxSize."
  ::= { ipv6IfEntry 5 }
 
-
-
-
-Fenner                        Informational                     [Page 9]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
  ipv6IfIdentifier OBJECT-TYPE
      SYNTAX      Ipv6AddressIfIdentifier
      MAX-ACCESS  read-write
@@ -515,7 +526,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      DESCRIPTION
         "The Interface Identifier for this interface that
         is (at least) unique on the link this interface is
-        attached to. The Interface Identifier is combined
+        attached to.  The Interface Identifier is combined
         with an address prefix to form an interface address.
 
         By default, the Interface Identifier is autoconfigured
@@ -543,19 +554,8 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      MAX-ACCESS  read-only
      STATUS      obsolete
      DESCRIPTION
-       "The interface's physical address. For example, for
+       "The interface's physical address.  For example, for
        an IPv6 interface attached to an 802.x link, this
-       object normally contains a MAC address. Note that
-       in some cases this address may differ from the
-       address of the interface's protocol sub-layer.  The
-       interface's media-specific MIB must define the bit
-       and byte ordering and the format of the value of
-       this object. For interfaces which do not have such
-       an address (e.g., a serial line), this object should
-       contain an octet string of zero length.
-
-       This object is obsoleted by IF-MIB::ifPhysAddress."
-     ::= { ipv6IfEntry 8 }
 
 
 
@@ -563,6 +563,18 @@ Fenner                        Informational                    [Page 10]
 
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
+
+       object normally contains a MAC address.  Note that
+       in some cases this address may differ from the
+       address of the interface's protocol sub-layer.  The
+       interface's media-specific MIB must define the bit
+       and byte ordering and the format of the value of
+       this object.  For interfaces which do not have such
+       an address (e.g., a serial line), this object should
+       contain an octet string of zero length.
+
+       This object is obsoleted by IF-MIB::ifPhysAddress."
+     ::= { ipv6IfEntry 8 }
 
 ipv6IfAdminStatus OBJECT-TYPE
     SYNTAX  INTEGER {
@@ -600,6 +612,14 @@ ipv6IfOperStatus OBJECT-TYPE
              notPresent(5)      -- missing
             }
     MAX-ACCESS  read-only
+
+
+
+Fenner                        Informational                    [Page 11]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
     STATUS      obsolete
     DESCRIPTION
       "The current operational state of the interface.
@@ -612,14 +632,6 @@ ipv6IfOperStatus OBJECT-TYPE
       to up(1) then ipv6IfOperStatus should change to up(1)
       if the interface is ready to transmit and receive
       network traffic; it should remain in the down(2) or
-
-
-
-Fenner                        Informational                    [Page 11]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
       noIfIdentifier(3) state if and only if there is a
       fault that prevents it from going to the up(1) state;
       it should remain in the notPresent(5) state if
@@ -656,6 +668,14 @@ ipv6IfLastChange OBJECT-TYPE
      DESCRIPTION
          "IPv6 interface traffic statistics.
 
+
+
+
+Fenner                        Informational                    [Page 12]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
          This table is obsoleted by the IP-MIB::ipIfStatsTable."
      ::= { ipv6MIBObjects 6 }
 
@@ -668,14 +688,6 @@ ipv6IfLastChange OBJECT-TYPE
          at a particular IPv6 interface.
 
          This object is obsoleted by the IP-MIB::ipIfStatsEntry."
-
-
-
-Fenner                        Informational                    [Page 12]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      AUGMENTS { ipv6IfEntry }
      ::= { ipv6IfStatsTable 1 }
 
@@ -712,6 +724,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
              Counter32,
          ipv6IfStatsReasmReqds
              Counter32,
+
+
+
+Fenner                        Informational                    [Page 13]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
          ipv6IfStatsReasmOKs
              Counter32,
          ipv6IfStatsReasmFails
@@ -724,14 +744,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
  ipv6IfStatsInReceives OBJECT-TYPE
      SYNTAX      Counter32
-
-
-
-Fenner                        Informational                    [Page 13]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      MAX-ACCESS  read-only
      STATUS      obsolete
      DESCRIPTION
@@ -769,6 +781,13 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
        incoming interface of a packet that failed fragmentation."
      ::= { ipv6IfStatsEntry 3 }
 
+
+
+Fenner                        Informational                    [Page 14]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
  ipv6IfStatsInNoRoutes OBJECT-TYPE
      SYNTAX      Counter32
      MAX-ACCESS  read-only
@@ -780,13 +799,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
          This object is obsoleted by IP-MIB::ipIfStatsInNoRoutes."
      ::= { ipv6IfStatsEntry 4 }
-
-
-
-Fenner                        Informational                    [Page 14]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
  ipv6IfStatsInAddrErrors OBJECT-TYPE
      SYNTAX      Counter32
@@ -814,7 +826,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      DESCRIPTION
         "The number of locally-addressed datagrams
         received successfully but discarded because of an
-        unknown or unsupported protocol. This counter is
+        unknown or unsupported protocol.  This counter is
         incremented at the interface to which these
         datagrams were addressed which might not be
         necessarily the input interface for some of
@@ -824,6 +836,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      ::= { ipv6IfStatsEntry 6 }
 
  ipv6IfStatsInTruncatedPkts OBJECT-TYPE
+
+
+
+Fenner                        Informational                    [Page 15]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
      SYNTAX      Counter32
      MAX-ACCESS  read-only
      STATUS      obsolete
@@ -836,14 +856,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
  ipv6IfStatsInDiscards OBJECT-TYPE
      SYNTAX      Counter32
-
-
-
-Fenner                        Informational                    [Page 15]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      MAX-ACCESS  read-only
      STATUS      obsolete
      DESCRIPTION
@@ -880,6 +892,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         "The number of output datagrams which this
         entity received and forwarded to their final
         destinations.  In entities which do not act
+
+
+
+Fenner                        Informational                    [Page 16]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         as IPv6 routers, this counter will include
         only those packets which were Source-Routed
         via this entity, and the Source-Route
@@ -892,14 +912,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      ::= { ipv6IfStatsEntry 10 }
 
  ipv6IfStatsOutRequests OBJECT-TYPE
-
-
-
-Fenner                        Informational                    [Page 16]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      SYNTAX      Counter32
      MAX-ACCESS  read-only
      STATUS      obsolete
@@ -937,6 +949,13 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         "The number of IPv6 datagrams that have been
          successfully fragmented at this output interface.
 
+
+
+Fenner                        Informational                    [Page 17]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
          This object is obsoleted by IP-MIB::ipIfStatsOutFragOKs."
      ::= { ipv6IfStatsEntry 13 }
 
@@ -948,13 +967,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         "The number of IPv6 datagrams that have been
          discarded because they needed to be fragmented
          at this output interface but could not be.
-
-
-
-Fenner                        Informational                    [Page 17]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
          This object is obsoleted by IP-MIB::ipIfStatsOutFragFails."
      ::= { ipv6IfStatsEntry 14 }
@@ -992,6 +1004,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      STATUS      obsolete
      DESCRIPTION
        "The number of IPv6 datagrams successfully
+
+
+
+Fenner                        Informational                    [Page 18]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
        reassembled.  Note that this counter is incremented
        at the interface to which these datagrams were
        addressed which might not be necessarily the input
@@ -1004,14 +1024,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      SYNTAX      Counter32
      MAX-ACCESS  read-only
      STATUS      obsolete
-
-
-
-Fenner                        Informational                    [Page 18]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      DESCRIPTION
         "The number of failures detected by the IPv6 re-
         assembly algorithm (for whatever reason: timed
@@ -1048,6 +1060,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          by the interface
 
          This object is obsoleted by IP-MIB::ipIfStatsHCOutMcastPkts."
+
+
+
+Fenner                        Informational                    [Page 19]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
      ::= { ipv6IfStatsEntry 20 }
 
  -- Address Prefix table
@@ -1060,14 +1080,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      SYNTAX  SEQUENCE OF Ipv6AddrPrefixEntry
      MAX-ACCESS  not-accessible
      STATUS      obsolete
-
-
-
-Fenner                        Informational                    [Page 19]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      DESCRIPTION
          "The list of IPv6 address prefixes of
          IPv6 interfaces.
@@ -1105,6 +1117,13 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      DESCRIPTION
        "The prefix associated with the this interface.
 
+
+
+Fenner                        Informational                    [Page 20]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
        This object is obsoleted by IP-MIB::ipAddressPrefixPrefix."
      ::= { ipv6AddrPrefixEntry 1 }
 
@@ -1116,14 +1135,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      DESCRIPTION
        "The length of the prefix (in bits).
 
-
-
-
-Fenner                        Informational                    [Page 20]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
        This object is obsoleted by IP-MIB::ipAddressPrefixLength."
      ::= { ipv6AddrPrefixEntry 2 }
 
@@ -1133,7 +1144,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      STATUS      obsolete
      DESCRIPTION
        "This object has the value 'true(1)', if this
-       prefix can be used  for on-link determination
+       prefix can be used for on-link determination
        and the value 'false(2)' otherwise.
 
        This object is obsoleted by IP-MIB::ipAddressPrefixOnLinkFlag."
@@ -1144,7 +1155,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      MAX-ACCESS  read-only
      STATUS      obsolete
      DESCRIPTION
-       "Autonomous address configuration flag. When
+       "Autonomous address configuration flag.  When
        true(1), indicates that this prefix can be used
        for autonomous address configuration (i.e. can
        be used to form a local interface address).
@@ -1161,6 +1172,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      MAX-ACCESS  read-only
      STATUS      obsolete
      DESCRIPTION
+
+
+
+Fenner                        Informational                    [Page 21]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         "It is the length of time in seconds that this
         prefix will remain preferred, i.e. time until
         deprecation.  A value of 4,294,967,295 represents
@@ -1172,14 +1191,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         an interface are processed as expected.
 
         This object is obsoleted by
-
-
-
-Fenner                        Informational                    [Page 21]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
         IP-MIB::ipAddressPrefixAdvPreferredLifetime."
      ::= { ipv6AddrPrefixEntry 5 }
 
@@ -1218,6 +1229,13 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
       This table is obsoleted by IP-MIB::ipAddressTable."
     ::= { ipv6MIBObjects 8 }
 
+
+
+Fenner                        Informational                    [Page 22]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
  ipv6AddrEntry OBJECT-TYPE
     SYNTAX      Ipv6AddrEntry
     MAX-ACCESS  not-accessible
@@ -1228,14 +1246,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
         This entry is obsoleted by IP-MIB::ipAddressEntry."
     INDEX   { ipv6IfIndex, ipv6AddrAddress }
-
-
-
-Fenner                        Informational                    [Page 22]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
     ::= { ipv6AddrTable 1 }
 
  Ipv6AddrEntry ::=
@@ -1274,6 +1284,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
  ipv6AddrType OBJECT-TYPE
     SYNTAX      INTEGER {
+
+
+
+Fenner                        Informational                    [Page 23]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
                         -- address has been formed
                         -- using stateless
          stateless(1),  -- autoconfiguration
@@ -1284,20 +1302,12 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          stateful(2),   -- configuration)
 
                         -- type can not be determined
-
-
-
-Fenner                        Informational                    [Page 23]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
          unknown(3)     -- for some reason.
        }
     MAX-ACCESS  read-only
     STATUS      obsolete
     DESCRIPTION
-       "The type of address. Note that 'stateless(1)'
+       "The type of address.  Note that 'stateless(1)'
        refers to an address that was statelessly
        autoconfigured; 'stateful(2)' refers to a address
        which was acquired by via a stateful protocol
@@ -1330,16 +1340,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
             }
     MAX-ACCESS  read-only
     STATUS      obsolete
-    DESCRIPTION
-      "Address status.  The preferred(1) state indicates
-      that this is a valid address that can appear as
-      the destination or source address of a packet.
-      The deprecated(2) state indicates that this is
-      a valid but deprecated address that should no longer
-      be used as a source address in new communications,
-      but packets addressed to such an address are
-      processed as expected. The invalid(3) state indicates
-      that this is not valid address which should not
 
 
 
@@ -1348,8 +1348,18 @@ Fenner                        Informational                    [Page 24]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
+    DESCRIPTION
+      "Address status.  The preferred(1) state indicates
+      that this is a valid address that can appear as
+      the destination or source address of a packet.
+      The deprecated(2) state indicates that this is
+      a valid but deprecated address that should no longer
+      be used as a source address in new communications,
+      but packets addressed to such an address are
+      processed as expected.  The invalid(3) state indicates
+      that this is not valid address which should not
       appear as the destination or source address of
-      a packet. The inaccessible(4) state indicates that
+      a packet.  The inaccessible(4) state indicates that
       the address is not accessible because the interface
       to which this address is assigned is not operational.
 
@@ -1387,22 +1397,22 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
  -- IPv6 Routing table
 
- ipv6RouteTable OBJECT-TYPE
-     SYNTAX     SEQUENCE OF Ipv6RouteEntry
-     MAX-ACCESS not-accessible
-     STATUS     obsolete
-     DESCRIPTION
-       "IPv6 Routing table. This table contains
-       an entry for each valid IPv6 unicast route
-       that can be used for packet forwarding
-       determination.
-
 
 
 Fenner                        Informational                    [Page 25]
 
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
+
+ ipv6RouteTable OBJECT-TYPE
+     SYNTAX     SEQUENCE OF Ipv6RouteEntry
+     MAX-ACCESS not-accessible
+     STATUS     obsolete
+     DESCRIPTION
+       "IPv6 Routing table.  This table contains
+       an entry for each valid IPv6 unicast route
+       that can be used for packet forwarding
+       determination.
 
        This table is obsoleted by IP-FORWARD-MIB::inetCidrRouteTable."
      ::= { ipv6MIBObjects 11 }
@@ -1442,6 +1452,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      SYNTAX     Ipv6Address
      MAX-ACCESS not-accessible
      STATUS     obsolete
+
+
+
+Fenner                        Informational                    [Page 26]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
      DESCRIPTION
        "The destination IPv6 address of this route.
        This object may not take a Multicast address
@@ -1452,14 +1470,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
  ipv6RoutePfxLength OBJECT-TYPE
      SYNTAX     INTEGER(0..128)
-
-
-
-Fenner                        Informational                    [Page 26]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      UNITS      "bits"
      MAX-ACCESS not-accessible
      STATUS     obsolete
@@ -1498,6 +1508,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
        ipv6IfIndex.  For routes of the discard type this
        value can be zero.
 
+
+
+
+Fenner                        Informational                    [Page 27]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
        This object is obsoleted by
        IP-FORWARD-MIB::inetCidrRouteIfIndex."
      ::= { ipv6RouteEntry 4 }
@@ -1508,14 +1526,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      STATUS     obsolete
      DESCRIPTION
        "On remote routes, the address of the next
-
-
-
-Fenner                        Informational                    [Page 27]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
        system en route;  otherwise, ::0
        ('00000000000000000000000000000000'H in ASN.1
        string representation).
@@ -1544,16 +1554,24 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      MAX-ACCESS read-only
      STATUS     obsolete
      DESCRIPTION
-        "The type of route. Note that 'local(3)' refers
+        "The type of route.  Note that 'local(3)' refers
         to a route for which the next hop is the final
         destination; 'remote(4)' refers to a route for
-        which  the  next  hop is not the final
+        which the next hop is not the final
         destination; 'discard(2)' refers to a route
         indicating that packets to destinations matching
         this route are to be discarded (sometimes called
         black-hole route).
 
         This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteType."
+
+
+
+Fenner                        Informational                    [Page 28]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
      ::= { ipv6RouteEntry 6 }
 
  ipv6RouteProtocol OBJECT-TYPE
@@ -1563,14 +1581,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
                    -- non-protocol information,
                    -- e.g., manually configured
        local(2),   -- entries
-
-
-
-
-Fenner                        Informational                    [Page 28]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
        netmgmt(3), -- static route
 
@@ -1610,16 +1620,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
       Protocols defining 'policy' otherwise must either
       define a set of values which are valid for
-      this object or must implement an integer-
-      instanced  policy table for which this object's
-      value acts as an index.
-
-      This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy."
-     ::= { ipv6RouteEntry 8 }
-
- ipv6RouteAge OBJECT-TYPE
-     SYNTAX     Unsigned32
-     UNITS      "seconds"
 
 
 
@@ -1628,6 +1628,16 @@ Fenner                        Informational                    [Page 29]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
+      this object or must implement an integer-
+      instanced policy table for which this object's
+      value acts as an index.
+
+      This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy."
+     ::= { ipv6RouteEntry 8 }
+
+ ipv6RouteAge OBJECT-TYPE
+     SYNTAX     Unsigned32
+     UNITS      "seconds"
      MAX-ACCESS read-only
      STATUS     obsolete
      DESCRIPTION
@@ -1646,9 +1656,9 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      STATUS     obsolete
      DESCRIPTION
         "The Routing Domain ID of the Next Hop.
-        The  semantics of this object are determined by
-        the routing-protocol specified in  the  route's
-        ipv6RouteProtocol value.   When  this object is
+        The semantics of this object are determined by
+        the routing-protocol specified in the route's
+        ipv6RouteProtocol value.  When this object is
         unknown or not relevant its value should be set
         to zero.
 
@@ -1661,11 +1671,19 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      MAX-ACCESS read-only
      STATUS     obsolete
      DESCRIPTION
-        "The routing metric for this route. The
+        "The routing metric for this route.  The
         semantics of this metric are determined by the
         routing protocol specified in the route's
         ipv6RouteProtocol value.  When this is unknown
         or not relevant to the protocol indicated by
+
+
+
+Fenner                        Informational                    [Page 30]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         ipv6RouteProtocol, the object value should be
         set to its maximum value (4,294,967,295).
 
@@ -1676,19 +1694,11 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
  ipv6RouteWeight OBJECT-TYPE
      SYNTAX     Unsigned32
      MAX-ACCESS read-only
-
-
-
-Fenner                        Informational                    [Page 30]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      STATUS     obsolete
      DESCRIPTION
         "The system internal weight value for this route.
         The semantics of this value are determined by
-        the implementation specific rules. Generally,
+        the implementation specific rules.  Generally,
         within routes with the same ipv6RoutePolicy value,
         the lower the weight value the more preferred is
         the route.
@@ -1705,11 +1715,11 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         particular routing protocol which is responsible
         for this route, as determined by the  value
         specified  in the route's ipv6RouteProto value.
-        If this information is not present,  its  value
+        If this information is not present, its value
         should be set to the OBJECT ID { 0 0 },
-        which is a syntactically valid object  identifier,
+        which is a syntactically valid object identifier,
         and any implementation conforming to ASN.1
-        and the Basic Encoding Rules must  be  able  to
+        and the Basic Encoding Rules must be able to
         generate and recognize this value.
 
         This object is obsoleted, and it has not been replaced."
@@ -1722,6 +1732,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      DESCRIPTION
         "Setting this object to the value 'false(2)' has
         the effect of invalidating the corresponding entry
+
+
+
+Fenner                        Informational                    [Page 31]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         in the ipv6RouteTable object.  That is, it
         effectively disassociates the destination
         identified with said entry from the route
@@ -1732,14 +1750,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         to receive tabular information from agents that
         corresponds to entries not currently in use.
         Proper interpretation of such entries requires
-
-
-
-Fenner                        Informational                    [Page 31]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
         examination of the relevant ipv6RouteValid
         object.
 
@@ -1778,6 +1788,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
        address equivalence.
 
        This entry is obsoleted by IP-MIB::ipNetToPhysicalEntry."
+
+
+
+Fenner                        Informational                    [Page 32]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
      INDEX   { ipv6IfIndex,
                ipv6NetToMediaNetAddress }
      ::= { ipv6NetToMediaTable 1 }
@@ -1788,14 +1806,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          ipv6NetToMediaPhysAddress
              PhysAddress,
          ipv6NetToMediaType
-
-
-
-Fenner                        Informational                    [Page 32]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
              INTEGER,
          ipv6IfNetToMediaState
              INTEGER,
@@ -1834,16 +1844,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
                  local(4)     -- local interface
                 }
      MAX-ACCESS read-only
-     STATUS     obsolete
-     DESCRIPTION
-             "The type of the mapping. The 'dynamic(2)' type
-             indicates that the IPv6 address to physical
-             addresses mapping has been dynamically
-             resolved using the IPv6 Neighbor Discovery
-             protocol. The static(3)' types indicates that
-             the mapping has been statically configured.
-             The local(4) indicates that the mapping is
-             provided for an entity's own interface address.
 
 
 
@@ -1851,6 +1851,17 @@ Fenner                        Informational                    [Page 33]
 
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
+
+     STATUS     obsolete
+     DESCRIPTION
+             "The type of the mapping.  The 'dynamic(2)' type
+             indicates that the IPv6 address to physical
+             addresses mapping has been dynamically
+             resolved using the IPv6 Neighbor Discovery
+             protocol.  The static(3)' types indicates that
+             the mapping has been statically configured.
+             The local(4) indicates that the mapping is
+             provided for an entity's own interface address.
 
              This object is obsoleted by IP-MIB::ipNetToPhysicalType."
      ::= { ipv6NetToMediaEntry 3 }
@@ -1889,6 +1900,14 @@ ipv6IfNetToMediaLastUpdated OBJECT-TYPE
     DESCRIPTION
         "The value of sysUpTime at the time this entry
         was last updated.  If this entry was updated prior
+
+
+
+Fenner                        Informational                    [Page 34]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         to the last re-initialization of the local network
         management subsystem, then this object contains
         a zero value.
@@ -1900,14 +1919,6 @@ ipv6IfNetToMediaLastUpdated OBJECT-TYPE
      SYNTAX     TruthValue
      MAX-ACCESS read-write
      STATUS     obsolete
-
-
-
-Fenner                        Informational                    [Page 34]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
      DESCRIPTION
       "Setting this object to the value 'false(2)' has
       the effect of invalidating the corresponding entry
@@ -1945,6 +1956,14 @@ ipv6IfStateChange NOTIFICATION-TYPE
               ipv6IfOperStatus -- the new state of the If.
              }
      STATUS             obsolete
+
+
+
+Fenner                        Informational                    [Page 35]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
      DESCRIPTION
         "An ipv6IfStateChange notification signifies
         that there has been a change in the state of
@@ -1955,14 +1974,6 @@ ipv6IfStateChange NOTIFICATION-TYPE
         This object is obsoleted by IF-MIB::linkUp
         and IF-MIB::linkDown notifications."
      ::= { ipv6NotificationPrefix 1 }
-
-
-
-
-Fenner                        Informational                    [Page 35]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
 -- conformance information
 
@@ -2001,6 +2012,14 @@ ipv6Compliance MODULE-COMPLIANCE
                 access to this object"
           OBJECT    ipv6IfIdentifier
             MIN-ACCESS  read-only
+
+
+
+Fenner                        Informational                    [Page 36]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
             DESCRIPTION
                "An agent is not required to provide write
                 access to this object"
@@ -2012,14 +2031,6 @@ ipv6Compliance MODULE-COMPLIANCE
 
           OBJECT    ipv6IfAdminStatus
             MIN-ACCESS  read-only
-
-
-
-Fenner                        Informational                    [Page 36]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
             DESCRIPTION
                "An agent is not required to provide write
                 access to this object"
@@ -2057,6 +2068,14 @@ ipv6GeneralGroup OBJECT-GROUP
               ipv6IfStatsInAddrErrors,
               ipv6IfStatsInUnknownProtos,
               ipv6IfStatsInTruncatedPkts,
+
+
+
+Fenner                        Informational                    [Page 37]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
               ipv6IfStatsInDiscards,
               ipv6IfStatsInDelivers,
               ipv6IfStatsOutForwDatagrams,
@@ -2068,14 +2087,6 @@ ipv6GeneralGroup OBJECT-GROUP
               ipv6IfStatsReasmReqds,
               ipv6IfStatsReasmOKs,
               ipv6IfStatsReasmFails,
-
-
-
-Fenner                        Informational                    [Page 37]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
               ipv6IfStatsInMcastPkts,
               ipv6IfStatsOutMcastPkts,
               ipv6AddrPrefixOnLinkFlag,
@@ -2113,6 +2124,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
           IP-MIB."
     ::= { ipv6Groups 1 }
 
+
+
+
+Fenner                        Informational                    [Page 38]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
 ipv6NotificationGroup NOTIFICATION-GROUP
     NOTIFICATIONS { ipv6IfStateChange }
     STATUS    obsolete
@@ -2123,14 +2142,6 @@ ipv6NotificationGroup NOTIFICATION-GROUP
           This group is obsoleted by
           IF-MIB::linkUpDownNotificationsGroup."
     ::= { ipv6Groups 2 }
-
-
-
-
-Fenner                        Informational                    [Page 38]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
  END
 
@@ -2169,17 +2180,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
               E-mail: sonishi@baynetworks.com"
         DESCRIPTION
           "The obsolete MIB module for entities implementing
-           the ICMPv6.  Use the IP-MIB instead."
-        REVISION "201702220000Z"
-        DESCRIPTION
-          "Obsoleting this MIB module; it has been replaced by
-          the revised IP-MIB (RFC4293)."
-        REVISION "9801082155Z"
-        DESCRIPTION
-          "First revision, published as RFC2466"
-        ::= { mib-2 56 }
-
-    -- the ICMPv6 group
 
 
 
@@ -2187,6 +2187,22 @@ Fenner                        Informational                    [Page 39]
 
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
+
+           the ICMPv6.  Use the IP-MIB instead.
+
+           Copyright (C) The Internet Society (2017). This version
+           of this MIB module is part of RFC 8096; see the RFC itself
+           for full legal notices."
+        REVISION "201702220000Z"
+        DESCRIPTION
+          "Obsoleting this MIB module; it has been replaced by
+          the revised IP-MIB (RFC 4293)."
+        REVISION "9801082155Z"
+        DESCRIPTION
+          "First revision, published as RFC 2466"
+        ::= { mib-2 56 }
+
+    -- the ICMPv6 group
 
     ipv6IcmpMIBObjects OBJECT IDENTIFIER ::= { ipv6IcmpMIB  1 }
 
@@ -2197,7 +2213,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         MAX-ACCESS not-accessible
         STATUS     obsolete
         DESCRIPTION
-         "IPv6 ICMP statistics. This table contains statistics
+         "IPv6 ICMP statistics.  This table contains statistics
          of ICMPv6 messages that are received and sourced by
          the entity.
 
@@ -2220,6 +2236,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
          Similarly,  the sending interface is
          the interface that sources a given
+
+
+
+Fenner                        Informational                    [Page 40]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
          ICMP message which is usually but not
          necessarily the output interface for the message.
 
@@ -2236,14 +2260,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
             ipv6IfIcmpInDestUnreachs
                   Counter32      ,
             ipv6IfIcmpInAdminProhibs
-
-
-
-Fenner                        Informational                    [Page 40]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
                   Counter32      ,
             ipv6IfIcmpInTimeExcds
                   Counter32      ,
@@ -2276,6 +2292,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
             ipv6IfIcmpOutErrors
                   Counter32      ,
             ipv6IfIcmpOutDestUnreachs
+
+
+
+Fenner                        Informational                    [Page 41]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
                   Counter32      ,
             ipv6IfIcmpOutAdminProhibs
                   Counter32      ,
@@ -2292,14 +2316,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
             ipv6IfIcmpOutRouterSolicits
                   Counter32      ,
             ipv6IfIcmpOutRouterAdvertisements
-
-
-
-Fenner                        Informational                    [Page 41]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
                   Counter32      ,
             ipv6IfIcmpOutNeighborSolicits
                   Counter32      ,
@@ -2322,7 +2338,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         DESCRIPTION
          "The total number of ICMP messages received
          by the interface which includes all those
-         counted by ipv6IfIcmpInErrors. Note that this
+         counted by ipv6IfIcmpInErrors.  Note that this
          interface is the interface to which the
          ICMP messages were addressed which may not be
          necessarily the input interface for the messages.
@@ -2332,6 +2348,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
     ipv6IfIcmpInErrors OBJECT-TYPE
         SYNTAX     Counter32
+
+
+
+Fenner                        Informational                    [Page 42]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
@@ -2348,14 +2372,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         STATUS     obsolete
         DESCRIPTION
          "The number of ICMP Destination Unreachable
-
-
-
-Fenner                        Informational                    [Page 42]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
          messages received by the interface.
 
          This object has been obsoleted by IP-MIB::icmpMsgStatsInPkts
@@ -2388,6 +2404,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         ::= { ipv6IfIcmpEntry 5 }
 
     ipv6IfIcmpInParmProblems OBJECT-TYPE
+
+
+
+Fenner                        Informational                    [Page 43]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         SYNTAX     Counter32
         MAX-ACCESS read-only
         STATUS     obsolete
@@ -2404,14 +2428,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
-
-
-
-Fenner                        Informational                    [Page 43]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
          "The number of ICMP Packet Too Big messages
          received by the interface.
 
@@ -2444,6 +2460,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         ::= { ipv6IfIcmpEntry 9 }
 
     ipv6IfIcmpInRouterSolicits OBJECT-TYPE
+
+
+
+Fenner                        Informational                    [Page 44]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         SYNTAX     Counter32
         MAX-ACCESS read-only
         STATUS     obsolete
@@ -2460,14 +2484,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
-
-
-
-Fenner                        Informational                    [Page 44]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
          "The number of ICMP Router Advertisement messages
          received by the interface.
 
@@ -2500,6 +2516,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         ::= { ipv6IfIcmpEntry 13 }
 
     ipv6IfIcmpInRedirects OBJECT-TYPE
+
+
+
+Fenner                        Informational                    [Page 45]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         SYNTAX     Counter32
         MAX-ACCESS read-only
         STATUS     obsolete
@@ -2516,14 +2540,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
-
-
-
-Fenner                        Informational                    [Page 45]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
          "The number of ICMPv6 Group Membership Query
          messages received by the interface.
 
@@ -2556,6 +2572,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         ::= { ipv6IfIcmpEntry 17}
 
     ipv6IfIcmpOutMsgs OBJECT-TYPE
+
+
+
+Fenner                        Informational                    [Page 46]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
         SYNTAX     Counter32
         MAX-ACCESS read-only
         STATUS     obsolete
@@ -2572,14 +2596,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
-
-
-
-Fenner                        Informational                    [Page 46]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
          "The number of ICMP messages which this interface did
          not send due to problems discovered within ICMP
          such as a lack of buffers.  This value should not
@@ -2613,6 +2629,13 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
           "Number of ICMP dest unreachable/communication
           administratively prohibited messages sent.
 
+
+
+Fenner                        Informational                    [Page 47]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
           This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
           in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 21 }
@@ -2628,13 +2651,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 22 }
-
-
-
-Fenner                        Informational                    [Page 47]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
     ipv6IfIcmpOutParmProblems OBJECT-TYPE
         SYNTAX     Counter32
@@ -2668,6 +2684,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          "The number of ICMP Echo (request) messages sent
          by the interface.
 
+
+
+
+Fenner                        Informational                    [Page 48]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 25 }
@@ -2683,14 +2707,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 26 }
-
-
-
-
-Fenner                        Informational                    [Page 48]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
     ipv6IfIcmpOutRouterSolicits OBJECT-TYPE
         SYNTAX     Counter32
@@ -2724,6 +2740,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          "The number of ICMP Neighbor Solicitation
           messages sent by the interface.
 
+
+
+
+Fenner                        Informational                    [Page 49]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
           This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
           in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 29 }
@@ -2740,20 +2764,12 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 30 }
 
-
-
-
-Fenner                        Informational                    [Page 49]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
     ipv6IfIcmpOutRedirects OBJECT-TYPE
         SYNTAX     Counter32
         MAX-ACCESS read-only
         STATUS     obsolete
         DESCRIPTION
-         "The number of Redirect messages sent. For
+         "The number of Redirect messages sent.  For
          a host, this object will always be zero,
          since hosts do not send redirects.
 
@@ -2781,6 +2797,13 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          "The number of ICMPv6 Group Membership Response
          messages sent.
 
+
+
+Fenner                        Informational                    [Page 50]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 33}
@@ -2796,13 +2819,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          This object has been obsoleted by IP-MIB::icmpMsgStatsOutPkts
          in the row corresponding to this message type."
         ::= { ipv6IfIcmpEntry 34}
-
-
-
-Fenner                        Informational                    [Page 50]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
    -- conformance information
 
@@ -2836,6 +2852,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
                    ipv6IfIcmpInTimeExcds,
                    ipv6IfIcmpInParmProblems,
                    ipv6IfIcmpInPktTooBigs,
+
+
+
+Fenner                        Informational                    [Page 51]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
                    ipv6IfIcmpInEchos,
                    ipv6IfIcmpInEchoReplies,
                    ipv6IfIcmpInRouterSolicits,
@@ -2852,14 +2876,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
                    ipv6IfIcmpOutAdminProhibs,
                    ipv6IfIcmpOutTimeExcds,
                    ipv6IfIcmpOutParmProblems,
-
-
-
-Fenner                        Informational                    [Page 51]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
                    ipv6IfIcmpOutPktTooBigs,
                    ipv6IfIcmpOutEchos,
                    ipv6IfIcmpOutEchoReplies,
@@ -2892,6 +2908,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
     mib-2, experimental                  FROM SNMPv2-SMI
     Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
 
+
+
+
+Fenner                        Informational                    [Page 52]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
  ipv6UdpMIB MODULE-IDENTITY
     LAST-UPDATED "201702220000Z"
     ORGANIZATION "IETF IPv6 MIB Working Group"
@@ -2907,22 +2931,18 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
                  Email:  daniele@zk3.dec.com"
     DESCRIPTION
          "The obsolete MIB module for entities implementing UDP
-         over IPv6.  Use the UDP-MIB instead."
+         over IPv6.  Use the UDP-MIB instead.
 
-
-
-Fenner                        Informational                    [Page 52]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
+         Copyright (C) The Internet Society (2017). This version
+         of this MIB module is part of RFC 8096; see the RFC itself
+         for full legal notices."
     REVISION "201702220000Z"
     DESCRIPTION
          "Obsoleting this MIB module; it has been replaced by
-         the revised UDP-MIB (RFC4113)."
+         the revised UDP-MIB (RFC 4113)."
     REVISION "9801290000Z"
     DESCRIPTION
-         "First revision, published as RFC2454"
+         "First revision, published as RFC 2454"
     ::= { experimental 87 }
 
  -- objects specific to UDP for IPv6
@@ -2944,6 +2964,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          "A table containing UDP listener information for
           UDP/IPv6 endpoints.
 
+
+
+
+Fenner                        Informational                    [Page 53]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
           This table is obsoleted by UDP-MIB::udpEndpointTable."
     ::= { udp 6 }
 
@@ -2964,13 +2992,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
               ipv6UdpLocalPort,
               ipv6UdpIfIndex }
     ::= { ipv6UdpTable 1 }
-
-
-
-Fenner                        Informational                    [Page 53]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
  Ipv6UdpEntry ::= SEQUENCE {
     ipv6UdpLocalAddress    Ipv6Address,
@@ -2999,6 +3020,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
          "The local port number for this UDP listener.
 
          This object is obsoleted by UDP-MIB::udpEndpointLocalPort."
+
+
+
+Fenner                        Informational                    [Page 54]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
      ::= { ipv6UdpEntry 2 }
 
  ipv6UdpIfIndex OBJECT-TYPE
@@ -3019,14 +3048,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
           The interface identified by a particular non-0 value of
           this index is the same interface as identified by the same
           value of ipv6IfIndex.
-
-
-
-
-Fenner                        Informational                    [Page 54]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
 
           The value of this object must remain constant during
           the life of this UDP endpoint.
@@ -3055,6 +3076,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
           This object is obsoleted by UDP-MIB::udpMIBCompliance2."
     MODULE  -- this module
+
+
+
+Fenner                        Informational                    [Page 55]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
+
     MANDATORY-GROUPS { ipv6UdpGroup }
     ::= { ipv6UdpCompliances 1 }
 
@@ -3073,65 +3102,36 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
  END
 
-
-
-
-
-
-
-Fenner                        Informational                    [Page 55]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
 6.  Historic IPV6-TCP-MIB
 
-IPV6-TCP-MIB DEFINITIONS ::= BEGIN
+ IPV6-TCP-MIB DEFINITIONS ::= BEGIN
 
-IMPORTS
-   MODULE-COMPLIANCE, OBJECT-GROUP      FROM SNMPv2-CONF
-   MODULE-IDENTITY, OBJECT-TYPE,
-   mib-2, experimental                  FROM SNMPv2-SMI
-   Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
+ IMPORTS
+    MODULE-COMPLIANCE, OBJECT-GROUP      FROM SNMPv2-CONF
+    MODULE-IDENTITY, OBJECT-TYPE,
+    mib-2, experimental                  FROM SNMPv2-SMI
+    Ipv6Address, Ipv6IfIndexOrZero       FROM IPV6-TC;
 
-ipv6TcpMIB MODULE-IDENTITY
-   LAST-UPDATED "201702220000Z"
-   ORGANIZATION "IETF IPv6 MIB Working Group"
-   CONTACT-INFO
-        "       Mike Daniele
+ ipv6TcpMIB MODULE-IDENTITY
+    LAST-UPDATED "201702220000Z"
+    ORGANIZATION "IETF IPv6 MIB Working Group"
+    CONTACT-INFO
+         "       Mike Daniele
 
-                Postal: Compaq Computer Corporation
-                        110 Spitbrook Rd
-                        Nashua, NH 03062.
-                        US
+                 Postal: Compaq Computer Corporation
+                         110 Spitbrook Rd
+                         Nashua, NH 03062.
+                         US
 
-                Phone:  +1 603 884 1423
-                Email:  daniele@zk3.dec.com"
-   DESCRIPTION
-        "The obsolete MIB module for entities implementing TCP
-        over IPv6.  Use the TCP-MIB instead."
-   REVISION "201702220000Z"
-   DESCRIPTION
-        "Obsoleting this MIB module; it has been replaced by
-        the revised TCP-MIB (RFC4022)."
-   REVISION "9801290000Z"
-   DESCRIPTION
-        "First revision, published as RFC2452"
-   ::= { experimental 86 }
+                 Phone:  +1 603 884 1423
+                 Email:  daniele@zk3.dec.com"
+    DESCRIPTION
+         "The obsolete MIB module for entities implementing TCP
+         over IPv6.  Use the TCP-MIB instead.
 
--- objects specific to TCP for IPv6
-
-tcp      OBJECT IDENTIFIER ::= { mib-2 6 }
-
--- the TCP over IPv6 Connection table
-
--- This connection table contains information about this
--- entity's existing TCP connections between IPv6 endpoints.
--- Only connections between IPv6 addresses are contained in
--- this table.  This entity's connections between IPv4
--- endpoints are contained in tcpConnTable.
-
-ipv6TcpConnTable OBJECT-TYPE
+         Copyright (C) The Internet Society (2017). This version
+         of this MIB module is part of RFC 8096; see the RFC itself
+         for full legal notices."
 
 
 
@@ -3140,54 +3140,54 @@ Fenner                        Informational                    [Page 56]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
-   SYNTAX      SEQUENCE OF Ipv6TcpConnEntry
-   MAX-ACCESS  not-accessible
-   STATUS      obsolete
-   DESCRIPTION
-        "A table containing TCP connection-specific information,
-         for only those connections whose endpoints are IPv6 addresses.
+    REVISION "201702220000Z"
+    DESCRIPTION
+         "Obsoleting this MIB module; it has been replaced by
+         the revised TCP-MIB (RFC 4022)."
+    REVISION "9801290000Z"
+    DESCRIPTION
+         "First revision, published as RFC 2452"
+    ::= { experimental 86 }
 
-         This table is obsoleted by TCP-MIB::tcpConnectionTable."
-   ::= { tcp 16 }
+ -- objects specific to TCP for IPv6
 
-ipv6TcpConnEntry OBJECT-TYPE
-   SYNTAX      Ipv6TcpConnEntry
-   MAX-ACCESS  not-accessible
-   STATUS      obsolete
-   DESCRIPTION
-        "A conceptual row of the ipv6TcpConnTable containing
-         information about a particular current TCP connection.
-         Each row of this table is transient, in that it ceases to
-         exist when (or soon after) the connection makes the transition
-         to the CLOSED state.
+ tcp      OBJECT IDENTIFIER ::= { mib-2 6 }
 
-         Note that conceptual rows in this table require an additional
-         index object compared to tcpConnTable, since IPv6 addresses
-         are not guaranteed to be unique on the managed node.
+ -- the TCP over IPv6 Connection table
 
-         This entry is obsoleted by TCP-MIB::tcpConnectionEntry."
-   INDEX   { ipv6TcpConnLocalAddress,
-             ipv6TcpConnLocalPort,
-             ipv6TcpConnRemAddress,
-             ipv6TcpConnRemPort,
-             ipv6TcpConnIfIndex }
-   ::= { ipv6TcpConnTable 1 }
+ -- This connection table contains information about this
+ -- entity's existing TCP connections between IPv6 endpoints.
+ -- Only connections between IPv6 addresses are contained in
+ -- this table.  This entity's connections between IPv4
+ -- endpoints are contained in tcpConnTable.
 
-Ipv6TcpConnEntry ::=
-   SEQUENCE { ipv6TcpConnLocalAddress    Ipv6Address,
-              ipv6TcpConnLocalPort       INTEGER,
-              ipv6TcpConnRemAddress      Ipv6Address,
-              ipv6TcpConnRemPort         INTEGER,
-              ipv6TcpConnIfIndex         Ipv6IfIndexOrZero,
-              ipv6TcpConnState           INTEGER }
+ ipv6TcpConnTable OBJECT-TYPE
+    SYNTAX      SEQUENCE OF Ipv6TcpConnEntry
+    MAX-ACCESS  not-accessible
+    STATUS      obsolete
+    DESCRIPTION
+         "A table containing TCP connection-specific information,
+          for only those connections whose endpoints are IPv6 addresses.
 
-ipv6TcpConnLocalAddress OBJECT-TYPE
-   SYNTAX     Ipv6Address
-   MAX-ACCESS not-accessible
-   STATUS     obsolete
-   DESCRIPTION
-        "The local IPv6 address for this TCP connection. In
-         the case of a connection in the listen state which
+          This table is obsoleted by TCP-MIB::tcpConnectionTable."
+    ::= { tcp 16 }
+
+ ipv6TcpConnEntry OBJECT-TYPE
+    SYNTAX      Ipv6TcpConnEntry
+    MAX-ACCESS  not-accessible
+    STATUS      obsolete
+    DESCRIPTION
+         "A conceptual row of the ipv6TcpConnTable containing
+          information about a particular current TCP connection.
+          Each row of this table is transient, in that it ceases to
+          exist when (or soon after) the connection makes the transition
+          to the CLOSED state.
+
+          Note that conceptual rows in this table require an additional
+          index object compared to tcpConnTable, since IPv6 addresses
+          are not guaranteed to be unique on the managed node.
+
+          This entry is obsoleted by TCP-MIB::tcpConnectionEntry."
 
 
 
@@ -3196,54 +3196,54 @@ Fenner                        Informational                    [Page 57]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
-         is willing to accept connections for any IPv6
-         address associated with the managed node, the value
-         ::0 is used.
+    INDEX   { ipv6TcpConnLocalAddress,
+              ipv6TcpConnLocalPort,
+              ipv6TcpConnRemAddress,
+              ipv6TcpConnRemPort,
+              ipv6TcpConnIfIndex }
+    ::= { ipv6TcpConnTable 1 }
 
-         This object is obsoleted by
-         TCP-MIB::tcpConnectionLocalAddressType."
-   ::= { ipv6TcpConnEntry 1 }
+ Ipv6TcpConnEntry ::=
+    SEQUENCE { ipv6TcpConnLocalAddress    Ipv6Address,
+               ipv6TcpConnLocalPort       INTEGER,
+               ipv6TcpConnRemAddress      Ipv6Address,
+               ipv6TcpConnRemPort         INTEGER,
+               ipv6TcpConnIfIndex         Ipv6IfIndexOrZero,
+               ipv6TcpConnState           INTEGER }
 
-ipv6TcpConnLocalPort OBJECT-TYPE
-   SYNTAX     INTEGER (0..65535)
-   MAX-ACCESS not-accessible
-   STATUS     obsolete
-   DESCRIPTION
-        "The local port number for this TCP connection.
+ ipv6TcpConnLocalAddress OBJECT-TYPE
+    SYNTAX     Ipv6Address
+    MAX-ACCESS not-accessible
+    STATUS     obsolete
+    DESCRIPTION
+         "The local IPv6 address for this TCP connection. In
+          the case of a connection in the listen state which
+          is willing to accept connections for any IPv6
+          address associated with the managed node, the value
+          ::0 is used.
 
-        This object is obsoleted by TCP-MIB::tcpConnectionLocalPort."
-   ::= { ipv6TcpConnEntry 2 }
+          This object is obsoleted by
+          TCP-MIB::tcpConnectionLocalAddressType."
+    ::= { ipv6TcpConnEntry 1 }
 
-ipv6TcpConnRemAddress OBJECT-TYPE
-   SYNTAX     Ipv6Address
-   MAX-ACCESS not-accessible
-   STATUS     obsolete
-   DESCRIPTION
-        "The remote IPv6 address for this TCP connection.
+ ipv6TcpConnLocalPort OBJECT-TYPE
+    SYNTAX     INTEGER (0..65535)
+    MAX-ACCESS not-accessible
+    STATUS     obsolete
+    DESCRIPTION
+         "The local port number for this TCP connection.
 
-        This object is obsoleted by TCP-MIB::tcpConnectionRemAddress."
-   ::= { ipv6TcpConnEntry 3 }
+         This object is obsoleted by TCP-MIB::tcpConnectionLocalPort."
+    ::= { ipv6TcpConnEntry 2 }
 
-ipv6TcpConnRemPort OBJECT-TYPE
-   SYNTAX     INTEGER (0..65535)
-   MAX-ACCESS not-accessible
-   STATUS     obsolete
-   DESCRIPTION
-        "The remote port number for this TCP connection.
+ ipv6TcpConnRemAddress OBJECT-TYPE
+    SYNTAX     Ipv6Address
+    MAX-ACCESS not-accessible
+    STATUS     obsolete
+    DESCRIPTION
+         "The remote IPv6 address for this TCP connection.
 
-        This object is obsoleted by TCP-MIB::tcpConnectionRemPort."
-   ::= { ipv6TcpConnEntry 4 }
-
-ipv6TcpConnIfIndex OBJECT-TYPE
-   SYNTAX     Ipv6IfIndexOrZero
-   MAX-ACCESS not-accessible
-   STATUS     obsolete
-   DESCRIPTION
-        "An index object used to disambiguate conceptual rows in
-         the table, since the connection 4-tuple may not be unique.
-
-         If the connection's remote address (ipv6TcpConnRemAddress)
-         is a link-local address and the connection's local address
+         This object is obsoleted by TCP-MIB::tcpConnectionRemAddress."
 
 
 
@@ -3252,54 +3252,54 @@ Fenner                        Informational                    [Page 58]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
-         (ipv6TcpConnLocalAddress) is not a link-local address, this
-         object identifies a local interface on the same link as
-         the connection's remote link-local address.
+    ::= { ipv6TcpConnEntry 3 }
 
-         Otherwise, this object identifies the local interface that
-         is associated with the ipv6TcpConnLocalAddress for this
-         TCP connection.  If such a local interface cannot be determined,
-         this object should take on the value 0.  (A possible example
-         of this would be if the value of ipv6TcpConnLocalAddress is ::0.)
+ ipv6TcpConnRemPort OBJECT-TYPE
+    SYNTAX     INTEGER (0..65535)
+    MAX-ACCESS not-accessible
+    STATUS     obsolete
+    DESCRIPTION
+         "The remote port number for this TCP connection.
 
-         The interface identified by a particular non-0 value of this
-         index is the same interface as identified by the same value
-         of ipv6IfIndex.
+         This object is obsoleted by TCP-MIB::tcpConnectionRemPort."
+    ::= { ipv6TcpConnEntry 4 }
 
-         The value of this object must remain constant during the life
-         of the TCP connection.
+ ipv6TcpConnIfIndex OBJECT-TYPE
+    SYNTAX     Ipv6IfIndexOrZero
+    MAX-ACCESS not-accessible
+    STATUS     obsolete
+    DESCRIPTION
+         "An index object used to disambiguate conceptual rows in
+          the table, since the connection 4-tuple may not be unique.
 
-         This object is obsoleted by the zone identifier in
-         an InetAddressIPv6z address in either
-         TCP-MIB::tcpConnectionLocalAddress or
-         TCP-MIB::tcpConnectionRemAddress."
-   ::= { ipv6TcpConnEntry 5 }
+          If the connection's remote address (ipv6TcpConnRemAddress)
+          is a link-local address and the connection's local address
+          (ipv6TcpConnLocalAddress) is not a link-local address, this
+          object identifies a local interface on the same link as
+          the connection's remote link-local address.
 
-ipv6TcpConnState OBJECT-TYPE
-   SYNTAX     INTEGER {
-        closed(1),
-        listen(2),
-        synSent(3),
-        synReceived(4),
-        established(5),
-        finWait1(6),
-        finWait2(7),
-        closeWait(8),
-        lastAck(9),
-        closing(10),
-        timeWait(11),
-        deleteTCB(12) }
-   MAX-ACCESS read-write
-   STATUS     obsolete
-   DESCRIPTION
-        "The state of this TCP connection.
+          Otherwise, this object identifies the local interface that
+          is associated with the ipv6TcpConnLocalAddress for this
+          TCP connection.  If such a local interface cannot be
+          determined, this object should take on the value 0.
+          (A possible example of this would be if the value of
+          ipv6TcpConnLocalAddress is ::0.)
 
-         The only value which may be set by a management station is
-         deleteTCB(12).  Accordingly, it is appropriate for an agent
-         to return an error response ('badValue' for SNMPv1, 'wrongValue'
-         for SNMPv2) if a management station attempts to set this
-         object to any other value.
+          The interface identified by a particular non-0 value of this
+          index is the same interface as identified by the same value
+          of ipv6IfIndex.
 
+          The value of this object must remain constant during the life
+          of the TCP connection.
+
+          This object is obsoleted by the zone identifier in
+          an InetAddressIPv6z address in either
+          TCP-MIB::tcpConnectionLocalAddress or
+          TCP-MIB::tcpConnectionRemAddress."
+    ::= { ipv6TcpConnEntry 5 }
+
+ ipv6TcpConnState OBJECT-TYPE
+    SYNTAX     INTEGER {
 
 
 
@@ -3308,54 +3308,54 @@ Fenner                        Informational                    [Page 59]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
-         If a management station sets this object to the value
-         deleteTCB(12), then this has the effect of deleting the TCB
-         (as defined in RFC 793) of the corresponding connection on
-         the managed node, resulting in immediate termination of the
-         connection.
+         closed(1),
+         listen(2),
+         synSent(3),
+         synReceived(4),
+         established(5),
+         finWait1(6),
+         finWait2(7),
+         closeWait(8),
+         lastAck(9),
+         closing(10),
+         timeWait(11),
+         deleteTCB(12) }
+    MAX-ACCESS read-write
+    STATUS     obsolete
+    DESCRIPTION
+         "The state of this TCP connection.
 
-         As an implementation-specific option, a RST segment may be
-         sent from the managed node to the other TCP endpoint (note
-         however that RST segments are not sent reliably).
+          The only value which may be set by a management station is
+          deleteTCB(12).  Accordingly, it is appropriate for an agent
+          to return an error response ('badValue' for SNMPv1,
+          'wrongValue' for SNMPv2) if a management station attempts
+          to set this object to any other value.
 
-         This object is obsoleted by TCP-MIB::tcpConnectionState."
-   ::= { ipv6TcpConnEntry 6 }
+          If a management station sets this object to the value
+          deleteTCB(12), then this has the effect of deleting the TCB
+          (as defined in RFC 793) of the corresponding connection on
+          the managed node, resulting in immediate termination of the
+          connection.
 
---
--- conformance information
---
+          As an implementation-specific option, a RST segment may be
+          sent from the managed node to the other TCP endpoint (note
+          however that RST segments are not sent reliably).
 
-ipv6TcpConformance OBJECT IDENTIFIER ::= { ipv6TcpMIB 2 }
+          This object is obsoleted by TCP-MIB::tcpConnectionState."
+    ::= { ipv6TcpConnEntry 6 }
 
-ipv6TcpCompliances OBJECT IDENTIFIER ::= { ipv6TcpConformance 1 }
-ipv6TcpGroups      OBJECT IDENTIFIER ::= { ipv6TcpConformance 2 }
+ --
+ -- conformance information
+ --
 
--- compliance statements
+ ipv6TcpConformance OBJECT IDENTIFIER ::= { ipv6TcpMIB 2 }
 
-ipv6TcpCompliance MODULE-COMPLIANCE
-   STATUS  obsolete
-   DESCRIPTION
-        "The compliance statement for SNMPv2 entities which
-         implement TCP over IPv6.
+ ipv6TcpCompliances OBJECT IDENTIFIER ::= { ipv6TcpConformance 1 }
+ ipv6TcpGroups      OBJECT IDENTIFIER ::= { ipv6TcpConformance 2 }
 
-         This compliance statement is obsoleted by
-         TCP-MIB::tcpMIBCompliance2."
-   MODULE  -- this module
-   MANDATORY-GROUPS { ipv6TcpGroup }
-   ::= { ipv6TcpCompliances 1 }
+ -- compliance statements
 
-ipv6TcpGroup OBJECT-GROUP
-   OBJECTS   { -- these are defined in this module
-               -- ipv6TcpConnLocalAddress (not-accessible)
-               -- ipv6TcpConnLocalPort (not-accessible)
-               -- ipv6TcpConnRemAddress (not-accessible)
-               -- ipv6TcpConnRemPort (not-accessible)
-               -- ipv6TcpConnIfIndex (not-accessible)
-               ipv6TcpConnState }
-   STATUS    obsolete
-   DESCRIPTION
-        "The group of objects providing management of
-         TCP over IPv6.
+ ipv6TcpCompliance MODULE-COMPLIANCE
 
 
 
@@ -3364,10 +3364,34 @@ Fenner                        Informational                    [Page 60]
 RFC 8096                IPv6 MIB Modules Obsolete          February 2017
 
 
-         This group is obsoleted by several groups in TCP-MIB."
-   ::= { ipv6TcpGroups 1 }
+    STATUS  obsolete
+    DESCRIPTION
+         "The compliance statement for SNMPv2 entities which
+          implement TCP over IPv6.
 
-END
+          This compliance statement is obsoleted by
+          TCP-MIB::tcpMIBCompliance2."
+    MODULE  -- this module
+    MANDATORY-GROUPS { ipv6TcpGroup }
+    ::= { ipv6TcpCompliances 1 }
+
+ ipv6TcpGroup OBJECT-GROUP
+    OBJECTS   { -- these are defined in this module
+                -- ipv6TcpConnLocalAddress (not-accessible)
+                -- ipv6TcpConnLocalPort (not-accessible)
+                -- ipv6TcpConnRemAddress (not-accessible)
+                -- ipv6TcpConnRemPort (not-accessible)
+                -- ipv6TcpConnIfIndex (not-accessible)
+                ipv6TcpConnState }
+    STATUS    obsolete
+    DESCRIPTION
+         "The group of objects providing management of
+          TCP over IPv6.
+
+          This group is obsoleted by several groups in TCP-MIB."
+    ::= { ipv6TcpGroups 1 }
+
+ END
 
 7.  Reclassification
 
@@ -3383,6 +3407,18 @@ END
    security implications based on these objects in an implementation,
    removing these objects as [RFC2578] suggests would improve the
    security of that implementation.
+
+
+
+
+
+
+
+
+Fenner                        Informational                    [Page 61]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
 
 9.  IANA Considerations
 
@@ -3412,14 +3448,6 @@ END
    o  Changed the "(Historical)" annotation for experimental.87
       ("ipv6UdpMIB") to "(Historic)".
 
-
-
-
-Fenner                        Informational                    [Page 61]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
    o  Updated the reference for experimental.86 ("ipv6TcpMIB") and
       experimental.87 ("ipv6UdpMIB") to point to this document.
 
@@ -3439,6 +3467,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
               for Network Management of TCP/IP-based internets: MIB-II",
               STD 17, RFC 1213, DOI 10.17487/RFC1213, March 1991,
               <http://www.rfc-editor.org/info/rfc1213>.
+
+
+
+
+Fenner                        Informational                    [Page 62]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
 
    [RFC1573]  McCloghrie, K. and F. Kastenholz, "Evolution of the
               Interfaces Group of MIB-II", RFC 1573,
@@ -3465,17 +3501,6 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
               RFC 2465, DOI 10.17487/RFC2465, December 1998,
               <http://www.rfc-editor.org/info/rfc2465>.
 
-
-
-
-
-
-
-Fenner                        Informational                    [Page 62]
-
-RFC 8096                IPv6 MIB Modules Obsolete          February 2017
-
-
    [RFC2466]  Haskin, D. and S. Onishi, "Management Information Base for
               IP Version 6: ICMPv6 Group", RFC 2466,
               DOI 10.17487/RFC2466, December 1998,
@@ -3498,6 +3523,14 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
    [RFC4293]  Routhier, S., Ed., "Management Information Base for the
               Internet Protocol (IP)", RFC 4293, DOI 10.17487/RFC4293,
               April 2006, <http://www.rfc-editor.org/info/rfc4293>.
+
+
+
+
+Fenner                        Informational                    [Page 63]
+
+RFC 8096                IPv6 MIB Modules Obsolete          February 2017
+
 
 10.3.  URIs
 
@@ -3527,4 +3560,27 @@ Author's Address
 
 
 
-Fenner                        Informational                    [Page 63]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fenner                        Informational                    [Page 64]

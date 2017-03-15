@@ -1713,7 +1713,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
      DESCRIPTION
         "A reference to MIB definitions specific to the
         particular routing protocol which is responsible
-        for this route, as determined by the  value
+        for this route, as determined by the value
         specified  in the route's ipv6RouteProto value.
         If this information is not present, its value
         should be set to the OBJECT ID { 0 0 },
@@ -3216,7 +3216,7 @@ RFC 8096                IPv6 MIB Modules Obsolete          February 2017
     MAX-ACCESS not-accessible
     STATUS     obsolete
     DESCRIPTION
-         "The local IPv6 address for this TCP connection. In
+         "The local IPv6 address for this TCP connection.  In
           the case of a connection in the listen state which
           is willing to accept connections for any IPv6
           address associated with the managed node, the value
